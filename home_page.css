@@ -1,0 +1,267 @@
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/back.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+
+.who-we-are {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.who-we-are-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.section-icon {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.who-we-are-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.who-we-are-text p {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+}
+
+.who-we-are-image {
+    text-align: center;
+}
+
+.who-we-are-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.who-we-are-description {
+    color: #555;
+}
+
+.who-we-are-description p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.learn-more {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+.recognition {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.recognition p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.verified {
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 968px) {
+    .who-we-are-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .who-we-are-image {
+        order: -1;
+    }
+
+    .who-we-are-image img {
+        max-width: 300px;
+    }
+}
+
+
+.history-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/face.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.history-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.history-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.history-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.history-text p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.hours-section {
+    padding: 30px 20px;
+    background-color: #fff5f2;
+}
+
+.hours-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.hours-box {
+    text-align: center;
+    padding: 30px;
+    min-width: 200px;
+}
+
+.hours-box h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.hours-box h3 span {
+    font-size: 1.5rem;
+}
+
+.hours-box p {
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Map section styles */
+.map-section {
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.map-container {
+    width: 100%;
+    height: 450px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .history-section {
+        padding: 60px 20px;
+    }
+
+    .history-section h2 {
+        font-size: 2rem;
+    }
+
+    .history-text {
+        font-size: 1rem;
+    }
+    
+    .hours-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hours-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hours-box h3 {
+        font-size: 2rem;
+    }
+}
+
