@@ -238,6 +238,7 @@
     padding: 30px;
     border-radius: 0;
     box-shadow: none;
+    text-align: center;
 }
 
 .contact-info-section h2 {
@@ -246,18 +247,21 @@
     padding-bottom: 10px;
     text-transform: uppercase;
     font-size: 1.4rem;
+    text-align: center;
 }
 
 .contact-item h3 {
     color: #395c3b; /* Dark green headings */
     margin-bottom: 10px;
     font-size: 1rem;
+    text-align: center;
 }
 
 .contact-item p {
     margin-bottom: 5px;
     color: #333;
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .map-container iframe {
@@ -373,4 +377,70 @@
     color: #666;
     margin: 0;
     font-size: 0.9rem;
+}
+
+
+/* Responsive styles for contact page */
+@media (max-width: 992px) {
+    .contact-grid {
+        display: block;
+    }
+    
+    .map-section {
+        margin-bottom: 30px;
+    }
+    
+    .review-grid {
+        display: block;
+    }
+    
+    .review-content {
+        margin-bottom: 30px;
+    }
+    
+    .google-review-image {
+        width: 40%;
+        margin: 0 auto 20px;
+    }
+    
+    .contact-page-main {
+        padding: 40px 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page-main {
+        padding: 30px 20px;
+    }
+    
+    .map-container {
+        height: 400px;
+    }
+    
+    .google-review-image {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content {
+        padding: 20px;
+    }
+    
+    .practitioner-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .practitioner-image {
+        margin: 0 auto 15px;
+    }
+    
+    .practitioner-details {
+        text-align: center;
+    }
+    
+    .button-container {
+        text-align: center;
+    }
 }
