@@ -55,33 +55,37 @@
             <li><a href="../contact/index.html">CONTACT US</a></li>
         </ul>
     </nav>
-
+    
     <main>
-        <!-- Update the sidebar navigation to include the intro link -->
-        <aside>
-            <ul>
-                <li><a href="#intro" class="section-link active">WHAT IS ACUPUNCTURE?</a></li>
-                <li><a href="#fertility" class="section-link">FERTILITY & ACUPUNCTURE</a></li>
-                <li><a href="#fibromyalgia" class="section-link">FIBROMYALGIA</a></li>
-                <li><a href="#lower-back-pain" class="section-link">LOWER BACK PAIN</a></li>
-                <li><a href="#stop-smoking" class="section-link">STOP SMOKING</a></li>
-                <li><a href="#weight-loss" class="section-link">WEIGHT LOSS</a></li>
-            </ul>
-        </aside>
-
+        <div class="page-container">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Brochures</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="#intro" class="sidebar-link active" data-section="intro">What is Acupuncture?</a></li>
+                        <li><a href="#fertility" class="sidebar-link" data-section="fertility">Fertility & Acupuncture</a></li>
+                        <li><a href="#fibromyalgia" class="sidebar-link" data-section="fibromyalgia">Fibromyalgia</a></li>
+                        <li><a href="#lower-back-pain" class="sidebar-link" data-section="lower-back-pain">Lower Back Pain</a></li>
+                        <li><a href="#stop-smoking" class="sidebar-link" data-section="stop-smoking">Stop Smoking</a></li>
+                        <li><a href="#weight-loss" class="sidebar-link" data-section="weight-loss">Weight Loss</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        
         <section class="content brochure-content">
-            <div class="brochure-section">
+            <div id="intro" class="brochure-section">
                 <h2>How Does Acupuncture Work?</h2>
                 <p>Traditional acupuncture is based on ancient Chinese theories of the flow of Qi (pronounced Chee) – energy and Xue (blood) through distinct meridians or pathways that cover the body somewhat like the way nerves and blood vessels do. According to ancient theory, acupuncture allows Qi to flow to areas where Qi is deficient and away from areas where Qi is excessive. It is in this manner, that acupuncture regulates and restores the harmonious energetic balance of the body.</p>
                 <blockquote>"There is no pain if there is free flow; if there is pain, there is no free flow." - Chinese saying</blockquote>
             </div>
 
-            <div class="brochure-section">
+            <div class="brochure-section" data-intro="true">
                 <h2>What is Acupuncture?</h2>
                 <p>Acupuncture is the practice of inserting fine needles at specific points into the body and has been shown through the centuries as an effective method of treatment for various health problems. These points have been revealed, studied, and mapped by the Chinese over thousands of years. Electromagnetic research has also confirmed these points.</p>
             </div>
 
-            <div class="brochure-section">
+            <div class="brochure-section" data-intro="true">
                 <h2>Common Questions About Acupuncture</h2>
                 
                 <h3>How Deep Do The Needles Go?</h3>
@@ -94,7 +98,7 @@
                 <p>Only sterilized, individually packaged, disposable needles are utilized. Needles are not saved and are not reused at a later date. This eliminates the possibility of transmitting diseases through the reuse of a potentially contaminated needle. Florida Law requires disposable Needles.</p>
             </div>
 
-            <div class="brochure-section">
+            <div class="brochure-section" data-intro="true">
                 <h2>What Conditions Does Acupuncture Treat?</h2>
                 <div class="condition-categories">
                     <div class="category">
@@ -120,13 +124,13 @@
                 </div>
             </div>
 
-            <div class="brochure-section">
+            <div class="brochure-section" data-intro="true">
                 <h2>What to Expect</h2>
                 <p>Following an acupuncture treatment, patients experience a sense of well being, relaxation, and often energized. As a sign of obtaining the vital energy, some patients may experience a slight sensation of soreness, numbness, distention or heaviness around the needle area. Patients should be comfortable and relaxed during treatment to attain the desired results.</p>
                 <p>The reaction usually starts during the first four or five visits. As with any other medical treatment, not all cases can be cured. However, there is no harmful effect from the therapy in common practice. Therefore, patients who suffer from lingering or chronic diseases that haven't responded well to orthodox medicine intervention are particularly encouraged to try this promising Chinese art of healing.</p>
             </div>
 
-            <div class="brochure-section">
+            <div class="brochure-section" data-intro="true">
                 <h2>Additional Treatment Methods</h2>
                 <div class="treatment-methods">
                     <div class="method">
@@ -498,7 +502,7 @@
             <div class="footer-section about-section">
                 <h3>About Dragon Phoenix</h3>
                 <p>About founder Xiu Feng Searcy: Over 50+ years - experienced in Eastern Medicine, 25 years as MD in China, certified by National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM), member-Florida Acupuncture Association.</p>
-                <a href="about/index.html">Learn more about us →</a>
+                <a href="../physicians/index.html">Learn more about us →</a>
             </div>
     
             <div class="footer-section">

@@ -1,18 +1,16 @@
 
 /* Physician Page Styles */
 .physicians-main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
+    width: 100%;
+}
   
-  .physicians-profile {
+.physicians-profile {
     background-color: #fff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 60px;
-  }
+}
   
   .physicians-header {
     display: flex;
@@ -77,7 +75,7 @@
   
   .timeline li {
     margin-bottom: 20px;
-    padding-left: 120px;
+    padding-left: 150px;
     position: relative;
   }
   
