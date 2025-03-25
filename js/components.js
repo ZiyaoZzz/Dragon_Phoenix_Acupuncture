@@ -132,3 +132,13 @@ class PageBuilder {
 // const builder = new PageBuilder('Page Title', '../'); // Use '../' for subdirectory pages, '' for root
 // const mainContent = document.querySelector('main').outerHTML;
 // builder.buildPage(mainContent).then(page => document.documentElement.innerHTML = page);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle anchor links
+    if (window.location.hash) {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+            element.scrollIntoView();
+        }
+    }
+});

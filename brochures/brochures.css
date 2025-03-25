@@ -2,63 +2,73 @@
 /* Sidebar styles */
 .page-container {
     display: flex;
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 30px;
 }
 
 .sidebar {
     flex: 0 0 250px;
-    margin-right: 30px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
 }
 
 .sidebar-section {
-    background-color: #fff;
+    background: #fff;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    margin-bottom: 30px;
-}
-
-.sidebar-section h3 {
-    color: #395c3b;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #c8e6c9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .sidebar-nav {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar-nav li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.sidebar-nav a {
-    color: #555;
-    text-decoration: none;
+.sidebar-link {
     display: block;
-    padding: 8px 10px;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
-.sidebar-nav a:hover {
-    background-color: #e8f5e9;
-    color: #395c3b;
-    padding-left: 15px;
+.sidebar-link:hover {
+    background-color: #f0f0f0;
 }
 
-.sidebar-nav a.active {
+.sidebar-link.active {
     background-color: #395c3b;
-    color: #fff;
-    padding-left: 15px;
+    color: white;
 }
 
-.brochures-main {
+.brochure-section {
+    display: none;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.brochure-section.active {
+    display: block;
+}
+
+main {
     flex: 1;
+    max-width: 100%;
+}
+
+.content {
+    margin-left: 20px;
 }
 
 /* Responsive adjustments for sidebar */

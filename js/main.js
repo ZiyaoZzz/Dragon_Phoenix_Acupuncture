@@ -1,67 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Get all sidebar links and sections
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     const sections = document.querySelectorAll('.brochure-section');
 
-    // Show intro sections by default and hide others
-    sections.forEach(section => {
-        if (section.id === 'intro' || section.getAttribute('data-intro') === 'true') {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
-        }
-    });
+    // Function to show a specific section
+    function showSection(sectionId) {
+        // Hide all sections
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
 
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all links
-            sidebarLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Hide all sections
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Show selected section
-            const sectionId = this.getAttribute('data-section');
-            
-            if (sectionId === 'intro') {
-                // Show all intro sections
-                sections.forEach(section => {
-                    if (section.id === 'intro' || section.getAttribute('data-intro') === 'true') {
-                        section.style.display = 'block';
-                    }
-                });
-            } else {
-                const selectedSection = document.getElementById(sectionId);
-                if (selectedSection) {
-                    selectedSection.style.display = 'block';
-                }
+        // Show the target section
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+
+        // Update sidebar active state
+        sidebarLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(sectionId)) {
+                link.classList.add('active');
             }
-            
-            // Update URL hash
-            window.location.hash = sectionId;
+        });
+    }
+
+    // Add click event listeners to sidebar links
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = link.getAttribute('href').split('#')[1];
+            showSection(sectionId);
+            window.history.pushState(null, '', `#${sectionId}`);
         });
     });
 
-    // Handle direct URL access with hash
-    if (window.location.hash) {
-        const hash = window.location.hash.substring(1);
-        const link = document.querySelector(`.sidebar-link[data-section="${hash}"]`);
-        if (link) {
-            link.click();
-        } else {
-            // If hash doesn't match any section, default to intro
-            const introLink = document.querySelector('.sidebar-link[data-section="intro"]');
-            if (introLink) introLink.click();
-        }
-    } else {
-        // Make sure intro link is active by default
-        const introLink = document.querySelector('.sidebar-link[data-section="intro"]');
-        if (introLink) introLink.classList.add('active');
+    // Handle initial load and hash changes
+    function handleHashChange() {
+        const hash = window.location.hash.slice(1) || 'intro';
+        showSection(hash);
     }
+
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
 });
