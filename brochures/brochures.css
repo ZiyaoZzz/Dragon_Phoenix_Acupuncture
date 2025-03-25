@@ -50,49 +50,28 @@
     color: white;
 }
 
+/* Content area styles */
+.brochure-content {
+    flex: 1;
+    max-width: 100%;
+}
+
 .brochure-section {
     display: none;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
 .brochure-section.active {
     display: block;
 }
 
+/* Fix for content layout */
 main {
-    flex: 1;
-    max-width: 100%;
-}
-
-.content {
-    margin-left: 20px;
-}
-
-/* Responsive adjustments for sidebar */
-@media (max-width: 992px) {
-    .page-container {
-        flex-direction: column;
-    }
-    
-    .sidebar {
-        flex: none;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-    
-    .sidebar-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    
-    .sidebar-nav li {
-        margin-bottom: 0;
-    }
+    width: 100%;
 }
 
 /* Brochures Page Styles */
