@@ -10,25 +10,25 @@
 }
 
 .brochure-section h2 {
-    color: #8b4513;
+    color: #395c3b; /* Dark green heading */
     margin-top: 0;
     margin-bottom: 20px;
-    border-bottom: 2px solid #f0e6d2;
+    border-bottom: 2px solid #c8e6c9; /* Light green border */
     padding-bottom: 10px;
 }
 
 .brochure-section h3 {
-    color: #8b4513;
+    color: #395c3b; /* Dark green heading */
     margin: 25px 0 15px;
 }
 
 .brochure-section h4 {
-    color: #a0522d;
+    color: #395c3b; /* Dark green heading */
     margin: 20px 0 10px;
 }
 
 .brochure-section h5 {
-    color: #a0522d;
+    color: #395c3b; /* Dark green heading */
     margin: 15px 0 10px;
     font-style: italic;
 }
@@ -57,24 +57,25 @@
 .fibromyalgia-highlight {
     font-size: 1.3em;
     font-weight: bold;
-    color: #8b4513;
+    color: #395c3b; /* Dark green text */
     text-align: center;
     margin: 20px 0;
     padding: 15px;
-    background-color: #f0e6d2;
+    background-color: #e8f5e9; /* Light green background */
     border-radius: 5px;
-    border-left: 5px solid #8b4513;
+    border-left: 5px solid #395c3b; /* Dark green border */
 }
+
 .fibromyalgia-program .highlight {
     font-size: 1.2em;
     font-weight: bold;
-    color: #8b4513;
+    color: #395c3b; /* Dark green text */
     text-align: center;
     margin: 20px 0;
     padding: 15px;
-    background-color: #f0e6d2;
+    background-color: #e8f5e9; /* Light green background */
     border-radius: 5px;
-    border-left: 5px solid #8b4513;
+    border-left: 5px solid #395c3b; /* Dark green border */
 }
 
 /* Lower Back Pain Section Styles */
@@ -82,16 +83,16 @@
 .back-pain-help, .back-pain-research {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #f9f5f0;
+    background-color: #f2f9f0;
     border-radius: 5px;
 }
 
 .research-results {
     margin: 15px 0;
     padding: 15px;
-    background-color: #f0e6d2;
+    background-color: #e8f5e9; /* Light green background */
     border-radius: 5px;
-    border-left: 5px solid #8b4513;
+    border-left: 5px solid #395c3b; /* Dark green border */
 }
 
 /* Stop Smoking Section Styles */
@@ -99,18 +100,18 @@
 .stop-smoking-why, .stop-smoking-insurance {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #f9f5f0;
+    background-color: #f1f9f0;
     border-radius: 5px;
 }
 
 .stop-smoking-callout {
-    background-color: #f0e6d2;
-    border-left: 5px solid #8b4513;
+    background-color: #e8f5e9; /* Light green background */
+    border-left: 5px solid #395c3b; /* Dark green border */
     padding: 15px;
     margin: 20px 0;
     font-weight: bold;
     text-align: center;
-    color: #8b4513;
+    color: #395c3b; /* Dark green text */
 }
 
 /* Weight Loss Section Styles */
@@ -119,7 +120,7 @@
 .weight-loss-food-guide {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #f9f5f0;
+    background-color: #f1f9f0;
     border-radius: 5px;
 }
 
@@ -140,11 +141,11 @@ aside ul {
 aside ul li {
     margin-bottom: 10px;
     padding: 5px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
 }
 
 aside ul li a {
-    color: #8b4513;
+    color: #395c3b; /* Dark green link */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
@@ -152,5 +153,32 @@ aside ul li a {
 }
 
 aside ul li a:hover {
-    color: #d2691e;
+    color: #4a6e4c; /* Slightly lighter green on hover */
+}
+
+
+/* Treatment methods */
+.treatment-methods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.method {
+    background-color: #f1f9f0;
+    padding: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #66bb6a; /* Softer green border */
+}
+
+.method h3 {
+    color: #395c3b; /* Dark green headings */
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.method p {
+    margin: 0;
+    line-height: 1.6;
 }

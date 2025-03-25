@@ -184,8 +184,8 @@
 }
 
 .hours-section {
-    padding: 30px 20px;
-    background-color: #fff5f2;
+    padding: 20px 20px;
+    background-color: #f5fff2;
 }
 
 .hours-container {
@@ -262,6 +262,142 @@
 
     .hours-box h3 {
         font-size: 2rem;
+    }
+}
+
+
+/* Our Team Section */
+.our-team-section {
+    padding: 80px 20px;
+    background-color: #fff;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    color: #395c3b; /* Dark green heading */
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #f0f9f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 25px;
+}
+
+.member-info h3 {
+    color: #395c3b; /* Dark green heading */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.member-title {
+    color: #4a6e4c; /* Slightly lighter green for title */
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.member-description {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.member-link {
+    display: inline-block;
+    color: #395c3b; /* Dark green for link */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 0;
+    position: relative;
+}
+
+.member-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #395c3b; /* Dark green for underline */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.member-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+@media (max-width: 768px) {
+    .our-team-section {
+        padding: 60px 20px;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .team-container {
+        gap: 30px;
+    }
+    
+    .team-member {
+        max-width: 100%;
+    }
+    
+    .member-image {
+        height: 250px;
     }
 }
 

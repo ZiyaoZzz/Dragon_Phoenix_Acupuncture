@@ -9,7 +9,7 @@ body {
     font-family: 'Noto Serif', Georgia, serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f5f0;
+    background-color: #f0f9f0;
     font-size: 16px;
 }
 
@@ -36,7 +36,7 @@ p, li {
 
 /* Header styles */
 header {
-    background-color: #f9e7d6;
+    background-color: #e8f5e9; /* Light green background - keeping this */
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -100,14 +100,21 @@ header {
     font-size: 0.9rem;
 }
 
+/* Contact info styles */
 .contact-text .subtitle {
     color: #666;
     font-size: 0.8rem;
 }
 
+/* Add this new style to highlight "Free Consultation" */
+.contact-text .subtitle:contains("Free Consultation") {
+    color: #395c3b; /* Dark green color */
+    font-weight: bold;
+}
+
 /* Navigation styles */
 nav {
-    background-color: #6a482f;
+    background-color: #395c3b; /* Dark green for navigation */
     padding: 15px 0;
 }
 
@@ -142,7 +149,7 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    color: #f9e7d6;
+    color: #daf9d6;
 }
 
 nav ul li a.active::after {
@@ -152,7 +159,7 @@ nav ul li a.active::after {
     height: 2px;
     bottom: -5px;
     left: 50%;
-    background-color: #f9e7d6;
+    background-color: #dbf9d6;
     transform: translateX(-50%);
 }
 
@@ -163,17 +170,17 @@ nav ul li a::after {
     height: 2px;
     bottom: -5px;
     left: 50%;
-    background-color: #f9e7d6;
+    background-color: #c8e6c9; /* Light green for hover underline */
     transition: all 0.3s;
     transform: translateX(-50%);
 }
 
 nav ul li a:hover::after {
-    width: 70%;
+    width: 70%; /* Make sure this is defined to show the underline on hover */
 }
 
 nav ul li a:hover {
-    color: #f9e7d6;
+    color: #c8e6c9; /* Light green for hover text */
 }
 
 /* Main content layout */
@@ -202,7 +209,7 @@ main.contact-main {
 
 /* Footer styles */
 footer {
-    background-color: #4a2c1c;
+    background-color: #395c3b; /* Softer green for footer */
     color: #fff;
     padding: 40px 20px;
 }
@@ -227,7 +234,7 @@ footer {
 }
 
 .about-section a {
-    color: #ff6b6b;
+    color: #81c784; /* Light green for links */
     text-decoration: none;
     display: inline-block;
     position: relative;
@@ -240,7 +247,7 @@ footer {
     height: 1px;
     bottom: -2px;
     left: 0;
-    background-color: #ff6b6b;
+    background-color: #7aaf7d; /* Light green for link underline */
 }
 
 .contact-details {
@@ -266,7 +273,7 @@ footer {
 }
 
 .opening-hours .closed {
-    color: #ff6b6b;
+    color: #e57373; /* Keeping red for closed */
 }
 
 .opening-hours .appointment {
@@ -320,250 +327,6 @@ footer p {
     transform: scale(1.1);
 }
 
-/* Treatment methods */
-.treatment-methods {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 20px;
-}
-
-.method {
-    background-color: #f9f5f0;
-    padding: 20px;
-    border-radius: 5px;
-    border-left: 4px solid #8b4513;
-}
-
-.method h3 {
-    color: #8b4513;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.method p {
-    margin: 0;
-    line-height: 1.6;
-}
-
-
-/* Message Section Styles */
-.message-section {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 40px;
-    background-color: #efebe4;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.message-section h2 {
-    color: #8b4513;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #f0e6d2;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.message-section .form-group {
-    margin-bottom: 25px;
-}
-
-.message-section .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #8b4513;
-    font-weight: bold;
-}
-
-.message-section .form-group input,
-.message-section .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    background-color: #fff;
-}
-
-.message-section .form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.message-section button {
-    background-color: #8b4513;
-    color: #fff;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    display: block;
-    margin: 0 auto;
-}
-
-.message-section button:hover {
-    background-color: #a0522d;
-}
-
-/* Contact page styles */
-.contact-content {
-    max-width: 1900px;
-    margin: 0 auto;
-    padding: 40px 50px;
-}
-
-.contact-page-main {
-    padding: 40px 200px;
-    margin: 0 auto;
-}
-    
-.contact-page-main .content {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.map-container {
-    width: 100%;
-    height: 550px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.map-section {
-    order: -1;
-    padding: 30px;
-    border-radius: 5px;
-}
-
-.contact-info-section {
-    padding: 30px;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.contact-info-section h2 {
-    color: #8b4513;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    text-transform: uppercase;
-    font-size: 1.4rem;
-}
-
-.contact-item h3 {
-    color: #8b4513;
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.contact-item p {
-    margin-bottom: 5px;
-    color: #333;
-    font-size: 0.9rem;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-}
-
-
-/* Review Section Styles */
-.review-section {
-    padding: 40px;
-    margin: 40px auto;
-    border-radius: 5px;
-    max-width: 1500px;
-}
-
-.review-grid {
-    display: grid;
-    grid-template-columns: 4fr 2fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.review-content {
-    padding-right: 20px;
-}
-
-.google-review-image {
-    width: 60%;
-    height: auto;
-    border-radius: 5px;
-    display: block;
-    margin: 0 auto;
-}
-
-.review-section h2 {
-    color: #8b4513;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-.review-section p {
-    color: #666;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.review-button {
-    display: inline-block;
-    background-color: #8b4513;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 20px 0;
-    transition: background-color 0.3s;
-}
-
-.review-button:hover {
-    background-color: #a0522d;
-}
-
-.practitioner-info {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.practitioner-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
-}
-
-.practitioner-details h3 {
-    color: #8b4513;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-}
-
-.practitioner-details p {
-    color: #666;
-    margin: 0;
-    font-size: 0.9rem;
-}
 
 /* Gallery Page Styles */
 .gallery-content {
@@ -573,7 +336,7 @@ footer p {
 }
 
 .gallery-content h2 {
-    color: #8b4513;
+    color: #395c3b; /* Dark green headings */
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
@@ -618,7 +381,7 @@ footer p {
 }
 
 .practitioner-caption h3 {
-    color: #8b4513;
+    color: #395c3b; /* Dark green headings */
     margin-bottom: 10px;
     font-size: 1.4rem;
 }
@@ -755,3 +518,21 @@ footer p {
       left: 0;
     }
   }
+
+/* Contact links styling */
+.contact-details li a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.contact-details li a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Highlight for Free Consultation text */
+.highlight-consultation {
+    color: #395c3b !important; /* Dark green color */
+    font-weight: bold;
+}

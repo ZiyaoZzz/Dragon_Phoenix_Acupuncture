@@ -30,18 +30,18 @@
 }
 
 #proven {
-    border-left: 5px solid #8b4513;
+    border-left: 5px solid #395c3b; /* Dark green border */
 }
 
 #probable {
-    border-left: 5px solid #a0522d;
+    border-left: 5px solid #4a6e4c; /* Slightly lighter green border */
 }
 
 .conditions-section h2 {
-    color: #8b4513;
+    color: #395c3b; /* Dark green heading */
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #f0e6d2;
+    border-bottom: 2px solid #c8e6c9; /* Light green border */
 }
 
 .conditions-section p {
