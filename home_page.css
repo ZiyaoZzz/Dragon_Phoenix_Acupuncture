@@ -476,6 +476,5 @@
     display: block;
     object-fit: fill; /* 改为fill，不保留原始比例 */
     object-position:  center; /* 将图片向右侧对齐 */
-    /* transform: translateX(50px); 向右移动50px */
-}
+}   
 
