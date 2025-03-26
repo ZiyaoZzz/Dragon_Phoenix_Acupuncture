@@ -463,3 +463,18 @@
     line-height: 1.5;
 }
 
+.banner-image {
+    width: 100%;
+    height: 1000px; /* 控制高度，使图片压扁 */
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.full-width-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* 保持图片比例并填充容器 */
+    object-position: center; /* 居中显示图片 */
+}
+
