@@ -68,6 +68,23 @@
             <button type="submit">Send Email</button>
         </form>
     </section>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const subject = document.getElementById('subject').value;
+            const body = document.getElementById('body').value;
+            
+            // Create mailto link with form data
+            const mailtoLink = `mailto:dragonphoenixMD@netscape.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open default email client
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
     <main class="contact-main">
         <section class="content contact-content">
             <div class="contact-grid">
