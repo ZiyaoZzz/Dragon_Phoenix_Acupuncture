@@ -58,36 +58,95 @@
         <img src="images/Dragon.jpg" alt="Dragon Phoenix Acupuncture Banner" class="full-width-image">
     </div>
 
-    <section class="who-we-are">
-        <div class="who-we-are-content">
+    <section class="who-and-appointment">
+        <div class="who-we-are-text-col">
             <div class="who-we-are-text">
                 <div class="section-icon"></div>
                 <h2>Who we are</h2>
                 <p>We've been providing acupuncture for more than 25 years in the Kissimmee area.</p>
+                <p> </p>
+                <br>
+                <p>About founder Xiu Feng Searcy: Over 50+ years - experienced in Eastern & Western Medicine, 25 years as MD in China, certified by National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM), member-Florida Acupuncture Association.</p>
+                <br>
+                <p>Consultations are FREE! If you are considering acupuncture and would like to discuss treatment in greater detail, feel free to schedule an appointment.</p>
+                <br>
+                <a href="physicians/index.html" class="learn-more">Learn more about us →</a>
+                <div class="recognition">
+                    <p>Dragon Phoenix Acupuncture has been recognized as one of the top Kissimmee Acupuncture practices.</p>
+                    <p class="verified">Verified by Opencare.com</p>
+                </div>
             </div>
+        </div>
+        <div class="who-we-are-image-col">
+            <br>
             <div class="who-we-are-image">
                 <img src="images/Xiu_Feng_Searcy.jpg" alt="Dr. Xiu Feng Searcy">
             </div>
-            <div class="who-we-are-description">
-                <p>About founder Xiu Feng Searcy: Over 50+ years - experienced in Eastern & Western Medicine, 25 years as MD in China, certified by National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM), member-Florida Acupuncture Association.</p>
-                <p>Consultations are FREE! If you are considering acupuncture and would like to discuss treatment in greater detail, feel free to schedule an appointment.</p>
-                <a href="physicians/index.html" class="learn-more">Learn more about us →</a>
-            </div>
         </div>
-        <div class="recognition">
-            <p>Dragon Phoenix Acupuncture has been recognized as one of the top Kissimmee Acupuncture practices.</p>
-            <p class="verified">Verified by Opencare.com</p>
+        <div class="appointment-right">
+            <section id="appointment" class="appointment-section">
+                <div class="appointment-container">
+                    <h2>Schedule an Appointment</h2>
+                    <p class="form-info">We will contact you at our earliest convenience. If however, you do not hear from us within a 24-hour period please call us here at the Kissimmee location, (407) 932-4818 to verify your request was received.</p>
+                    <form action="https://formspree.io/f/mkgranjq" method="POST" class="appointment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name<span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email<span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone<span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-client">Are You a New Client?<span class="required">*</span></label>
+                                <select id="new-client" name="new-client" required>
+                                    <option value="">Select...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="appointment-date">Preferred Appointment Date<span class="required">*</span></label>
+                                <input type="date" id="appointment-date" name="appointment-date" required>
+                                <span id="weekday-display" class="weekday-display"></span>
+                                <span id="date-warning" class="date-warning" style="display:none;"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-time">Preferred Time Slot<span class="required">*</span></label>
+                                <select id="appointment-time" name="appointment-time" required>
+                                    <option value="">Select...</option>
+                                    <option>9:00 AM – 10:00 AM</option>
+                                    <option>10:00 AM – 11:00 AM</option>
+                                    <option>11:00 AM – 12:00 PM</option>
+                                    <option>12:00 PM – 1:00 PM</option>
+                                    <option>1:00 PM – 2:00 PM</option>
+                                    <option>2:00 PM – 3:00 PM</option>
+                                    <option>3:00 PM – 4:00 PM</option>
+                                    <option>4:00 PM – 5:00 PM</option>
+                                    <option>Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="additional-info">Additional Information<span class="required">*</span></label>
+                            <textarea id="additional-info" name="additional-info" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Appointment Request</button>
+                    </form>
+                    <p class="form-note">* All fields are required. Your information will be sent securely to our clinic.</p>
+                </div>
+            </section>
         </div>
     </section>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to</h1>
-            <h2>Dragon Phoenix<br>Acupuncture</h2>
-            <p>Honesty with integrity is our top priority</p>
-        </div>
-    </section>
-
+    <!-- Restore Our Team section below who-and-appointment -->
     <section class="our-team-section">
         <div class="section-title">
             <h2>Our Team</h2>
@@ -120,141 +179,6 @@
                     <a href="physicians/index.html#dr-zhou" class="member-link">View Profile</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Appointment Form Section -->
-    <section id="appointment" class="appointment-section">
-        <div class="appointment-container">
-            <h2>Schedule an Appointment</h2>
-            <p class="form-info">We will contact you at our earliest convenience. If however, you do not hear from us within a 24-hour period please call us here at the Milwaukee location, (407) 932-4818 to verify your request was received.</p>
-            <form action="https://formspree.io/f/mkgranjq" method="POST" class="appointment-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name<span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email<span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone<span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="new-client">Are You a New Client?<span class="required">*</span></label>
-                        <select id="new-client" name="new-client" required>
-                            <option value="">Select...</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row days-row">
-                    <label>Preferred Appointment Days and Time Slots:</label>
-                    <div class="days-grid">
-                        <div class="form-group">
-                            <label for="monday">Monday</label>
-                            <select id="monday" name="monday" required>
-                                <option value="">Select...</option>
-                                <option>9:00 AM – 10:00 AM</option>
-                                <option>10:00 AM – 11:00 AM</option>
-                                <option>11:00 AM – 12:00 PM</option>
-                                <option>12:00 PM – 1:00 PM</option>
-                                <option>1:00 PM – 2:00 PM</option>
-                                <option>2:00 PM – 3:00 PM</option>
-                                <option>3:00 PM – 4:00 PM</option>
-                                <option>4:00 PM – 5:00 PM</option>
-                                <option>Not Available</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="tuesday">Tuesday</label>
-                            <select id="tuesday" name="tuesday" required>
-                                <option value="">Select...</option>
-                                <option>9:00 AM – 10:00 AM</option>
-                                <option>10:00 AM – 11:00 AM</option>
-                                <option>11:00 AM – 12:00 PM</option>
-                                <option>12:00 PM – 1:00 PM</option>
-                                <option>1:00 PM – 2:00 PM</option>
-                                <option>2:00 PM – 3:00 PM</option>
-                                <option>3:00 PM – 4:00 PM</option>
-                                <option>4:00 PM – 5:00 PM</option>
-                                <option>Not Available</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="wednesday">Wednesday</label>
-                            <select id="wednesday" name="wednesday" required>
-                                <option value="">Select...</option>
-                                <option>9:00 AM – 10:00 AM</option>
-                                <option>10:00 AM – 11:00 AM</option>
-                                <option>11:00 AM – 12:00 PM</option>
-                                <option>12:00 PM – 1:00 PM</option>
-                                <option>1:00 PM – 2:00 PM</option>
-                                <option>2:00 PM – 3:00 PM</option>
-                                <option>3:00 PM – 4:00 PM</option>
-                                <option>4:00 PM – 5:00 PM</option>
-                                <option>Not Available</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="thursday">Thursday</label>
-                            <select id="thursday" name="thursday" required>
-                                <option value="">Select...</option>
-                                <option>9:00 AM – 10:00 AM</option>
-                                <option>10:00 AM – 11:00 AM</option>
-                                <option>11:00 AM – 12:00 PM</option>
-                                <option>12:00 PM – 1:00 PM</option>
-                                <option>1:00 PM – 2:00 PM</option>
-                                <option>2:00 PM – 3:00 PM</option>
-                                <option>3:00 PM – 4:00 PM</option>
-                                <option>4:00 PM – 5:00 PM</option>
-                                <option>Not Available</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="friday">Friday</label>
-                            <select id="friday" name="friday" required>
-                                <option value="">Select...</option>
-                                <option>9:00 AM – 10:00 AM</option>
-                                <option>10:00 AM – 11:00 AM</option>
-                                <option>11:00 AM – 12:00 PM</option>
-                                <option>12:00 PM – 1:00 PM</option>
-                                <option>1:00 PM – 2:00 PM</option>
-                                <option>2:00 PM – 3:00 PM</option>
-                                <option>3:00 PM – 4:00 PM</option>
-                                <option>4:00 PM – 5:00 PM</option>
-                                <option>Not Available</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="saturday">Saturday</label>
-                            <select id="saturday" name="saturday" required>
-                                <option value="">Select...</option>
-                                <option>9:00 AM – 10:00 AM</option>
-                                <option>10:00 AM – 11:00 AM</option>
-                                <option>11:00 AM – 12:00 PM</option>
-                                <option>12:00 PM – 1:00 PM</option>
-                                <option>1:00 PM – 2:00 PM</option>
-                                <option>2:00 PM – 3:00 PM</option>
-                                <option>3:00 PM – 4:00 PM</option>
-                                <option>4:00 PM – 5:00 PM</option>
-                                <option>Not Available</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="additional-info">Additional Information<span class="required">*</span></label>
-                    <textarea id="additional-info" name="additional-info" rows="4" required></textarea>
-                </div>
-                <!-- Google reCAPTCHA integration (optional, recommended for spam protection) -->
-                <!-- <div class="g-recaptcha" data-sitekey="your-site-key"></div> -->
-                <button type="submit" class="submit-btn">Submit Appointment Request</button>
-            </form>
-            <p class="form-note">* All fields are required. Your information will be sent securely to our clinic.</p>
         </div>
     </section>
 
@@ -393,5 +317,62 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('appointment-date');
+        const weekdayDisplay = document.getElementById('weekday-display');
+        const dateWarning = document.getElementById('date-warning');
+        let minDate, maxDate;
+        if (dateInput) {
+            // Set min and max for 2-week window
+            const today = new Date();
+            minDate = today.toISOString().split('T')[0];
+            const maxDateObj = new Date(today);
+            maxDateObj.setDate(today.getDate() + 13); // 14 days including today
+            maxDate = maxDateObj.toISOString().split('T')[0];
+            dateInput.setAttribute('min', minDate);
+            dateInput.setAttribute('max', maxDate);
+        }
+        if (dateInput && weekdayDisplay) {
+            dateInput.addEventListener('input', function() {
+                const value = this.value;
+                if (value) {
+                    // Extra validation for min/max
+                    if ((minDate && value < minDate) || (maxDate && value > maxDate)) {
+                        dateInput.value = '';
+                        weekdayDisplay.textContent = '';
+                        if (dateWarning) {
+                            dateWarning.textContent = `Please select a date within the next 14 days.`;
+                            dateWarning.style.display = 'inline';
+                            dateWarning.style.color = '#d32f2f';
+                        }
+                        return;
+                    }
+                    // Parse yyyy-mm-dd as local date to avoid timezone issues
+                    const [yyyy, mm, dd] = value.split('-');
+                    const date = new Date(Number(yyyy), Number(mm) - 1, Number(dd));
+                    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    const weekday = weekdays[date.getDay()];
+                    weekdayDisplay.textContent = ` (${weekday})`;
+                    if (weekday === 'Sunday') {
+                        dateInput.value = '';
+                        weekdayDisplay.textContent = '';
+                        if (dateWarning) {
+                            dateWarning.textContent = 'Sunday is not available for appointments. Please select another date.';
+                            dateWarning.style.display = 'inline';
+                            dateWarning.style.color = '#d32f2f';
+                        }
+                    } else {
+                        if (dateWarning) dateWarning.style.display = 'none';
+                    }
+                } else {
+                    weekdayDisplay.textContent = '';
+                    if (dateWarning) dateWarning.style.display = 'none';
+                }
+            });
+        }
+    });
+    </script>
 </body>
 </html>

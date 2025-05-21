@@ -732,19 +732,15 @@ footer p {
 
 /* Appointment Form Section */
 .appointment-section {
-    background: #f0f9f0;
-    padding: 60px 20px 40px 20px;
-    margin: 0 auto;
-    max-width: 900px;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(57, 92, 59, 0.07);
+    background: rgba(255,255,255,0.75);
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(57, 92, 59, 0.08);
+    padding: 24px 20px 20px 20px;
     margin-bottom: 40px;
 }
 .appointment-section h2 {
-    color: #395c3b;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.2rem;
+    font-size: 2rem;
+    margin-bottom: 12px;
 }
 .appointment-form {
     display: flex;
@@ -759,7 +755,7 @@ footer p {
 .form-group {
     display: flex;
     flex-direction: column;
-    flex: 1 1 200px;
+    flex: 1 1 50px;
     min-width: 180px;
     margin-bottom: 10px;
 }
@@ -810,6 +806,7 @@ footer p {
     cursor: pointer;
     transition: background 0.2s;
     margin-top: 10px;
+    margin-bottom: 10px;
     align-self: flex-start;
 }
 .submit-btn:hover {
@@ -818,7 +815,7 @@ footer p {
 .form-note {
     color: #666;
     font-size: 0.95rem;
-    margin-top: 10px;
+    margin-top: 6px;
     text-align: center;
 }
 .schedule-now-btn {
@@ -868,5 +865,105 @@ footer p {
     font-size: 1rem;
     line-height: 1.6;
     text-align: left;
+}
+
+.who-and-appointment {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    max-width: 1650px;
+    margin: 0 auto 60px auto;
+    padding: 40px 20px 0 20px;
+}
+.who-we-are-text-col, .who-we-are-image-col, .appointment-right {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+.who-we-are-text-col {
+    align-items: flex-start;
+    padding-right: 24px;
+}
+.who-we-are-image-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    height: 100%;
+    margin-top: 62px;
+}
+.who-we-are-image {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+.who-we-are-image img {
+    max-width: 100px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.appointment-right {
+    align-items: flex-end;
+    padding-left: 24px;
+}
+@media (max-width: 1100px) {
+    .who-and-appointment {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 5vw 0 5vw;
+        align-items: stretch;
+    }
+    .who-we-are-text-col, .who-we-are-image-col, .appointment-right {
+        max-width: 100%;
+        flex: 1 1 100%;
+        padding: 0;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .who-we-are-text-col {
+        align-items: center;
+        padding: 0;
+    }
+    .appointment-right {
+        align-items: center;
+        padding: 0;
+    }
+}
+
+.confirm-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 18px 0;
+}
+.confirm-label {
+    font-size: 1rem;
+    color: #395c3b;
+    cursor: pointer;
+}
+
+.appointment-container {
+    padding-bottom: 0;
+}
+
+.who-we-are-text h2 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+@media (max-width: 1100px) {
+    .who-we-are-text {
+        align-items: center;
+        text-align: center;
+    }
 }
 
