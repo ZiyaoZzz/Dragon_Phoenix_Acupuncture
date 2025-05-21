@@ -51,6 +51,7 @@
             <li><a href="conditions/index.html">CONDITIONS</a></li>
             <li><a href="gallery/index.html">GALLERY</a></li>
             <li><a href="contact/index.html">CONTACT US</a></li>
+            <li><a href="#appointment" class="appointment-link">APPOINTMENT</a></li>
         </ul>
     </nav>
     <div class="banner-image">
@@ -122,96 +123,201 @@
         </div>
     </section>
 
-        <section class="services-section">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a comprehensive range of traditional Chinese medicine treatments tailored to your individual needs. Our holistic approach combines ancient wisdom with modern techniques to restore balance and promote healing.</p>
-            </div>
-            <div class="services-container">
-                <div class="service-item">
-                    <div class="service-image">
-                        <img src="images/dragon_phoenix_3.png" alt="Acupuncture">
+    <!-- Appointment Form Section -->
+    <section id="appointment" class="appointment-section">
+        <div class="appointment-container">
+            <h2>Schedule an Appointment</h2>
+            <p class="form-info">We will contact you at our earliest convenience. If however, you do not hear from us within a 24-hour period please call us here at the Milwaukee location, (407) 932-4818 to verify your request was received.</p>
+            <form action="https://formspree.io/f/mkgranjq" method="POST" class="appointment-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name<span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <h3>Traditional Acupuncture</h3>
-                    <p>Traditional needle therapy to stimulate energy flow</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image">
-                        <img src="images/dragon_phoenix_6.png" alt="头针耳针反射疗法">
+                    <div class="form-group">
+                        <label for="email">Email<span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                    <h3>Scalp & Ear Acupuncture</h3>
-                    <p>Precise stimulation of specific points to treat neurological conditions and chronic pain</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image">
-                        <img src="images/dragon_phoenix_8.png" alt="Moxibustion">
+                    <div class="form-group">
+                        <label for="phone">Phone<span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
-                    <h3>Bioelectric Therapy</h3>
-                    <p>Advanced electrical stimulation to relieve pain and accelerate healing</p>
+                    <div class="form-group">
+                        <label for="new-client">Are You a New Client?<span class="required">*</span></label>
+                        <select id="new-client" name="new-client" required>
+                            <option value="">Select...</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="form-row days-row">
+                    <label>Preferred Appointment Days and Time Slots:</label>
+                    <div class="days-grid">
+                        <div class="form-group">
+                            <label for="monday">Monday</label>
+                            <select id="monday" name="monday">
+                                <option>Not Available</option>
+                                <option>9:00 AM – 11:00 AM</option>
+                                <option>11:00 AM – 1:00 PM</option>
+                                <option>1:00 PM – 3:00 PM</option>
+                                <option>3:00 PM – 5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tuesday">Tuesday</label>
+                            <select id="tuesday" name="tuesday">
+                                <option>Not Available</option>
+                                <option>9:00 AM – 11:00 AM</option>
+                                <option>11:00 AM – 1:00 PM</option>
+                                <option>1:00 PM – 3:00 PM</option>
+                                <option>3:00 PM – 5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="wednesday">Wednesday</label>
+                            <select id="wednesday" name="wednesday">
+                                <option>Not Available</option>
+                                <option>9:00 AM – 11:00 AM</option>
+                                <option>11:00 AM – 1:00 PM</option>
+                                <option>1:00 PM – 3:00 PM</option>
+                                <option>3:00 PM – 5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="thursday">Thursday</label>
+                            <select id="thursday" name="thursday">
+                                <option>Not Available</option>
+                                <option>9:00 AM – 11:00 AM</option>
+                                <option>11:00 AM – 1:00 PM</option>
+                                <option>1:00 PM – 3:00 PM</option>
+                                <option>3:00 PM – 5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="friday">Friday</label>
+                            <select id="friday" name="friday">
+                                <option>Not Available</option>
+                                <option>9:00 AM – 11:00 AM</option>
+                                <option>11:00 AM – 1:00 PM</option>
+                                <option>1:00 PM – 3:00 PM</option>
+                                <option>3:00 PM – 5:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="saturday">Saturday</label>
+                            <select id="saturday" name="saturday">
+                                <option>Not Available</option>
+                                <option>9:00 AM – 11:00 AM</option>
+                                <option>11:00 AM – 1:00 PM</option>
+                                <option>1:00 PM – 3:00 PM</option>
+                                <option>3:00 PM – 5:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="additional-info">Additional Information<span class="required">*</span></label>
+                    <textarea id="additional-info" name="additional-info" rows="4" required></textarea>
+                </div>
+                <!-- Google reCAPTCHA integration (optional, recommended for spam protection) -->
+                <!-- <div class="g-recaptcha" data-sitekey="your-site-key"></div> -->
+                <button type="submit" class="submit-btn">Submit Appointment Request</button>
+            </form>
+            <p class="form-note">* All fields are required. Your information will be sent securely to our clinic.</p>
+        </div>
+    </section>
 
-                <div class="service-item">
-                    <div class="service-image">
-                        <img src="images/cupping.jpg" alt="Tui Na Massage">
-                    </div>
-                    <h3>Cupping Therapy</h3>
-                    <p>Suction technique to improve circulation and reduce pain</p>
+    <section class="services-section">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>We offer a comprehensive range of traditional Chinese medicine treatments tailored to your individual needs. Our holistic approach combines ancient wisdom with modern techniques to restore balance and promote healing.</p>
+        </div>
+        <div class="services-container">
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="images/dragon_phoenix_3.png" alt="Acupuncture">
                 </div>
-                <div class="service-item">
-                    <div class="service-image">
-                        <img src="images/herbal_medicine.jpg" alt="Herbal Medicine">
-                    </div>
-                    <h3>Herbal Medicine</h3>
-                    <p>Customized herbal formulations for various conditions</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-image">
-                        <img src="images/tuina.jpg" alt="Cupping Therapy">
-                    </div>
-                    <h3>TuiNa (Therapeutic Massage)</h3>
-                    <p>Therapeutic massage to balance energy and relieve tension</p>
-                    </div>
+                <h3>Traditional Acupuncture</h3>
+                <p>Traditional needle therapy to stimulate energy flow</p>
             </div>
-        </section>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="images/dragon_phoenix_6.png" alt="头针耳针反射疗法">
+                </div>
+                <h3>Scalp & Ear Acupuncture</h3>
+                <p>Precise stimulation of specific points to treat neurological conditions and chronic pain</p>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="images/dragon_phoenix_8.png" alt="Moxibustion">
+                </div>
+                <h3>Bioelectric Therapy</h3>
+                <p>Advanced electrical stimulation to relieve pain and accelerate healing</p>
+            </div>
 
-        <section class="history-section">
-            <div class="history-content">
-                <div class="section-icon"></div>
-                <h2>History of Acupuncture</h2>
-                <div class="history-text">
-                    <p>Traditional Chinese medicine-one of the oldest forms of healing known and it is a great treasure house of information. It embodies the fine achievements accumulated over the millennia in the course of the medical practice of Chinese Physicians. The special methods of Acupuncture and Moxibustion, with their multiple advantages, have been handed down from ancient times and have improved through the ages. They are still widely used in many Asian and European countries.</p>
-                    <p>Since acupuncture was first introduced to the United States in the 1970s, there has been an increasing awareness of the usefulness of treating many medical conditions. The Food and Drug Administration has removed acupuncture needles from its category of "experimental medical devices" and now regulates them under good manufacturing practices and single-use standards of sterility.</p>
-                    <p class="signature">-XIU FENG SEARCY, LAc</p>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="images/cupping.jpg" alt="Tui Na Massage">
                 </div>
+                <h3>Cupping Therapy</h3>
+                <p>Suction technique to improve circulation and reduce pain</p>
             </div>
-        </section>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="images/herbal_medicine.jpg" alt="Herbal Medicine">
+                </div>
+                <h3>Herbal Medicine</h3>
+                <p>Customized herbal formulations for various conditions</p>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="images/tuina.jpg" alt="Cupping Therapy">
+                </div>
+                <h3>TuiNa (Therapeutic Massage)</h3>
+                <p>Therapeutic massage to balance energy and relieve tension</p>
+                </div>
+        </div>
+    </section>
 
-        <section class="hours-section">
-            <div class="hours-container">
-                <div class="hours-box">
-                    <h3>9<span>AM</span> — 5<span>PM</span></h3>
-                    <p>MONDAY-SATURDAY</p>
-                </div>
-                <div class="hours-box">
-                    <h3>CLOSED</h3>
-                    <p>SUNDAY</p>
-                </div>
+    <section class="history-section">
+        <div class="history-content">
+            <div class="section-icon"></div>
+            <h2>History of Acupuncture</h2>
+            <div class="history-text">
+                <p>Traditional Chinese medicine-one of the oldest forms of healing known and it is a great treasure house of information. It embodies the fine achievements accumulated over the millennia in the course of the medical practice of Chinese Physicians. The special methods of Acupuncture and Moxibustion, with their multiple advantages, have been handed down from ancient times and have improved through the ages. They are still widely used in many Asian and European countries.</p>
+                <p>Since acupuncture was first introduced to the United States in the 1970s, there has been an increasing awareness of the usefulness of treating many medical conditions. The Food and Drug Administration has removed acupuncture needles from its category of "experimental medical devices" and now regulates them under good manufacturing practices and single-use standards of sterility.</p>
+                <p class="signature">-XIU FENG SEARCY, LAc</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="map-section">
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14055.353746469302!2d-81.3390036!3d28.2729154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed674992cf3991ee!2sDragon%20Phoenix%20Acupuncture!5e0!3m2!1sen!2sin!4v1596731702074!5m2!1sen!2sin"
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+    <section class="hours-section">
+        <div class="hours-container">
+            <div class="hours-box">
+                <h3>9<span>AM</span> — 5<span>PM</span></h3>
+                <p>MONDAY-SATURDAY</p>
             </div>
-        </section>
+            <div class="hours-box">
+                <h3>CLOSED</h3>
+                <p>SUNDAY</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14055.353746469302!2d-81.3390036!3d28.2729154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed674992cf3991ee!2sDragon%20Phoenix%20Acupuncture!5e0!3m2!1sen!2sin!4v1596731702074!5m2!1sen!2sin"
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
