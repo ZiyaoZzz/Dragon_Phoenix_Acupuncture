@@ -807,7 +807,7 @@ footer p {
     transition: background 0.2s;
     margin-top: 10px;
     margin-bottom: 10px;
-    align-self: flex-start;
+    align-self: center;
 }
 .submit-btn:hover {
     background: #2c462d;

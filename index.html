@@ -137,8 +137,9 @@
                         </div>
                         <div class="form-group">
                             <label for="additional-info">Additional Information</label>
-                            <textarea id="additional-info" name="additional-info" rows="4" required></textarea>
+                            <textarea id="additional-info" name="additional-info" rows="4"></textarea>
                         </div>
+                        <input type="hidden" id="clientTime" name="clientTime">
                         <button type="submit" class="submit-btn">Submit Appointment Request</button>
                     </form>
                     <p class="form-note">* All fields are required. Your information will be sent securely to our clinic.</p>
@@ -386,12 +387,41 @@
             });
         }
 
-        // 限制电话号码输入框只能输入10个数字
         const phoneInput = document.getElementById('phone');
         if (phoneInput) {
             phoneInput.addEventListener('input', function() {
                 let digits = this.value.replace(/\D/g, '').slice(0, 10);
                 this.value = digits;
+            });
+        }
+
+        // Set client time when form is submitted
+        const clientTimeInput = document.getElementById('clientTime');
+        if (clientTimeInput) {
+            clientTimeInput.value = new Date().toString();
+        }
+
+        // Handle form submission and refresh page
+        const appointmentForm = document.querySelector('.appointment-form');
+        if (appointmentForm) {
+            appointmentForm.addEventListener('submit', function(e) {
+                // Set the current time when form is submitted
+                if (clientTimeInput) {
+                    clientTimeInput.value = new Date().toString();
+                }
+                
+                // Show success message
+                const submitBtn = this.querySelector('.submit-btn');
+                if (submitBtn) {
+                    submitBtn.textContent = 'Submitted Successfully!';
+                    submitBtn.style.background = '#4CAF50';
+                    submitBtn.disabled = true;
+                }
+                
+                // Refresh page after form submission
+                setTimeout(function() {
+                    window.location.reload();
+                }, 2000);
             });
         }
     });
