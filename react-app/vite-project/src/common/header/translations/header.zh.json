@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "首页",
+    "physicians": "医师",
+    "faqs": "常见问题",
+    "brochures": "针灸手册",
+    "conditions": "病症",
+    "gallery": "画廊",
+    "contact": "联系我们"
+  },
+  "contact": {
+    "phone": "(407) 932-4818",
+    "consultation": "免费咨询",
+    "address": "2579 Oak Street Kissimmee,",
+    "location": "Florida 34744, USA",
+    "hours": "周一至周六: 上午9点 - 下午5点",
+    "closed": "周日: 休息"
+  }
+}

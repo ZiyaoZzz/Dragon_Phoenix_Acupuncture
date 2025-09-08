@@ -1,0 +1,32 @@
+{
+  "about": {
+    "title": "关于龙凤针灸",
+    "description": "关于创始人修凤·瑟西：50多年经验 - 东方医学专家，在中国担任25年医学博士，获得国家针灸和东方医学认证委员会(NCCAOM)认证，佛罗里达针灸协会会员。",
+    "learnMore": "了解更多关于我们 →"
+  },
+  "contact": {
+    "title": "联系详情",
+    "address": "📍 2579 Oak Street, Kissimmee, Florida 34744",
+    "phone": "📞 (407) 932-4818",
+    "fax": "📠 (407) 932-2888",
+    "email": "✉️ dragonphoenix40@netscape.net"
+  },
+  "gallery": {
+    "title": "画廊",
+    "description": "查看治疗室和针灸程序"
+  },
+  "hours": {
+    "title": "营业时间",
+    "monday": "周一",
+    "tuesday": "周二",
+    "wednesday": "周三",
+    "thursday": "周四",
+    "friday": "周五",
+    "saturday": "周六",
+    "sunday": "周日",
+    "schedule": {
+      "operationTimeRange": "上午9点 - 下午5点",
+      "closed": "休息"
+    }
+  }
+}
