@@ -1,0 +1,79 @@
+{
+  "dr-xiu": {
+    "name": "谢秀凤 医师，LAc",
+    "title": "首席针灸师",
+    "license": "佛罗里达州执照号：AP 1359",
+    "address": "2579 Oak Street, Kissimmee, FL 34744",
+    "certifications": [
+      "NCCAOM 针灸认证 — 1999年11月"
+    ],
+    "description": "从事中西医超过50年，在中国任医生25年，获 NCCAOM 认证。",
+    "experiences": [
+      { "period": "2000年至今", "role": "创始人 / 负责人", "organization": "龙凤针灸（Dragon Phoenix Acupuncture）" },
+      { "period": "1992 - 1998", "role": "主治医师", "organization": "Splendid China Development Co., Ltd." },
+      { "period": "1989 - 1992", "role": "耳鼻喉科医师", "organization": "陕西省第四医院" },
+      { "period": "1988 - 1989", "role": "妇产科医师", "organization": "陕西省第四医院" },
+      { "period": "1971 - 1982", "role": "外科手术助理", "organization": "陕西省第四医院手术室" }
+    ],
+    "education": [
+      {
+        "title": "医学教育",
+        "details": [
+          "中医主任医师职称（2013）",
+          "中医学学士（2013）",
+          "陕西中医学院 针灸与中医专业（1990-1992）",
+          "滨州医学院 & 山西医科大学 普通医学与外科（1982-1988）"
+        ]
+      },
+      {
+        "title": "专项培训",
+        "details": [
+          "手部穴位快速止痛（2004）",
+          "缓解背颈肩疼痛特效穴（2002）",
+          "中医诊断与治疗（1999）",
+          "陕西省医院 创伤推拿（1999）"
+        ]
+      }
+    ],
+    "continuingEducation": [
+      "颈痛：中医诊断与治疗（2009）",
+      "腰痛：中医诊断与治疗（2009）",
+      "实验室检查的临床应用（2008）",
+      "不孕症及常见妇科疾病的中医治疗（2008）",
+      "中药：质量控制与管理（2008）"
+    ],
+    "memberships": [
+      "佛罗里达针灸协会",
+      "全美针灸与东方医学认证委员会（NCCAOM）"
+    ]
+  },
+
+  "dr-zhou": {
+    "name": "周伟 医师，LAc",
+    "title": "针灸师",
+    "description": "专注传统中医，拥有45年以上针灸与中草药经验。",
+    "credentials": [
+      "A.P.（佛罗里达）",
+      "NCCAOM 针灸文凭",
+      "医学博士（中国）"
+    ],
+    "education": [
+      {
+        "title": "教育与资质",
+        "details": [
+          "医学博士（M.D.）- 中国",
+          "东方医学硕士 - FCIM，美国",
+          "东方医学博士学习 - ATOM，美国（在读）",
+          "NCCAOM 针灸文凭",
+          "佛罗里达注册针灸师（A.P.）"
+        ]
+      }
+    ],
+    "summary": "自1978年起接受系统中医教育；临床实践40余年，具高级职称；中华中医药学会会员。",
+    "specialties": ["中药方剂", "针灸", "拔罐", "推拿", "刮痧", "反射疗法"],
+    "memberships": [
+      "中华中医药学会",
+      "全美针灸与东方医学认证委员会（NCCAOM）"
+    ]
+  }
+}

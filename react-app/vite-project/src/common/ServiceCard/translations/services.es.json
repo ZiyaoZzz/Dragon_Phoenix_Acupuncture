@@ -1,0 +1,14 @@
+{
+  "title": "Nuestros servicios",
+  "intro": "Ofrecemos una amplia gama de tratamientos de medicina tradicional china adaptados a sus necesidades.",
+  "items": {
+    "traditional": { "title": "Acupuntura tradicional", "desc": "Terapia con agujas para estimular el flujo de energía" },
+    "scalpEar": { "title": "Acupuntura de cuero cabelludo y oreja", "desc": "Estimulación precisa para tratar afecciones neurológicas y el dolor" },
+    "bioelectric": { "title": "Terapia bioeléctrica", "desc": "Estimulación eléctrica para aliviar el dolor y acelerar la curación" },
+    "cupping": { "title": "Terapia de ventosas", "desc": "Técnica de succión para mejorar la circulación y reducir el dolor" },
+    "herbal": { "title": "Medicina herbal", "desc": "Formulaciones herbales personalizadas para diversas condiciones" },
+    "tuina": { "title": "TuiNa (masaje terapéutico)", "desc": "Masaje para equilibrar la energía y aliviar la tensión" },
+    "facial": { "title": "Acupuntura facial", "desc": "Acupuntura con enfoque cosmético para mejorar el tono de la piel y la circulación" },
+    "eyePoints": { "title": "Acupuntura en puntos oculares", "desc": "Puntos específicos alrededor de los ojos para aliviar la fatiga y apoyar la visión" }
+  }
+} 

@@ -16,7 +16,7 @@ Object.entries(modules).forEach(([path, modValue]) => {
   if (parts.length < 3) return; // not matching {ns}.{lng}.json
   const ns = parts[0];
   const lng = parts[1];
-  if (!['en', 'zh'].includes(lng)) return;
+  if (!['en', 'zh', 'es'].includes(lng)) return;
   if (!resources[lng]) resources[lng] = {};
   const maybeModule = modValue as { default: unknown } | JsonDict;
   const data = (maybeModule as { default: unknown }).default ?? maybeModule;

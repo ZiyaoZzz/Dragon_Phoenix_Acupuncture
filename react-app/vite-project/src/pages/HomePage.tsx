@@ -10,10 +10,23 @@ import s4 from '../asserts/cupping.jpg';
 import s5 from '../asserts/herbal_medicine.jpg';
 import s6 from '../asserts/tuina.jpg';
 import faceImg from '../asserts/face.jpg';
-import { DoctorCard } from '../common/doctorCard';
-import { doctors } from '../common/doctorCard/doctors';
+import { DoctorCard, doctors } from '../common/doctorCard';
+import { ServiceCard } from '../common/ServiceCard';
+import { useTranslation } from 'react-i18next';
 
-export const HomePage: React.FC = () => (
+export const HomePage: React.FC = () => {
+  const { t } = useTranslation();
+  const serviceItems = [
+    { key: 'traditional', img: s1 },
+    { key: 'scalpEar', img: s2 },
+    { key: 'bioelectric', img: s3 },
+    { key: 'cupping', img: s4 },
+    { key: 'herbal', img: s5 },
+    { key: 'tuina', img: s6 },
+    { key: 'facial', img: s1 },
+    { key: 'eyePoints', img: s2 },
+  ];
+  return (
   <div className="min-h-screen flex flex-col">
     <Header />
 
@@ -115,7 +128,7 @@ export const HomePage: React.FC = () => (
         <h2 className="text-3xl text-[#395c3b] mb-3">Our Team</h2>
         <p className="text-gray-600">Meet our experienced practitioners dedicated to your health and wellness</p>
       </div>
-      <div className="flex flex-wrap justify-center gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
         {doctors.map((d) => (
           <DoctorCard key={d.id} doctor={d} />
         ))}
@@ -125,24 +138,12 @@ export const HomePage: React.FC = () => (
     {/* Services */}
     <section className="bg-[#f1f9f0] px-5 py-14">
       <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl text-[#395c3b] mb-3">Our Services</h2>
-        <p className="text-gray-600">We offer a comprehensive range of traditional Chinese medicine treatments tailored to your needs.</p>
+        <h2 className="text-3xl text-[#395c3b] mb-3">{t('services:title')}</h2>
+        <p className="text-gray-600">{t('services:intro')}</p>
       </div>
       <div className="mt-10 max-w-[1200px] mx-auto flex flex-wrap justify-center gap-8">
-        {[{ img: s1, title: 'Traditional Acupuncture', desc: 'Traditional needle therapy to stimulate energy flow' },
-          { img: s2, title: 'Scalp & Ear Acupuncture', desc: 'Precise stimulation to treat neurological conditions and pain' },
-          { img: s3, title: 'Bioelectric Therapy', desc: 'Electrical stimulation to relieve pain and accelerate healing' },
-          { img: s4, title: 'Cupping Therapy', desc: 'Suction technique to improve circulation and reduce pain' },
-          { img: s5, title: 'Herbal Medicine', desc: 'Customized herbal formulations for various conditions' },
-          { img: s6, title: 'TuiNa (Therapeutic Massage)', desc: 'Massage to balance energy and relieve tension' },
-        ].map((s, i) => (
-          <div key={i} className="flex-[0_0_calc(33.33%_-_30px)] min-w-[280px] bg-white rounded shadow text-center overflow-hidden">
-            <div className="h-56 overflow-hidden">
-              <img src={s.img} alt={s.title} className="w-full h-full object-cover" />
-            </div>
-            <h3 className="text-[#395c3b] mt-4 mb-2 px-4 text-lg">{s.title}</h3>
-            <p className="text-gray-600 px-4 pb-5">{s.desc}</p>
-          </div>
+        {serviceItems.map((s) => (
+          <ServiceCard key={s.key} imageSrc={s.img} title={t(`services:items.${s.key}.title`)} description={t(`services:items.${s.key}.desc`)} />
         ))}
       </div>
     </section>
@@ -199,4 +200,5 @@ export const HomePage: React.FC = () => (
 
     <Footer />
   </div>
-);
+  );
+};

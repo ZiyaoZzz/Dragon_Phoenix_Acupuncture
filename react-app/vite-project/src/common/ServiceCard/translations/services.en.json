@@ -1,0 +1,14 @@
+{
+  "title": "Our Services",
+  "intro": "We offer a comprehensive range of traditional Chinese medicine treatments tailored to your needs.",
+  "items": {
+    "traditional": { "title": "Traditional Acupuncture", "desc": "Traditional needle therapy to stimulate energy flow" },
+    "scalpEar": { "title": "Scalp & Ear Acupuncture", "desc": "Precise stimulation to treat neurological conditions and pain" },
+    "bioelectric": { "title": "Bioelectric Therapy", "desc": "Electrical stimulation to relieve pain and accelerate healing" },
+    "cupping": { "title": "Cupping Therapy", "desc": "Suction technique to improve circulation and reduce pain" },
+    "herbal": { "title": "Herbal Medicine", "desc": "Customized herbal formulations for various conditions" },
+    "tuina": { "title": "TuiNa (Therapeutic Massage)", "desc": "Massage to balance energy and relieve tension" },
+    "facial": { "title": "Facial Acupuncture", "desc": "Cosmetic-focused acupuncture to improve skin tone and promote circulation" },
+    "eyePoints": { "title": "Eye Acupoint Acupuncture", "desc": "Targeted acupoints around the eyes to relieve strain and support vision" }
+  }
+} 

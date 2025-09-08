@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "INICIO",
+    "physicians": "MÉDICOS",
+    "faqs": "PREGUNTAS FRECUENTES",
+    "brochures": "FOLLETOS DE ACUPUNTURA",
+    "conditions": "CONDICIONES",
+    "gallery": "GALERÍA",
+    "contact": "CONTÁCTANOS"
+  },
+  "contact": {
+    "phone": "(407) 932-4818",
+    "consultation": "Consulta gratuita",
+    "address": "2579 Oak Street Kissimmee,",
+    "location": "Florida 34744, USA",
+    "hours": "Lunes a sábado: 9 a. m. - 5 p. m.",
+    "closed": "Domingo: CERRADO"
+  }
+}

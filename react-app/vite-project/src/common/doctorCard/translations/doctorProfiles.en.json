@@ -1,0 +1,79 @@
+{
+  "dr-xiu": {
+    "name": "Dr. Xiu Feng Searcy, LAc",
+    "title": "Lead Acupuncturist",
+    "license": "Florida License No: AP 1359",
+    "address": "2579 Oak Street Kissimmee, FL 34744",
+    "certifications": [
+      "NCCAOM Acupuncture Certification – November 1999"
+    ],
+    "description": "Over 50+ years of experience in Eastern & Western Medicine, 25 years as MD in China, certified by NCCAOM.",
+    "experiences": [
+      { "period": "2000 - Present", "role": "Founder, Owner/Operator", "organization": "Dragon Phoenix Acupuncture" },
+      { "period": "1992 - 1998", "role": "Physician-In-Charge", "organization": "Splendid China Development Co., Ltd." },
+      { "period": "1989 - 1992", "role": "Otolaryngology Physician", "organization": "Fourth Hospital of Shaanxi Province" },
+      { "period": "1988 - 1989", "role": "OB/GYN Physician", "organization": "Fourth Hospital of Shaanxi Province" },
+      { "period": "1971 - 1982", "role": "Surgical Assistant", "organization": "Operating Room of the Fourth Hospital of Shaanxi Province" }
+    ],
+    "education": [
+      {
+        "title": "Medical Education",
+        "details": [
+          "Professional title of Chief Physician of Chinese Medicine (2013)",
+          "Bachelor of Chinese Medicine (2013)",
+          "Acupuncture and Traditional Chinese Medicine, Shaaxi College of Traditional Medicine (1990-1992)",
+          "General Medicine and Surgery, Bingzhou Medical College & Shanxi Medical University (1982-1988)"
+        ]
+      },
+      {
+        "title": "Specialized Training",
+        "details": [
+          "Quick Stop Pain Relief with Hand Pressure Points (2004)",
+          "Release Back, Neck, Shoulder Pain Special Points (2002)",
+          "Traditional Chinese Medicine Diagnosis and Treatment (1999)",
+          "Trauma Massage, Shaaxi Provincial Hospital (1999)"
+        ]
+      }
+    ],
+    "continuingEducation": [
+      "Neck Pain: Diagnosis And Treatment in TCM (2009)",
+      "Low Back Pain: Diagnosis and treatment in TCM (2009)",
+      "Clinical Applications of Laboratory Testing (2008)",
+      "TCM treatment of Infertility and other common GYN diseases (2008)",
+      "Chinese Herbal Medicine: Quality control and management (2008)"
+    ],
+    "memberships": [
+      "Florida Acupuncture Association, Inc.",
+      "National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM)"
+    ]
+  },
+  
+  "dr-zhou": {
+    "name": "Dr. Wei Zhou, LAc",
+    "title": "Acupuncturist",
+    "description": "Specialized in traditional Chinese medicine with more than 45 years of acupuncture and herbal experience.",
+    "credentials": [
+      "A.P. (Florida)",
+      "Diploma of Acupuncture (NCCAOM)",
+      "M.D. (China)"
+    ],
+    "education": [
+      {
+        "title": "Education & Credentials",
+        "details": [
+          "Medical Doctor (M.D.) - China",
+          "Master's in Oriental Medicine - FCIM, USA",
+          "Doctoral Studies in Oriental Medicine - ATOM, USA (In Progress)",
+          "NCCAOM Diploma of Acupuncture",
+          "Florida Licensed Acupuncture Physician (A.P.)"
+        ]
+      }
+    ],
+    "summary": "Formal TCM education since 1978; 40+ years of clinical practice with senior professional title; member of the Chinese Association of Chinese Medicine.",
+    "specialties": ["TCM Herbs Formula", "Acupuncture", "Cupping", "Tuina", "Gua Sha", "Reflexology"],
+    "memberships": [
+      "Chinese Association of Chinese Medicine",
+      "National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM)"
+    ]
+  }
+}

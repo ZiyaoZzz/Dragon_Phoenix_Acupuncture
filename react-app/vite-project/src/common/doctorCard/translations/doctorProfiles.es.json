@@ -1,0 +1,80 @@
+{
+    "dr-xiu": {
+      "name": "Dra. Xiu Feng Searcy, LAc",
+      "title": "Acupunturista principal",
+      "license": "Licencia de Florida: AP 1359",
+      "address": "2579 Oak Street, Kissimmee, FL 34744",
+      "certifications": [
+        "Certificación de Acupuntura NCCAOM – Noviembre de 1999"
+      ],
+      "description": "Más de 50 años de experiencia en medicina oriental y occidental; 25 años como médica en China; certificada por la NCCAOM.",
+      "experiences": [
+        { "period": "2000 - Presente", "role": "Fundadora y directora", "organization": "Dragon Phoenix Acupuncture" },
+        { "period": "1992 - 1998", "role": "Médica responsable", "organization": "Splendid China Development Co., Ltd." },
+        { "period": "1989 - 1992", "role": "Médica otorrinolaringóloga", "organization": "Cuarto Hospital de la Provincia de Shaanxi" },
+        { "period": "1988 - 1989", "role": "Médica obstetra y ginecóloga", "organization": "Cuarto Hospital de la Provincia de Shaanxi" },
+        { "period": "1971 - 1982", "role": "Asistente quirúrgica", "organization": "Quirófano del Cuarto Hospital de la Provincia de Shaanxi" }
+      ],
+      "education": [
+        {
+          "title": "Formación médica",
+          "details": [
+            "Título profesional de médica jefe de medicina china (2013)",
+            "Licenciatura en Medicina China (2013)",
+            "Acupuntura y Medicina Tradicional China, Colegio de Medicina Tradicional de Shaaxi (1990-1992)",
+            "Medicina General y Cirugía, Facultad de Medicina de Bingzhou y Universidad Médica de Shanxi (1982-1988)"
+          ]
+        },
+        {
+          "title": "Formación especializada",
+          "details": [
+            "Alivio rápido del dolor con puntos de presión en la mano (2004)",
+            "Puntos especiales para aliviar dolor de espalda, cuello y hombros (2002)",
+            "Diagnóstico y tratamiento de la medicina tradicional china (1999)",
+            "Masaje de trauma, Hospital Provincial de Shaaxi (1999)"
+          ]
+        }
+      ],
+      "continuingEducation": [
+        "Dolor de cuello: diagnóstico y tratamiento en MTC (2009)",
+        "Dolor lumbar: diagnóstico y tratamiento en MTC (2009)",
+        "Aplicaciones clínicas de las pruebas de laboratorio (2008)",
+        "Tratamiento de la MTC para infertilidad y otras enfermedades ginecológicas comunes (2008)",
+        "Medicina herbal china: control de calidad y gestión (2008)"
+      ],
+      "memberships": [
+        "Asociación de Acupuntura de Florida",
+        "Comisión Nacional de Certificación para la Acupuntura y la Medicina Oriental (NCCAOM)"
+      ]
+    },
+    
+    "dr-zhou": {
+      "name": "Dr. Wei Zhou, LAc",
+      "title": "Acupunturista",
+      "description": "Especialista en medicina tradicional china con más de 45 años de experiencia en acupuntura y fitoterapia.",
+      "credentials": [
+        "A.P. (Florida)",
+        "Diploma de Acupuntura (NCCAOM)",
+        "M.D. (China)"
+      ],
+      "education": [
+        {
+          "title": "Educación y credenciales",
+          "details": [
+            "Médico (M.D.) - China",
+            "Máster en Medicina Oriental - FCIM, EE. UU.",
+            "Estudios de doctorado en Medicina Oriental - ATOM, EE. UU. (En curso)",
+            "Diploma de Acupuntura de la NCCAOM",
+            "Médico acupunturista licenciado en Florida (A.P.)"
+          ]
+        }
+      ],
+      "summary": "Formación formal en MTC desde 1978; más de 40 años de práctica clínica con título profesional superior; miembro de la Asociación China de Medicina China.",
+      "specialties": ["Fórmulas de hierbas de MTC", "Acupuntura", "Ventosas", "Tuina", "Gua Sha", "Reflexología"],
+      "memberships": [
+        "Asociación China de Medicina China",
+        "Comisión Nacional de Certificación para la Acupuntura y la Medicina Oriental (NCCAOM)"
+      ]
+    }
+  }
+  

@@ -1,0 +1,32 @@
+{
+  "about": {
+    "title": "Sobre Dragon Phoenix",
+    "description": "Sobre la fundadora Xiu Feng Searcy: más de 50 años de experiencia en Medicina Oriental, 25 años como médica en China, certificada por la Comisión Nacional de Certificación para la Acupuntura y la Medicina Oriental (NCCAOM), miembro de la Asociación de Acupuntura de Florida.",
+    "learnMore": "Más sobre nosotros →"
+  },
+  "contact": {
+    "title": "Datos de contacto",
+    "address": "📍 2579 Oak Street, Kissimmee, Florida 34744",
+    "phone": "📞 (407) 932-4818",
+    "fax": "📠 (407) 932-2888",
+    "email": "✉️ dragonphoenix40@netscape.net"
+  },
+  "gallery": {
+    "title": "Nuestra galería",
+    "description": "Vea nuestras salas de tratamiento y procedimientos de acupuntura"
+  },
+  "hours": {
+    "title": "Horario de apertura",
+    "monday": "Lunes",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles",
+    "thursday": "Jueves",
+    "friday": "Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "schedule": {
+      "operationTimeRange": "9 a. m. - 5 p. m.",
+      "closed": "CERRADO"
+    }
+  }
+}

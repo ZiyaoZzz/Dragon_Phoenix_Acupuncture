@@ -7,12 +7,13 @@ export const LanguageSwitcher: React.FC = () => {
 
   const languages = [
     { code: 'en', name: 'English'},
-    { code: 'zh', name: '中文'}
+    { code: 'zh', name: '中文'},
+    { code: 'es', name: 'Español'}
   ];
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language);
 
-  const handleLanguageChange = (langCode: 'en' | 'zh') => {
+  const handleLanguageChange = (langCode: 'en' | 'zh' | 'es') => {
     i18n.changeLanguage(langCode);
     setIsOpen(false);
   };
@@ -40,7 +41,7 @@ export const LanguageSwitcher: React.FC = () => {
             {languages.map((lang) => (
               <button
                 key={lang.code}
-                onClick={() => handleLanguageChange(lang.code as 'en' | 'zh')}
+                onClick={() => handleLanguageChange(lang.code as 'en' | 'zh' | 'es')}
                 className={`w-full text-left px-4 py-2 text-sm flex items-center space-x-3 hover:bg-gray-100 transition-colors duration-200 ${
                   i18n.language === lang.code ? 'bg-brand-light text-brand-primary' : 'text-gray-700'
                 }`}
