@@ -1,0 +1,7 @@
+{
+  "weekdayStart": "9",
+  "weekdayEnd": "5",
+  "weekdays": "周一 - 周六",
+  "closed": "休息",
+  "sunday": "周日"
+} 

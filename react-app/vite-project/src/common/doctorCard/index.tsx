@@ -63,4 +63,21 @@ export const doctors: DoctorInfo[] = [
   }
 ];
 
+export const OurTeam: React.FC = () => {
+  const { t } = useTranslation();
+  return (
+    <section className="bg-white max-w-[1400px] mx-auto px-5 pb-14">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl text-[#395c3b] mb-3">{t('doctorCard:ourTeam')}</h2>
+        <p className="text-gray-600">{t('doctorCard:meetOurTeam')}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+        {doctors.map((d) => (
+          <DoctorCard key={d.id} doctor={d} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
 
