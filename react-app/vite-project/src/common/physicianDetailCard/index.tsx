@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import type { DoctorData } from '../doctorCard/doctors';
 
 interface PhysicianDetailCardProps {
@@ -23,9 +24,10 @@ const ListSection: React.FC<{ title: string; items: string[]; className?: string
   </div>
 );
 
-const ExperienceSection: React.FC<{ experiences: DoctorData['experiences'] }> = ({ experiences }) => (
+type ExperienceItem = NonNullable<DoctorData['experiences']>[number];
+const ExperienceSection: React.FC<{ experiences: ExperienceItem[]; title: string }> = ({ experiences, title }) => (
   <div>
-    <h2 className="text-2xl font-bold text-brand-primary mb-4">Professional Experience</h2>
+    <h2 className="text-2xl font-bold text-brand-primary mb-4">{title}</h2>
     <div className="space-y-4">
       {experiences?.map((exp, index) => (
         <div key={index} className="border-l-4 border-brand-gold pl-6 py-2 hover:bg-gray-50 transition-colors rounded-r-lg">
@@ -42,9 +44,10 @@ const ExperienceSection: React.FC<{ experiences: DoctorData['experiences'] }> = 
   </div>
 );
 
-const EducationSection: React.FC<{ education: DoctorData['education'] }> = ({ education }) => (
+type EducationItem = NonNullable<DoctorData['education']>[number];
+const EducationSection: React.FC<{ education: EducationItem[]; title: string }> = ({ education, title }) => (
   <div>
-    <h2 className="text-2xl font-bold text-brand-primary mb-4">Education & Credentials</h2>
+    <h2 className="text-2xl font-bold text-brand-primary mb-4">{title}</h2>
     <div className="space-y-6">
       {education?.map((edu, index) => (
         <div key={index} className="bg-gray-50 p-4 rounded-lg">
@@ -66,11 +69,12 @@ const EducationSection: React.FC<{ education: DoctorData['education'] }> = ({ ed
 );
 
 const SpecialtiesSection: React.FC<{ 
+  title: string;
   specialties: DoctorData['specialties']; 
   description?: string 
-}> = ({ specialties, description }) => (
+}> = ({ title, specialties, description }) => (
   <div>
-    <h2 className="text-2xl font-bold text-brand-primary mb-4">Specialties & Techniques</h2>
+    <h2 className="text-2xl font-bold text-brand-primary mb-4">{title}</h2>
     <div className="flex flex-wrap gap-2 mb-4">
       {specialties?.map((specialty, index) => (
         <div
@@ -90,6 +94,48 @@ const SpecialtiesSection: React.FC<{
 );
 
 export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor }) => {
+  const { t } = useTranslation('physiciandetailcard');
+
+  const tx = (key: string, fallback?: string) => {
+    const res = t(key, { defaultValue: fallback }) as string;
+    if (typeof res === 'string' && res === key) return fallback || '';
+    return res || fallback || '';
+  };
+  const normalizeToArray = (value: unknown): string[] => {
+    if (Array.isArray(value)) return value as string[];
+    if (typeof value === 'string' && value.trim().length > 0) return [value];
+    return [];
+  };
+  const txArr = (key: string, fallback?: string[]) => {
+    const res = t(key, { returnObjects: true, defaultValue: fallback }) as unknown;
+    if (typeof res === 'string' && res === key) return normalizeToArray(fallback ?? []);
+    const base = res ?? fallback ?? [];
+    return normalizeToArray(base);
+  };
+
+  // doctor-scoped keys
+  const base = `doctors.${doctor.id}`;
+  const name = tx(`${base}.name`, doctor.name);
+  const title = tx(`${base}.title`, doctor.title);
+  const license = tx(`${base}.license`, doctor.license);
+  const address = tx(`${base}.address`, doctor.address);
+  const description = tx(`${base}.description`, doctor.description);
+  const summary = tx(`${base}.summary`, doctor.summary);
+  const specialties = txArr(`${base}.specialties`, doctor.specialties);
+  const specialtiesDescription = tx(`${base}.specialtiesDescription`, doctor.specialtiesDescription);
+  const continuingEducation = txArr(`${base}.continuingEducation`, doctor.continuingEducation);
+  const memberships = txArr(`${base}.memberships`, doctor.memberships);
+  const credentials = txArr(`${base}.credentials`, doctor.credentials);
+  const translatedEducation: EducationItem[] = (doctor.education ?? []).map((edu, idx) => ({
+    title: tx(`${base}.education.${idx}.title`, edu.title),
+    details: txArr(`${base}.education.${idx}.details`, edu.details),
+  }));
+  const translatedExperiences: ExperienceItem[] = (doctor.experiences ?? []).map((exp, idx) => ({
+    period: tx(`${base}.experiences.${idx}.period`, exp.period),
+    role: tx(`${base}.experiences.${idx}.role`, exp.role),
+    organization: tx(`${base}.experiences.${idx}.organization`, exp.organization),
+  }));
+
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
       <div className="bg-white p-6 border-b border-gray-100">
@@ -105,22 +151,22 @@ export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor
             </div>
           </div>
           <div className="flex-1">
-            <h1 className="text-3xl font-bold text-brand-primary mb-1">{doctor.name}</h1>
-            <p className="text-lg text-gray-700 mb-2">{doctor.title}</p>
-            {doctor.license && (
-              <p className="text-base text-gray-600 mb-1">{doctor.license}</p>
+            <h1 className="text-3xl font-bold text-brand-primary mb-1">{name}</h1>
+            <p className="text-lg text-gray-700 mb-2">{title}</p>
+            {license && (
+              <p className="text-base text-gray-600 mb-1">{license}</p>
             )}
-            {doctor.address && (
-              <p className="text-base text-gray-600 mb-2">{doctor.address}</p>
+            {address && (
+              <p className="text-base text-gray-600 mb-2">{address}</p>
             )}
-            {doctor.credentials && doctor.credentials.length > 0 && (
+            {Array.isArray(credentials) && credentials.length > 0 && (
               <div className="space-y-1">
-                {doctor.credentials.map((cred, idx) => (
+                {credentials.map((cred, idx) => (
                   <p key={idx} className="text-sm text-gray-700">{cred}</p>
                 ))}
               </div>
             )}
-            {!doctor.credentials && doctor.certifications && doctor.certifications.length > 0 && (
+            {(!credentials || credentials.length === 0) && doctor.certifications && doctor.certifications.length > 0 && (
               <div className="space-y-1">
                 {doctor.certifications.map((cert, idx) => (
                   <p key={idx} className="text-sm text-gray-700">{cert}</p>
@@ -132,45 +178,46 @@ export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor
       </div>
 
       <div className="p-8 space-y-8">
-        {doctor.description && (
+        {description && (
           <div className="bg-gray-50 p-6 rounded-lg border border-gray-100">
-            <p className="text-gray-700 text-lg leading-relaxed">{doctor.description}</p>
+            <p className="text-gray-700 text-lg leading-relaxed">{description}</p>
           </div>
         )}
 
-        {doctor.summary && (
+        {summary && (
           <div>
-            <h2 className="text-2xl font-bold text-brand-primary mb-4">Professional Background</h2>
-            <p className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-lg border border-gray-100">{doctor.summary}</p>
+            <h2 className="text-2xl font-bold text-brand-primary mb-4">{t('sections.professionalBackground')}</h2>
+            <p className="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-lg border border-gray-100">{summary}</p>
           </div>
         )}
 
-        {Array.isArray(doctor.specialties) && doctor.specialties.length > 0 && (
+        {Array.isArray(specialties) && specialties.length > 0 && (
           <SpecialtiesSection 
-            specialties={doctor.specialties} 
-            description={doctor.specialtiesDescription} 
+            title={t('sections.specialties')}
+            specialties={specialties} 
+            description={specialtiesDescription} 
           />
         )}
 
-        {doctor.education && doctor.education.length > 0 && (
-          <EducationSection education={doctor.education} />
+        {translatedEducation && translatedEducation.length > 0 && (
+          <EducationSection title={t('sections.education')} education={translatedEducation} />
         )}
 
-        {doctor.experiences && doctor.experiences.length > 0 && (
-          <ExperienceSection experiences={doctor.experiences} />
+        {translatedExperiences && translatedExperiences.length > 0 && (
+          <ExperienceSection title={t('sections.experience')} experiences={translatedExperiences} />
         )}
 
-        {doctor.continuingEducation && doctor.continuingEducation.length > 0 && (
+        {continuingEducation && continuingEducation.length > 0 && (
           <ListSection 
-            title="Recent Continuing Education" 
-            items={doctor.continuingEducation} 
+            title={t('sections.continuingEducation')} 
+            items={continuingEducation} 
           />
         )}
 
-        {doctor.memberships && doctor.memberships.length > 0 && (
+        {memberships && memberships.length > 0 && (
           <ListSection 
-            title="Professional Organizations" 
-            items={doctor.memberships} 
+            title={t('sections.organizations')} 
+            items={memberships} 
           />
         )}
       </div>

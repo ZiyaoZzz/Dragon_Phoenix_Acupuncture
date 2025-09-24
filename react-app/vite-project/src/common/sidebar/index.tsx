@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 export interface SidebarItem {
   id: string;
   name: string;
@@ -6,7 +8,7 @@ export interface SidebarItem {
 }
 
 interface SidebarProps<T extends SidebarItem> {
-  title: string;
+  title?: string;
   items: T[];
   selectedItem: T;
   onItemSelect: (item: T) => void;
@@ -20,9 +22,20 @@ export const Sidebar = <T extends SidebarItem>({
   onItemSelect,
   className = "",
 }: SidebarProps<T>) => {
+  const { t } = useTranslation('sidebar');
+  
+  // Use translated title if no title prop provided
+  const displayTitle = title || t('title');
+  
+  // Helper to get translated name with fallback
+  const getTranslatedName = (item: T) => {
+    const translatedName = t(`doctors.${item.id}.name`, { defaultValue: item.name });
+    return translatedName === `doctors.${item.id}.name` ? item.name : translatedName;
+  };
+
   return (
     <div className={`bg-white rounded-lg shadow-md p-6 ${className}`}>
-      <h2 className="text-xl font-bold text-brand-primary mb-4">{title}</h2>
+      <h2 className="text-xl font-bold text-brand-primary mb-4">{displayTitle}</h2>
       <div className="space-y-2">
         {items.map((item) => (
           <button
@@ -34,7 +47,7 @@ export const Sidebar = <T extends SidebarItem>({
                 : 'hover:bg-gray-100 text-gray-700'
             }`}
           >
-            <div className="font-medium">{item.name}</div>
+            <div className="font-medium">{getTranslatedName(item)}</div>
           </button>
         ))}
       </div>

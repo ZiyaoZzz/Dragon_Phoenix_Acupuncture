@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "professionalBackground": "Professional Background",
+    "specialties": "Specialties & Techniques",
+    "education": "Education & Credentials",
+    "experience": "Professional Experience",
+    "continuingEducation": "Recent Continuing Education",
+    "organizations": "Professional Organizations"
+  },
+  "doctors": {
+    "dr-xiu": {
+      "name": "Dr. Xiu Feng Searcy, LAc",
+      "title": "Lead Acupuncturist",
+      "license": "Florida License No: AP 1359",
+      "address": "2579 Oak Street Kissimmee, FL 34744",
+      "description": "Over 50+ years of experience in Eastern & Western Medicine, 25 years as MD in China, certified by NCCAOM.",
+      "summary": "Dr. Searcy brings over 50 years of combined experience in both Eastern and Western medicine, with 25 years as a practicing MD in China before becoming a licensed acupuncturist in the United States.",
+      "credentials": ["NCCAOM Acupuncture Certification – November 1999"],
+      "specialties": ["Acupuncture", "Traditional Chinese Medicine", "Pain Management", "Women's Health", "Internal Medicine"],
+      "specialtiesDescription": "Specializes in treating chronic pain, women's health issues, and internal medicine conditions using traditional Chinese medicine techniques.",
+      "continuingEducation": [
+        "Neck Pain: Diagnosis And Treatment in TCM (2009)",
+        "Low Back Pain: Diagnosis and treatment in TCM (2009)",
+        "Clinical Applications of Laboratory Testing (2008)",
+        "TCM treatment of Infertility and other common GYN diseases (2008)",
+        "Chinese Herbal Medicine: Quality control and management (2008)"
+      ],
+      "education": [
+        {
+          "title": "Medical Education",
+          "details": [
+            "Professional title of Chief Physician of Chinese Medicine (2013)",
+            "Bachelor of Chinese Medicine (2013)",
+            "Acupuncture and Traditional Chinese Medicine, Shaaxi College of Traditional Medicine (1990-1992)",
+            "General Medicine and Surgery, Bingzhou Medical College & Shanxi Medical University (1982-1988)"
+          ]
+        },
+        {
+          "title": "Specialized Training",
+          "details": [
+            "Quick Stop Pain Relief with Hand Pressure Points (2004)",
+            "Release Back, Neck, Shoulder Pain Special Points (2002)",
+            "Traditional Chinese Medicine Diagnosis and Treatment (1999)",
+            "Trauma Massage, Shaaxi Provincial Hospital (1999)"
+          ]
+        }
+      ],
+      "memberships": [
+        "Florida Acupuncture Association, Inc.",
+        "National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM)"
+      ]
+    },
+    "dr-zhou": {
+      "name": "Dr. Wei Zhou, LAc",
+      "title": "Acupuncturist",
+      "description": "Specialized in traditional Chinese medicine with extensive acupuncture and herbal experience over 45 years.",
+      "summary": "Dr. Zhou has been receiving formal TCM professional education in China university of TCM since 1978. He has practiced Traditional Chinese Medicine in Chinese medical institutions for more than 40+ years. He has a senior professional title and is a member of the Chinese Association of Chinese Medicine.",
+      "credentials": [
+        "A.P. (Florida), Diploma of Acupuncture (NCCAOM), M.D. (China)",
+        "Master's Degree in Oriental Medicine - FCIM (USA)",
+        "Doctoral Candidate in Oriental Medicine - ATOM (USA)"
+      ],
+      "specialties": ["TCM Herbs Formula", "Acupuncture", "Cupping", "Tuina", "Gua Sha", "Reflexology"],
+      "specialtiesDescription": "Specializes in treating various common and difficult clinical diseases using traditional Chinese medicine techniques.",
+      "education": [
+        {
+          "title": "Education & Credentials",
+          "details": [
+            "Medical Doctor (M.D.) - China",
+            "Master's in Oriental Medicine - FCIM, USA",
+            "Doctoral Studies in Oriental Medicine - ATOM, USA (In Progress)",
+            "NCCAOM Diploma of Acupuncture",
+            "Florida Licensed Acupuncture Physician (A.P.)"
+          ]
+        }
+      ],
+      "memberships": [
+        "Chinese Association of Chinese Medicine",
+        "National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM)"
+      ]
+    }
+  }
+}
+

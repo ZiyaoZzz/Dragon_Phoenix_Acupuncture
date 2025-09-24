@@ -27,7 +27,6 @@ export const PhysiciansPage: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="sticky top-8">
               <Sidebar
-                title="Our Physicians"
                 items={doctors}
                 selectedItem={selectedDoctor}
                 onItemSelect={handleDoctorSelect}

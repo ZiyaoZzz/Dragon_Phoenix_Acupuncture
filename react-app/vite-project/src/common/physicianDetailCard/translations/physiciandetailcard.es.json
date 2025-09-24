@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "professionalBackground": "Antecedentes Profesionales",
+    "specialties": "Especialidades y Técnicas",
+    "education": "Educación y Credenciales",
+    "experience": "Experiencia Profesional",
+    "continuingEducation": "Educación Continua Reciente",
+    "organizations": "Organizaciones Profesionales"
+  },
+  "doctors": {
+    "dr-xiu": {
+      "name": "Dra. Xiu Feng Searcy, LAc",
+      "title": "Acupunturista Principal",
+      "license": "Licencia de Florida No: AP 1359",
+      "address": "2579 Oak Street Kissimmee, FL 34744",
+      "description": "Más de 50 años de experiencia en Medicina Oriental y Occidental, 25 años como MD en China, certificada por NCCAOM.",
+      "summary": "La Dra. Searcy aporta más de 50 años de experiencia combinada en medicina oriental y occidental, con 25 años como MD en ejercicio en China antes de convertirse en acupunturista licenciada en Estados Unidos.",
+      "credentials": ["Certificación de Acupuntura NCCAOM – Noviembre 1999"],
+      "specialties": ["Acupuntura", "Medicina Tradicional China", "Manejo del Dolor", "Salud de la Mujer", "Medicina Interna"],
+      "specialtiesDescription": "Se especializa en el tratamiento del dolor crónico, problemas de salud de la mujer y condiciones de medicina interna usando técnicas de medicina tradicional china.",
+      "continuingEducation": [
+        "Dolor de Cuello: Diagnóstico y Tratamiento en MTC (2009)",
+        "Dolor de Espalda Baja: Diagnóstico y tratamiento en MTC (2009)",
+        "Aplicaciones Clínicas de Pruebas de Laboratorio (2008)",
+        "Tratamiento MTC de Infertilidad y otras enfermedades GIN comunes (2008)",
+        "Medicina Herbal China: Control de calidad y gestión (2008)"
+      ],
+      "education": [
+        {
+          "title": "Educación Médica",
+          "details": [
+            "Título profesional de Médico Jefe de Medicina China (2013)",
+            "Licenciatura en Medicina China (2013)",
+            "Acupuntura y Medicina Tradicional China, Colegio de Medicina Tradicional de Shaanxi (1990-1992)",
+            "Medicina General y Cirugía, Bingzhou Medical College & Shanxi Medical University (1982-1988)"
+          ]
+        },
+        {
+          "title": "Formación Especializada",
+          "details": [
+            "Alivio rápido del dolor con puntos de presión de la mano (2004)",
+            "Puntos especiales para aliviar dolor de espalda, cuello y hombros (2002)",
+            "Diagnóstico y tratamiento en Medicina Tradicional China (1999)",
+            "Masaje de trauma, Hospital Provincial de Shaanxi (1999)"
+          ]
+        }
+      ],
+      "experiences": [
+        { "period": "2000 - Presente", "role": "Fundadora, Propietaria/Operadora", "organization": "Dragon Phoenix Acupuncture" },
+        { "period": "1992 - 1998", "role": "Médica a Cargo", "organization": "Splendid China Development Co., Ltd." },
+        { "period": "1989 - 1992", "role": "Médica Otorrinolaringóloga", "organization": "Cuarto Hospital de la Provincia de Shaanxi" },
+        { "period": "1988 - 1989", "role": "Médica Gineco-Obstetra (OB/GYN)", "organization": "Cuarto Hospital de la Provincia de Shaanxi" },
+        { "period": "1971 - 1982", "role": "Asistente de Cirugía", "organization": "Quirófano del Cuarto Hospital de la Provincia de Shaanxi" }
+      ],
+      "memberships": [
+        "Asociación de Acupuntura de Florida, Inc.",
+        "Comisión Nacional de Certificación para Acupuntura y Medicina Oriental (NCCAOM)"
+      ]
+    },
+    "dr-zhou": {
+      "name": "Dr. Wei Zhou, LAc",
+      "title": "Acupunturista",
+      "description": "Especializado en medicina tradicional china con amplia experiencia en acupuntura y herbolaria durante más de 45 años.",
+      "summary": "El Dr. Zhou ha estado recibiendo educación profesional formal en MTC en la universidad de MTC de China desde 1978. Ha practicado Medicina Tradicional China en instituciones médicas chinas durante más de 40 años. Tiene un título profesional senior y es miembro de la Asociación China de Medicina China.",
+      "credentials": [
+        "A.P. (Florida), Diploma de Acupuntura (NCCAOM), M.D. (China)",
+        "Maestría en Medicina Oriental - FCIM (USA)",
+        "Candidato a Doctorado en Medicina Oriental - ATOM (USA)"
+      ],
+      "specialties": ["Fórmulas de Hierbas MTC", "Acupuntura", "Ventosas", "Tuina", "Gua Sha", "Reflexología"],
+      "specialtiesDescription": "Se especializa en el tratamiento de varias enfermedades clínicas comunes y difíciles usando técnicas de medicina tradicional china.",
+      "education": [
+        {
+          "title": "Educación y Credenciales",
+          "details": [
+            "Doctor en Medicina (M.D.) - China",
+            "Maestría en Medicina Oriental - FCIM, EE.UU.",
+            "Estudios doctorales en Medicina Oriental - ATOM, EE.UU. (En curso)",
+            "Diploma de Acupuntura NCCAOM",
+            "Acupunturista Licenciado en Florida (A.P.)"
+          ]
+        }
+      ],
+      "experiences": [],
+      "memberships": [
+        "Asociación China de Medicina China",
+        "Comisión Nacional de Certificación para Acupuntura y Medicina Oriental (NCCAOM)"
+      ]
+    }
+  }
+}
