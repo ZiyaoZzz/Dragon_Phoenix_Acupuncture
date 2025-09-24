@@ -16,6 +16,7 @@ export interface DoctorData {
   id: string;
   name: string;
   title: string;
+  subtitle?: string;
   img: string;
   href: string;
   license?: string;
@@ -27,8 +28,10 @@ export interface DoctorData {
   education?: DoctorEducationItem[];
   continuingEducation?: string[];
   specialties?: string[];
+  specialtiesDescription?: string;
   memberships?: string[];
   credentials?: string[];
+  [key: string]: unknown;
 }
 
 export const doctors: DoctorData[] = [
@@ -36,6 +39,7 @@ export const doctors: DoctorData[] = [
     id: 'dr-xiu',
     name: 'Dr. Xiu Feng Searcy, LAc',
     title: 'Lead Acupuncturist',
+    subtitle: 'Lead Acupuncturist',
     img: Physician_Xiu_Feng_SearcyImg,
     href: '/physicians#dr-xiu',
     license: 'Florida License No: AP 1359',
@@ -86,15 +90,16 @@ export const doctors: DoctorData[] = [
     id: 'dr-zhou',
     name: 'Dr. Wei Zhou, LAc',
     title: 'Acupuncturist',
+    subtitle: 'Acupuncturist',
     img: Physician_Wei_ZhouImg,
     href: '/physicians#dr-zhou',
+    credentials: [
+      'A.P. (Florida), Diploma of Acupuncture (NCCAOM), M.D. (China)',
+      "Master's Degree in Oriental Medicine - FCIM (USA)",
+      'Doctoral Candidate in Oriental Medicine - ATOM (USA)',
+    ],
     description:
     'Specialized in traditional Chinese medicine with extensive acupuncture and herbal experience over 45 years.',
-    credentials: [
-      'A.P. (Florida)',
-      'Diploma of Acupuncture (NCCAOM)',
-      'M.D. (China)',
-    ],
     education: [
       {
         title: "Education & Credentials",
@@ -107,9 +112,9 @@ export const doctors: DoctorData[] = [
         ],
       },
     ],
-    summary:
-      'Formal TCM education since 1978; 40+ years of clinical practice with senior professional title; member of the Chinese Association of Chinese Medicine.',
+    summary: "Dr. Zhou has been receiving formal TCM professional education in China university of TCM since 1978. He has practiced Traditional Chinese Medicine in Chinese medical institutions for more than 40+ years. He has a senior professional title and is a member of the Chinese Association of Chinese Medicine.",
     specialties: ['TCM Herbs Formula', 'Acupuncture', 'Cupping', 'Tuina', 'Gua Sha', 'Reflexology'],
+    specialtiesDescription: 'Specializes in treating various common and difficult clinical diseases using traditional Chinese medicine techniques.',
     memberships: [
       'Chinese Association of Chinese Medicine',
       'National Certification Commission for Acupuncture and Oriental Medicine (NCCAOM)',
