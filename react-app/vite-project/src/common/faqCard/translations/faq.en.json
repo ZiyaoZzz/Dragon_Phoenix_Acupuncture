@@ -1,0 +1,35 @@
+{
+  "title": "Q&A – What Patients Usually Ask",
+  "subtitle": "Common questions about acupuncture treatment",
+  "questions": {
+    "techniques": "Are There Different Techniques of Acupuncture?",
+    "criteria": "What Criteria Should One Use In Choosing an Acupuncturist?",
+    "treatments": "How Many Treatments Will I Need?",
+    "necessary": "How Many Treatments Are Necessary?",
+    "training": "What Training Should Patients Look For?",
+    "sideEffects": "What Are The Side Effects?",
+    "insurance": "Does Insurance Cover Treatment?",
+    "cost": "What Is The Cost?"
+  },
+  "answers": {
+    "techniques": {
+      "p1": "Acupuncture originated in China. In recent years it has spread to Korea, Japan, Vietnam, Europe, the British Isles, the United States and other parts of the world. As such, there are a variety of styles developed and practiced based on differing opinions as to the theory and technique.",
+      "p2": "Patients should talk to their practitioners about their particular style or school and learn as much as possible about the treatment being proposed."
+    },
+    "criteria": {
+      "p1": "Patients should ask where the acupuncturist or practitioner was trained, how long their training was for, how long he/she has been in practice, and what experience the acupuncturist has had in treating patients for a specific ailment.",
+      "p2": "Acupuncture is a licensed and regulated healthcare profession in approximately half the states in the United States. In states that do not require licensing, patients should ask the acupuncturist if the National Commission has certified them for the Certification of Acupuncturist. Acupuncturists who have passed this exam are entitled to add Dipl. Ac. (Diplomat of Acupuncture) after their name."
+    },
+    "treatments": "Treatments vary according to the duration, severity, and nature of an ailment or complaint. An acute condition may only need one treatment. Chronic problems may be resolved in five to fifteen treatments. Some degenerative conditions may require additional treatments over a longer period of time.",
+    "necessary": "It is recommended that a series of 10 treatments be given. Many patients will obtain the best results after 6 or 12 treatments. It is best to consult with the acupuncturist on individual treatment. Treatments are preferably given twice a week in the beginning and then spread out as the patient improves.",
+    "training": "Members of the Florida Acupuncture Association is proud to use only the traditional Chinese method of acupuncture. Many Graduates have more than 10 years of experience. Doctors are trained to only use traditional Chinese methods. Only the most qualified acupuncturists are licensed to practice.",
+    "sideEffects": "Acupuncture has no side effects though a two-hour rest is recommended following treatment. Patients are encouraged to report the exact results of each treatment to allow the acupuncturist the most information available to best determine how to handle individual treatments.",
+    "insurance": "Most insurance companies honor claims for acupuncture treatment. Patients are encouraged to contact their insurance provider. Dragon Phoenix Acupuncture will be pleased to assist in completing and filing insurance claim forms. Acupuncture treatment is tax-deductible as a medical expense.",
+    "cost": "Fees are determined following a FREE consultation. If you are considering acupuncture and would like to discuss treatment in greater detail, feel free to schedule an appointment."
+  },
+  "moreQuestions": {
+    "title": "Have More Questions?",
+    "description": "We're happy to answer any additional questions you may have about acupuncture treatment. Please contact us for a free consultation.",
+    "cta": "Contact Us"
+  }
+}

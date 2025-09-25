@@ -1,0 +1,35 @@
+{
+  "title": "Preguntas Frecuentes",
+  "subtitle": "Preguntas comunes sobre el tratamiento de acupuntura",
+  "questions": {
+    "techniques": "¿Existen diferentes técnicas de acupuntura?",
+    "criteria": "¿Qué criterios debo usar para elegir un acupunturista?",
+    "treatments": "¿Cuántos tratamientos necesitaré?",
+    "necessary": "¿Cuántos tratamientos son necesarios?",
+    "training": "¿Qué formación debo buscar en un acupunturista?",
+    "sideEffects": "¿Cuáles son los efectos secundarios?",
+    "insurance": "¿El seguro cubre el tratamiento de acupuntura?",
+    "cost": "¿Cuál es el costo del tratamiento?"
+  },
+  "answers": {
+    "techniques": {
+      "p1": "La acupuntura se originó en China y en los últimos años se ha extendido a Corea, Japón, Vietnam, Europa, las Islas Británicas, Estados Unidos y otras partes del mundo. Por ello, se han desarrollado diversos estilos basados en diferentes enfoques teóricos y técnicos.",
+      "p2": "Los pacientes deben hablar con su acupunturista sobre su estilo o escuela específica y aprender todo lo posible sobre el tratamiento propuesto."
+    },
+    "criteria": {
+      "p1": "Los pacientes deben preguntar dónde se formó el acupunturista, cuánto duró su formación, cuánto tiempo lleva ejerciendo y qué experiencia tiene en el tratamiento de afecciones específicas.",
+      "p2": "La acupuntura es una profesión sanitaria licenciada y regulada en aproximadamente la mitad de los estados de Estados Unidos. En los estados que no requieren licencia, los pacientes deben preguntar si el acupunturista está certificado por la Comisión Nacional de Certificación de Acupunturistas. Los acupunturistas que han superado este examen pueden añadir Dipl. Ac. (Diplomado en Acupuntura) después de su nombre."
+    },
+    "treatments": "El número de tratamientos varía según la duración, gravedad y naturaleza de la afección. Una condición aguda puede requerir solo un tratamiento. Los problemas crónicos pueden resolverse en cinco a quince tratamientos. Algunas afecciones degenerativas pueden requerir tratamientos adicionales durante un período más largo.",
+    "necessary": "Se recomienda una serie de 10 tratamientos. Muchos pacientes obtienen los mejores resultados después de 6 o 12 tratamientos. Es mejor consultar con el acupunturista sobre el tratamiento individual. Los tratamientos se administran preferiblemente dos veces por semana al principio y luego se espacian a medida que el paciente mejora.",
+    "training": "Los miembros de la Asociación de Acupuntura de Florida se enorgullecen de utilizar únicamente el método tradicional chino de acupuntura. Muchos graduados tienen más de 10 años de experiencia. Los doctores están formados exclusivamente en métodos tradicionales chinos. Solo los acupunturistas más cualificados están licenciados para ejercer.",
+    "sideEffects": "La acupuntura no tiene efectos secundarios, aunque se recomienda descansar dos horas después del tratamiento. Se anima a los pacientes a informar de los resultados exactos de cada tratamiento para que el acupunturista tenga la máxima información disponible y pueda determinar la mejor forma de manejar los tratamientos individuales.",
+    "insurance": "La mayoría de las compañías de seguros aceptan reclamaciones por tratamiento de acupuntura. Se anima a los pacientes a contactar con su proveedor de seguros. Dragon Phoenix Acupuncture estará encantado de ayudar a completar y presentar los formularios de reclamación del seguro. El tratamiento de acupuntura es deducible de impuestos como gasto médico.",
+    "cost": "Las tarifas se determinan tras una consulta GRATUITA. Si está considerando la acupuntura y desea discutir el tratamiento con más detalle, no dude en programar una cita."
+  },
+  "moreQuestions": {
+    "title": "¿Tiene más preguntas?",
+    "description": "Estaremos encantados de responder cualquier pregunta adicional que pueda tener sobre el tratamiento de acupuntura. Póngase en contacto con nosotros para una consulta gratuita.",
+    "cta": "Contáctanos"
+  }
+}
