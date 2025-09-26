@@ -1,0 +1,24 @@
+{
+  "title": "Galería de Nuestra Clínica",
+  "images": {
+    "clinic1": "Clínica de Acupuntura Dragon Phoenix",
+    "clinic2": "Interior de la Clínica",
+    "treatmentRoom": "Sala de Tratamiento",
+    "acupunctureTreatment": "Tratamiento de Acupuntura",
+    "clinicEquipment": "Equipo de la Clínica",
+    "clinicFacilities": "Instalaciones de la Clínica",
+    "treatmentArea": "Área de Tratamiento",
+    "clinicEnvironment": "Ambiente de la Clínica"
+  },
+  "practitioner": {
+    "title": "Nuestros Acupunturistas Licenciados",
+    "xiuFeng": {
+      "name": "Dr. Xiu Feng Searcy, LAc",
+      "title": "Acupunturista Principal"
+    },
+    "weiZhou": {
+      "name": "Dr. Wei Zhou, LAc",
+      "title": "Acupunturista"
+    }
+  }
+}

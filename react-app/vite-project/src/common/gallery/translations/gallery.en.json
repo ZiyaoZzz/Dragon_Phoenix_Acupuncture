@@ -1,0 +1,24 @@
+{
+  "title": "Our Clinic Gallery",
+  "images": {
+    "clinic1": "Dragon Phoenix Acupuncture Clinic",
+    "clinic2": "Clinic Interior",
+    "treatmentRoom": "Treatment Room",
+    "acupunctureTreatment": "Acupuncture Treatment",
+    "clinicEquipment": "Clinic Equipment",
+    "clinicFacilities": "Clinic Facilities",
+    "treatmentArea": "Treatment Area",
+    "clinicEnvironment": "Clinic Environment"
+  },
+  "practitioner": {
+    "title": "Our Licensed Acupuncturists",
+    "xiuFeng": {
+      "name": "Dr. Xiu Feng Searcy, LAc",
+      "title": "Lead Acupuncturist"
+    },
+    "weiZhou": {
+      "name": "Dr. Wei Zhou, LAc",
+      "title": "Acupuncturist"
+    }
+  }
+}

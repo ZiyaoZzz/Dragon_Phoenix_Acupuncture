@@ -1,0 +1,24 @@
+{
+  "title": "我们的诊所画廊",
+  "images": {
+    "clinic1": "龙凤针灸诊所",
+    "clinic2": "诊所内部",
+    "treatmentRoom": "治疗室",
+    "acupunctureTreatment": "针灸治疗",
+    "clinicEquipment": "诊所设备",
+    "clinicFacilities": "诊所设施",
+    "treatmentArea": "治疗区域",
+    "clinicEnvironment": "诊所环境"
+  },
+  "practitioner": {
+    "title": "我们的持证针灸师",
+    "xiuFeng": {
+      "name": "Dr. Xiu Feng Searcy, LAc",
+      "title": "首席针灸师"
+    },
+    "weiZhou": {
+      "name": "Dr. Wei Zhou, LAc",
+      "title": "针灸师"
+    }
+  }
+}
