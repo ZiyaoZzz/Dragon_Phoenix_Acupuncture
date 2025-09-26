@@ -1,0 +1,98 @@
+{
+  "sidebar": {
+    "title": "Folletos",
+    "items": {
+      "intro": "¿Qué es la acupuntura?",
+      "fertility": "Fertilidad y acupuntura",
+      "fibromyalgia": "Fibromialgia",
+      "lower-back-pain": "Dolor lumbar",
+      "stop-smoking": "Dejar de fumar",
+      "weight-loss": "Pérdida de peso"
+    }
+  },
+  "sections": {
+    "intro": {
+      "title": "¿Cómo funciona la acupuntura?",
+      "whatIs": "¿Qué es la acupuntura?",
+      "commonQuestions": "Preguntas comunes sobre la acupuntura",
+      "needleDepth": "¿Qué tan profundas van las agujas?",
+      "doesItHurt": "¿Duele?",
+      "areNeedlesClean": "¿Las agujas son limpias?",
+      "conditions": "¿Qué afecciones trata la acupuntura?",
+      "whatToExpect": "Qué esperar",
+      "additionalMethods": "Métodos de tratamiento adicionales",
+      "quote": "No hay dolor si hay flujo libre; si hay dolor, no hay flujo libre. - Dicho chino",
+      "lists": {
+        "ent": "Trastornos de oído, nariz y garganta:",
+        "respiratory": "Trastornos respiratorios:",
+        "gastro": "Trastornos gastrointestinales:",
+        "eye": "Trastornos oculares:",
+        "neuroMuscular": "Trastornos del sistema nervioso y muscular:"
+      },
+      "methods": {
+        "auricular": "Acupuntura auricular",
+        "herbology": "Herbolaria",
+        "tuina": "Tuina",
+        "dietary": "Medicina dietética",
+        "qigong": "Qi-Gong musical"
+      }
+    },
+    "fertility": {
+      "title": "Fertilidad y acupuntura",
+      "ivfSupport": "Cómo la acupuntura apoya la FIV",
+      "tcmApproach": "Enfoque de la Medicina Tradicional China",
+      "researchFindings": "Hallazgos de investigación",
+      "benefits": "Beneficios de la acupuntura para la fertilidad"
+    },
+    "fibromyalgia": {
+      "title": "Tratamiento de la fibromialgia",
+      "background": "Antecedentes",
+      "whoSuffers": "¿Quién sufre de fibromialgia?",
+      "treatedHow": "¿Cómo se trata la fibromialgia?",
+      "whatIs": "¿Qué es la fibromialgia?",
+      "causes": "¿Qué causa la fibromialgia?",
+      "symptoms": "Síntomas de la fibromialgia",
+      "aches": "Dolores y molestias:",
+      "fatigue": "Fatiga y falta de energía:",
+      "sleep": "Trastornos del sueño:",
+      "associated": "Síntomas asociados:",
+      "clinicTreatment": "Cómo se trata la fibromialgia en nuestra clínica",
+      "commitment": "Dragon Phoenix Acupuncture se compromete a:"
+    },
+    "lowerBackPain": {
+      "title": "Tratamiento del dolor lumbar",
+      "summary": "En resumen",
+      "insight": "Información adicional",
+      "canHelp": "¿La acupuntura puede ayudarle?",
+      "research": "La investigación respalda la eficacia de la acupuntura",
+      "generalFindings": "Hallazgos generales:",
+      "acuteFindings": "Hallazgos en esguince lumbar agudo:",
+      "degenerative": "Hallazgos en enfermedad degenerativa del disco:",
+      "protrusion": "Hallazgos en protrusión discal lumbar:"
+    },
+    "stopSmoking": {
+      "title": "Dejar de fumar con acupuntura",
+      "problems": "Pocas personas se dan cuenta de otros problemas de salud por fumar:",
+      "miscarriage": "Aborto espontáneo:",
+      "skinDamage": "Daños en la piel:",
+      "radioactivity": "Radiactividad:",
+      "nutritional": "Daños nutricionales:",
+      "health": "Fumar y su salud",
+      "help": "¡La acupuntura puede ayudar!",
+      "whyCant": "¿Por qué no puede dejarlo?"
+    },
+    "weightLoss": {
+      "title": "Pérdida de peso con acupuntura",
+      "whyLose": "¿Por qué debería perder peso?",
+      "sensible": "Pérdida de peso sensata",
+      "goals": "Objetivos para la pérdida de peso",
+      "obesityAndAcupuncture": "OBESIDAD Y ACUPUNTURA",
+      "whatIs": "¿Qué es la obesidad?",
+      "health": "Obesidad y su salud",
+      "program": "Programa de gestión de pérdida de peso en seis puntos",
+      "foodGuide": "Guía de alimentos:",
+      "avoid": "Qué evitar:",
+      "eat": "Qué comer:"
+    }
+  }
+} 
