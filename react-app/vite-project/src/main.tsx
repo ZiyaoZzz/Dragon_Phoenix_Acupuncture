@@ -5,6 +5,7 @@ import { PhysiciansPage } from './pages/PhysiciansPage'
 import { FAQPage } from './pages/FAQPage'
 import { ConditionsPage } from './pages/ConditionsPage'
 import { GalleryPage } from './pages/GalleryPage'
+import { ContactPage } from './pages/ContactPage'
 import './i18n/index'
 import './index.css'
 
@@ -17,7 +18,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/conditions" element={<ConditionsPage />} />
       <Route path="/brochures" element={<div>Brochures Page</div>} />
       <Route path="/gallery" element={<GalleryPage />} />
-      <Route path="/contact" element={<div>Contact Page</div>} />
+      <Route path="/contact" element={<ContactPage />} />
     </Routes>
   </Router>
 )

@@ -1,0 +1,34 @@
+{
+  "title": "联系我们",
+  "sendMessage": "给我们留言",
+  "form": {
+    "subject": "主题",
+    "message": "内容",
+    "send": "发送邮件"
+  },
+  "info": {
+    "title": "联系信息",
+    "addressLabel": "地址",
+    "address": "2579 Oak Street, Kissimmee, Florida 34744",
+    "phoneLabel": "电话",
+    "phone": "(407) 932-4818",
+    "faxLabel": "传真",
+    "fax": "(407) 932-2888",
+    "emailLabel": "邮箱",
+    "email": "dragonphoenix40@netscape.net",
+    "hoursLabel": "营业时间",
+    "hoursWeek": "周一至周六：9AM - 5PM",
+    "hoursSun": "周日：休息"
+  },
+  "review": {
+    "title": "请与我们分享您的体验",
+    "p1": "感谢您近期光临龙凤针灸。我们非常关心您的健康，并十分重视您作为我们的客户。",
+    "p2": "客户满意度对我们至关重要，我们非常期待您的反馈！如果您能花几分钟在 Google 上给我们留言评价，我们将不胜感激，这将帮助我们进一步提升服务。",
+    "button": "立即评价"
+  },
+  "practitioners": {
+    "xiu": { "name": "Xiu Feng Searcy, LAc" },
+    "wei": { "name": "Wei Zhou, LAc" },
+    "phone": "电话： (407) 932-4818"
+  }
+}

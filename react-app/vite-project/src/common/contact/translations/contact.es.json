@@ -1,0 +1,34 @@
+{
+  "title": "Contáctenos",
+  "sendMessage": "Envíenos un mensaje",
+  "form": {
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar correo"
+  },
+  "info": {
+    "title": "INFORMACIÓN DE CONTACTO",
+    "addressLabel": "Dirección",
+    "address": "2579 Oak Street, Kissimmee, Florida 34744",
+    "phoneLabel": "Teléfono",
+    "phone": "(407) 932-4818",
+    "faxLabel": "Fax",
+    "fax": "(407) 932-2888",
+    "emailLabel": "Correo",
+    "email": "dragonphoenix40@netscape.net",
+    "hoursLabel": "Horario",
+    "hoursWeek": "Lunes-Sábado: 9AM - 5PM",
+    "hoursSun": "Domingo: CERRADO"
+  },
+  "review": {
+    "title": "Comparta su experiencia con nosotros",
+    "p1": "Gracias por su reciente visita a Dragon Phoenix Acupuncture. Nos preocupamos por su salud y valoramos mucho su preferencia.",
+    "p2": "La satisfacción del cliente es muy importante para nosotros. ¡Agradecemos sus comentarios! Si pudiera dejarnos una reseña en Google, nos ayudaría a mejorar.",
+    "button": "Comentar ahora"
+  },
+  "practitioners": {
+    "xiu": { "name": "Xiu Feng Searcy, LAc" },
+    "wei": { "name": "Wei Zhou, LAc" },
+    "phone": "Teléfono: (407) 932-4818"
+  }
+}
