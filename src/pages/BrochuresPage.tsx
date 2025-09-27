@@ -1,0 +1,66 @@
+import React, { useMemo, useState, useEffect } from 'react';
+import { Header } from '../common/header';
+import { Footer } from '../common/footer';
+import { Sidebar } from '../common/sidebar';
+import type { SidebarItem } from '../common/sidebar';
+import { renderBrochureSection } from '../common/brochures/renderer';
+import type { BrochureSectionId } from '../common/brochures/types';
+import { useTranslation } from 'react-i18next';
+
+export const BrochuresPage: React.FC = () => {
+  const { t } = useTranslation('brochures');
+
+  const items: SidebarItem[] = useMemo(() => [
+    { id: 'intro', name: t('sidebar.items.intro') },
+    { id: 'fertility', name: t('sidebar.items.fertility') },
+    { id: 'fibromyalgia', name: t('sidebar.items.fibromyalgia') },
+    { id: 'lower-back-pain', name: t('sidebar.items.lower-back-pain') },
+    { id: 'stop-smoking', name: t('sidebar.items.stop-smoking') },
+    { id: 'weight-loss', name: t('sidebar.items.weight-loss') },
+  ], [t]);
+
+  const [selected, setSelected] = useState<SidebarItem>(items[0]);
+
+  const handleSelect = (item: SidebarItem) => {
+    setSelected(item);
+    window.history.replaceState(null, '', `#${item.id}`);
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const initial = items.find(i => i.id === hash);
+      if (initial) setSelected(initial);
+    }
+  }, [items]);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1 bg-[#f1f9f0]">
+        <section className="max-w-[90rem] mx-auto px-8 py-16 md:py-20">
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="md:col-span-3">
+              <div className="md:sticky md:top-28 lg:top-32 max-h-[calc(100vh-8rem)] overflow-auto">
+                <Sidebar
+                  title={t('sidebar.title')}
+                  items={items}
+                  selectedItem={selected}
+                  onItemSelect={handleSelect}
+                />
+              </div>
+            </div>
+
+            <div className="md:col-span-9 space-y-10">
+              {renderBrochureSection(selected.id as BrochureSectionId)}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default BrochuresPage; 
