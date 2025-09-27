@@ -11,7 +11,7 @@ export const LanguageSwitcher: React.FC = () => {
     { code: 'es', name: 'Español'}
   ];
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language);
+  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
 
   const handleLanguageChange = (langCode: 'en' | 'zh' | 'es') => {
     i18n.changeLanguage(langCode);
