@@ -7,5 +7,10 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/Dragon_Phoenix_Acupuncture/' : '/',
   build: {
     outDir: 'dist'
+  },
+  server: {
+    fs: {
+      strict: false
+    }
   }
 }))
