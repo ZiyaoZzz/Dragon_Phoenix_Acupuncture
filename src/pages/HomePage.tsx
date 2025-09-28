@@ -4,10 +4,12 @@ import { Footer } from '../common/footer';
 import bannerImg from '../asserts/Dragon.jpg';
 import s1 from '../asserts/dragon_phoenix_3.png';
 import s2 from '../asserts/dragon_phoenix_6.png';
-import s3 from '../asserts/dragon_phoenix_8.png';
 import s4 from '../asserts/cupping.jpg';
 import s5 from '../asserts/herbal_medicine.jpg';
 import s6 from '../asserts/tuina.jpg';
+import s7 from '../asserts/Facial_Acupuncture.jpg';
+import s8 from '../asserts/Eye_Acupoint_Acupuncture.jpg';
+import s9 from '../asserts/Bioelectric_Therapy.jpg';
 import faceImg from '../asserts/face.jpg';
 import { OurTeam } from '../common/doctorCard';
 import { ServiceCard } from '../common/ServiceCard';
@@ -21,17 +23,17 @@ export const HomePage: React.FC = () => {
   const serviceItems = [
     { key: 'traditional', img: s1 },
     { key: 'scalpEar', img: s2 },
-    { key: 'bioelectric', img: s3 },
+    { key: 'bioelectric', img: s9 },
     { key: 'cupping', img: s4 },
     { key: 'herbal', img: s5 },
     { key: 'tuina', img: s6 },
-    { key: 'facial', img: s1 },
-    { key: 'eyePoints', img: s2 },
+    { key: 'facial', img: s7 },
+    { key: 'eyePoints', img: s8 },
   ];
   return (
   <div className="min-h-screen flex flex-col">
     <Header />
-    <div className="w-full h-[520px] overflow-hidden mb-8">
+    <div className="w-full h-[620px] overflow-hidden mb-8">
       <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-full object-fill" />
     </div>
    <HomepageBanner />

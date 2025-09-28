@@ -14,12 +14,12 @@ export const HomepageBanner: React.FC = () => {
 
   const getDateConstraints = () => {
     const today = new Date();
-    const twoWeeksLater = new Date();
-    twoWeeksLater.setDate(today.getDate() + 14);
+    const DaysLater = new Date();
+    DaysLater.setDate(today.getDate() + 4);
     
     return {
       min: today.toISOString().split('T')[0],
-      max: twoWeeksLater.toISOString().split('T')[0]
+      max: DaysLater.toISOString().split('T')[0]
     };
   };
 
