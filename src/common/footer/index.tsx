@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import img3 from '../../asserts/dragon_phoenix_3.png';
 import img4 from '../../asserts/dragon_phoenix_4.png';
@@ -29,12 +30,12 @@ export const Footer: React.FC = () => {
         <div className="flex-1">
           <h3 className="text-white text-xl mb-5 font-normal">{t('about.title')}</h3>
           <p className="text-base mb-4">{t('about.description')}</p>
-          <a 
-            href="/physicians" 
+          <Link 
+            to="/physicians" 
             className="text-brand-secondary hover:text-brand-light transition-colors duration-300 inline-block mt-2"
           >
             {t('about.learnMore')}
-          </a>
+          </Link>
         </div>
 
         <div className="flex-1">
@@ -61,9 +62,9 @@ export const Footer: React.FC = () => {
           <h3 className={sectionTitleClass}>{t('gallery.title')}</h3>
           <div className="grid grid-cols-3 grid-rows-2 gap-2 mt-4 max-w-md mx-auto lg:mx-0">
             {galleryImages.map((src, idx) => (
-              <a key={idx} href="/gallery" className="block aspect-square overflow-hidden rounded">
+              <Link key={idx} to="/gallery" className="block aspect-square overflow-hidden rounded">
                 <img src={src} alt={`gallery-${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
-              </a>
+              </Link>
             ))}
           </div>
         </div>

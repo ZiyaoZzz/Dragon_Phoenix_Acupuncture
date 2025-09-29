@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import whoImg from '../../asserts/Xiu_Feng_Searcy.jpg';
 
@@ -15,7 +16,7 @@ export const HomepageBanner: React.FC = () => {
   const getDateConstraints = () => {
     const today = new Date();
     const DaysLater = new Date();
-    DaysLater.setDate(today.getDate() + 4);
+    DaysLater.setDate(today.getDate() + 12);
     
     return {
       min: today.toISOString().split('T')[0],
@@ -63,7 +64,7 @@ export const HomepageBanner: React.FC = () => {
           </p>
           <div className="my-4 h-px w-20 bg-gray-300" />
           <p className="italic text-gray-700 text-lg md:text-xl">{t('recognition')}</p>
-          <a href="/physicians" className="text-brand-secondary hover:text-brand-light inline-block mt-4">{t('whoWeAreCta')}</a>
+          <Link to="/physicians" className="text-brand-secondary hover:text-brand-light inline-block mt-4">{t('whoWeAreCta')}</Link>
         </div>
 
         <div className="text-center">
