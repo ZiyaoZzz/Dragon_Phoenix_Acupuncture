@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
           <h3 className="text-white text-xl mb-5 font-normal">{t('about.title')}</h3>
           <p className="text-base mb-4">{t('about.description')}</p>
           <Link 
-            to="/physicians" 
+            to="/physicians#top" 
             className="text-brand-secondary hover:text-brand-light transition-colors duration-300 inline-block mt-2"
           >
             {t('about.learnMore')}

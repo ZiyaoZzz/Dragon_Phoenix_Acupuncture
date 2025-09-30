@@ -64,7 +64,7 @@ export const HomepageBanner: React.FC = () => {
           </p>
           <div className="my-4 h-px w-20 bg-gray-300" />
           <p className="italic text-gray-700 text-lg md:text-xl">{t('recognition')}</p>
-          <Link to="/physicians" className="text-brand-secondary hover:text-brand-light inline-block mt-4">{t('whoWeAreCta')}</Link>
+          <Link to="/physicians#top" className="text-brand-secondary hover:text-brand-light inline-block mt-4">{t('whoWeAreCta')}</Link>
         </div>
 
         <div className="text-center">

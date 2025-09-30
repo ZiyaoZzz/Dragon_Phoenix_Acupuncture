@@ -8,6 +8,23 @@ import { doctors } from '../common/doctorCard/doctors';
 export const PhysiciansPage: React.FC = () => {
   const [selectedDoctor, setSelectedDoctor] = React.useState(doctors[0]);
 
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === '#top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (hash) {
+      const doctorId = hash.substring(1);
+      const element = document.getElementById(`doctor-${doctorId}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const doctor = doctors.find(d => d.id === doctorId);
+        if (doctor) {
+          setSelectedDoctor(doctor);
+        }
+      }
+    }
+  }, []);
+
   const handleDoctorSelect = (doctor: typeof doctors[0]) => {
     setSelectedDoctor(doctor);
     const element = document.getElementById(`doctor-${doctor.id}`);

@@ -11,7 +11,7 @@ import './i18n/index'
 import './index.css'
 
 createRoot(document.getElementById('root')!).render(
-  <Router basename={import.meta.env.PROD ? "/Dragon_Phoenix_Acupuncture" : "/"}>
+  <Router>
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/physicians" element={<PhysiciansPage />} />

@@ -97,8 +97,8 @@ export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor
   const { t } = useTranslation('physiciandetailcard');
 
   const tx = (key: string, fallback?: string) => {
-    const res = t(key, { defaultValue: fallback }) as string;
-    if (typeof res === 'string' && res === key) return fallback || '';
+    const res = t(key, { defaultValue: fallback });
+    if (res === key) return fallback || '';
     return res || fallback || '';
   };
   const normalizeToArray = (value: unknown): string[] => {
@@ -107,7 +107,7 @@ export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor
     return [];
   };
   const txArr = (key: string, fallback?: string[]) => {
-    const res = t(key, { returnObjects: true, defaultValue: fallback }) as unknown;
+    const res = t(key, { returnObjects: true, defaultValue: fallback });
     if (typeof res === 'string' && res === key) return normalizeToArray(fallback ?? []);
     const base = res ?? fallback ?? [];
     return normalizeToArray(base);

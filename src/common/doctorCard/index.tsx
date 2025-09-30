@@ -5,15 +5,15 @@ import { doctors } from './doctorInfo';
 
 export const DoctorCard: React.FC<{ doctor: DoctorInfo }> = ({ doctor }) => {
   const { t } = useTranslation();
-  const { name, nameKey, title, titleKey, img, href, description, descriptionKey } = doctor;
+  const { name, title, img, description } = doctor;
 
-  const localizedName = nameKey ? t(nameKey) : (name ?? '');
-  const localizedTitle = titleKey ? t(titleKey) : (title ?? '');
-  const localizedDescription = descriptionKey ? t(descriptionKey) : description;
+  const localizedName = name ?? '';
+  const localizedTitle = title ?? '';
+  const localizedDescription = description;
 
   return (
     <div className="bg-[#f0f9f1] rounded-lg overflow-hidden shadow w-full max-w-md">
-      <a href={href}>
+      <a href="/physicians">
         <div className="h-72 overflow-hidden">
           <img src={img} alt={localizedName} className="w-full h-full object-cover" />
         </div>
@@ -26,7 +26,7 @@ export const DoctorCard: React.FC<{ doctor: DoctorInfo }> = ({ doctor }) => {
         ) : (
           <p className="text-gray-600 mb-4">{t('doctorCard:defaultDescription')}</p>
         )}
-        <a href={href} className="text-[#395c3b] font-bold">{t('doctorCard:viewProfile')}</a>
+        <a href="/physicians" className="text-[#395c3b] font-bold">{t('doctorCard:viewProfile')}</a>
       </div>
     </div>
   );
