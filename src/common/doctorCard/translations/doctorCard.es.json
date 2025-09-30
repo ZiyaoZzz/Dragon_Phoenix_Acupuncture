@@ -1,6 +1,18 @@
 {
-  "viewProfile": "Ver perfil",
+  "ourTeam": "Nuestro Equipo",
+  "meetOurTeam": "Conoce a nuestros profesionales experimentados dedicados a tu salud y bienestar",
+  "viewProfile": "Ver Perfil",
   "defaultDescription": "Con experiencia en medicina tradicional china y atención personalizada.",
-  "ourTeam": "Nuestro equipo",
-  "meetOurTeam": "Conoce a nuestros profesionales experimentados dedicados a tu bienestar y salud"
-} 
+  "doctors": {
+    "dr-xiu": {
+      "name": "Dra. Xiu Feng Searcy, LAc",
+      "title": "Acupunturista Principal",
+      "description": "Más de 50 años de experiencia en Medicina Oriental y Occidental, 25 años como MD en China, certificada por NCCAOM."
+    },
+    "dr-zhou": {
+      "name": "Dr. Wei Zhou, LAc",
+      "title": "Acupunturista",
+      "description": "Especializado en medicina tradicional china con amplia experiencia en acupuntura y herbolaria durante más de 45 años."
+    }
+  }
+}

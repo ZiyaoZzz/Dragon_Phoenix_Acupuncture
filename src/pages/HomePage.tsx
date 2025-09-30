@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import bannerImg from '../asserts/Dragon.jpg';
@@ -11,7 +12,8 @@ import s7 from '../asserts/Facial_Acupuncture.jpg';
 import s8 from '../asserts/Eye_Acupoint_Acupuncture.jpg';
 import s9 from '../asserts/Bioelectric_Therapy.jpg';
 import faceImg from '../asserts/face.jpg';
-import { OurTeam } from '../common/doctorCard';
+import Physician_Xiu_Feng_SearcyImg from '../asserts/Xiu_Feng_Searcy.jpg';
+import Physician_Wei_ZhouImg from '../asserts/Physician_Wei_Zhou.jpeg';
 import { ServiceCard } from '../common/ServiceCard';
 import { useTranslation } from 'react-i18next';
 import { HomepageBanner } from '../common/homepageBanner';
@@ -37,7 +39,41 @@ export const HomePage: React.FC = () => {
       <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-full object-fill" />
     </div>
    <HomepageBanner />
-    <OurTeam />
+    <section className="bg-white max-w-[1400px] mx-auto px-5 pb-14">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl text-[#395c3b] mb-3">{t('doctorCard:ourTeam')}</h2>
+        <p className="text-gray-600">{t('doctorCard:meetOurTeam')}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+        <div className="bg-[#f0f9f1] rounded-lg overflow-hidden shadow w-full max-w-md">
+          <Link to="/physicians">
+            <div className="h-72 overflow-hidden">
+              <img src={Physician_Xiu_Feng_SearcyImg} alt={t('doctorCard:doctors.dr-xiu.name')} className="w-full h-full object-cover" />
+            </div>
+          </Link>
+          <div className="p-6">
+            <h3 className="text-[#395c3b] text-xl mb-1">{t('doctorCard:doctors.dr-xiu.name')}</h3>
+            <p className="text-[#4a6e4c] italic mb-3">{t('doctorCard:doctors.dr-xiu.title')}</p>
+            <p className="text-gray-600 mb-4">{t('doctorCard:doctors.dr-xiu.description')}</p>
+            <Link to="/physicians" className="text-[#395c3b] font-bold">{t('doctorCard:viewProfile')}</Link>
+          </div>
+        </div>
+        
+        <div className="bg-[#f0f9f1] rounded-lg overflow-hidden shadow w-full max-w-md">
+          <Link to="/physicians">
+            <div className="h-72 overflow-hidden">
+              <img src={Physician_Wei_ZhouImg} alt={t('doctorCard:doctors.dr-zhou.name')} className="w-full h-full object-cover" />
+            </div>
+          </Link>
+          <div className="p-6">
+            <h3 className="text-[#395c3b] text-xl mb-1">{t('doctorCard:doctors.dr-zhou.name')}</h3>
+            <p className="text-[#4a6e4c] italic mb-3">{t('doctorCard:doctors.dr-zhou.title')}</p>
+            <p className="text-gray-600 mb-4">{t('doctorCard:doctors.dr-zhou.description')}</p>
+            <Link to="/physicians" className="text-[#395c3b] font-bold">{t('doctorCard:viewProfile')}</Link>
+          </div>
+        </div>
+      </div>
+    </section>
     <section className="bg-[#f1f9f0] px-5 py-14">
       <div className="text-center max-w-3xl mx-auto">
         <h2 className="text-3xl text-[#395c3b] mb-3">{t('services:title')}</h2>

@@ -1,6 +1,18 @@
 {
+  "ourTeam": "我们的团队",
+  "meetOurTeam": "认识我们经验丰富的医师，他们致力于您的健康和福祉",
   "viewProfile": "查看简介",
   "defaultDescription": "擅长中医治疗并提供个性化护理。",
-  "ourTeam": "我们的团队",
-  "meetOurTeam": "我们的团队专注于您的健康"
-} 
+  "doctors": {
+    "dr-xiu": {
+      "name": "徐秀凤医师（执照针灸师）",
+      "title": "首席针灸师",
+      "description": "拥有50多年中西医结合经验，在中国担任25年医生，获得NCCAOM认证。"
+    },
+    "dr-zhou": {
+      "name": "周伟医师（执照针灸师）",
+      "title": "针灸师", 
+      "description": "专长传统中医，拥有45年丰富的针灸和中药经验。"
+    }
+  }
+}
