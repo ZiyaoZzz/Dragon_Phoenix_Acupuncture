@@ -1,7 +1,5 @@
----
 
 # 🐉 Dragon Phoenix Acupuncture
-
 **Bringing Traditional Chinese Medicine to the Modern Web**
 
 ## 🌿 Overview
