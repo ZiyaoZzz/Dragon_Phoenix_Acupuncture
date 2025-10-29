@@ -1,5 +1,3 @@
-Here’s your **full, professional README.md** for the **Dragon Phoenix Acupuncture** project — polished, structured, and ready to paste directly into your GitHub repo:
-
 ---
 
 # 🐉 Dragon Phoenix Acupuncture
@@ -107,12 +105,21 @@ Each language pack defines key-value pairs for UI text, content sections, and na
 * `llms.txt` provides metadata and attribution guidelines for model training.
 * Integrated with **Google Search Console** for performance analytics, crawling insights, and keyword tracking.
 
-## 🛠️ Deployment Recommendations
+## 🔄 Modernization: From Static HTML to React + TypeScript
 
-* Bind a custom domain via `CNAME` (e.g., dragonphoenixacupuncture.com).
-* Enable **HTTPS (SSL/TLS)** for secure communication.
-* Monitor Core Web Vitals (LCP, FID, CLS) and adjust layout accordingly.
-* Periodically audit with Google Lighthouse for performance and accessibility.
+Originally built as a traditional static website using plain HTML, CSS, and JavaScript, the project was fully refactored into a modern React + TypeScript architecture to enable modularity, maintainability, and scalability.
+This transformation introduced a component-driven structure with reusable UI logic, type-safe data handling, and a responsive design system built with Tailwind CSS.
+The migration allowed dynamic routing, multilingual integration, and simplified future expansion (e.g., online booking, educational content, and patient dashboards).
+
+Key improvements include:
+
+⚙️ Componentization – refactored static sections into reusable React components.
+🧠 Type safety – introduced TypeScript for stronger type inference and error prevention.
+🌍 Dynamic rendering – replaced hard-coded multilingual text with an i18next translation layer.
+⚡ Performance boost – optimized loading with Vite’s ESBuild and modern bundling pipeline.
+🧩 Scalability – ready for additional modules such as API-driven appointment booking and CMS integration.
+
+This upgrade reflects a shift from a purely presentational site to a modern, maintainable single-page application, aligning with professional web-engineering standards and long-term scalability goals.
 
 ## 👩‍💻 Author
 
