@@ -35,51 +35,51 @@ export const HomePage: React.FC = () => {
   return (
   <div className="min-h-screen flex flex-col">
     <Header />
-    <div className="w-full h-[620px] overflow-hidden mb-8">
-      <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-full object-fill" />
+    <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[620px] overflow-hidden mb-4 md:mb-8">
+      <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-full object-cover" loading="eager" />
     </div>
    <HomepageBanner />
-    <section className="bg-white max-w-[1400px] mx-auto px-5 pb-14">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl text-[#395c3b] mb-3">{t('doctorCard:ourTeam')}</h2>
-        <p className="text-gray-600">{t('doctorCard:meetOurTeam')}</p>
+    <section className="bg-white max-w-[1400px] mx-auto px-4 sm:px-5 pb-8 md:pb-14">
+      <div className="text-center mb-6 md:mb-10">
+        <h2 className="text-2xl sm:text-3xl text-[#395c3b] mb-2 md:mb-3">{t('doctorCard:ourTeam')}</h2>
+        <p className="text-sm sm:text-base text-gray-600">{t('doctorCard:meetOurTeam')}</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 justify-items-center">
         <div className="bg-[#f0f9f1] rounded-lg overflow-hidden shadow w-full max-w-md">
           <Link to="/physicians">
-            <div className="h-72 overflow-hidden">
-              <img src={Physician_Xiu_Feng_SearcyImg} alt={t('doctorCard:doctors.dr-xiu.name')} className="w-full h-full object-cover" />
+            <div className="h-64 sm:h-72 overflow-hidden">
+              <img src={Physician_Xiu_Feng_SearcyImg} alt={t('doctorCard:doctors.dr-xiu.name')} className="w-full h-full object-cover" loading="lazy" />
             </div>
           </Link>
-          <div className="p-6">
-            <h3 className="text-[#395c3b] text-xl mb-1">{t('doctorCard:doctors.dr-xiu.name')}</h3>
-            <p className="text-[#4a6e4c] italic mb-3">{t('doctorCard:doctors.dr-xiu.title')}</p>
-            <p className="text-gray-600 mb-4">{t('doctorCard:doctors.dr-xiu.description')}</p>
-            <Link to="/physicians" className="text-[#395c3b] font-bold">{t('doctorCard:viewProfile')}</Link>
+          <div className="p-4 sm:p-6">
+            <h3 className="text-[#395c3b] text-lg sm:text-xl mb-1">{t('doctorCard:doctors.dr-xiu.name')}</h3>
+            <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-sm sm:text-base">{t('doctorCard:doctors.dr-xiu.title')}</p>
+            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{t('doctorCard:doctors.dr-xiu.description')}</p>
+            <Link to="/physicians" className="text-[#395c3b] font-bold text-sm sm:text-base">{t('doctorCard:viewProfile')}</Link>
           </div>
         </div>
         
         <div className="bg-[#f0f9f1] rounded-lg overflow-hidden shadow w-full max-w-md">
           <Link to="/physicians">
-            <div className="h-72 overflow-hidden">
-              <img src={Physician_Wei_ZhouImg} alt={t('doctorCard:doctors.dr-zhou.name')} className="w-full h-full object-cover" />
+            <div className="h-64 sm:h-72 overflow-hidden">
+              <img src={Physician_Wei_ZhouImg} alt={t('doctorCard:doctors.dr-zhou.name')} className="w-full h-full object-cover" loading="lazy" />
             </div>
           </Link>
-          <div className="p-6">
-            <h3 className="text-[#395c3b] text-xl mb-1">{t('doctorCard:doctors.dr-zhou.name')}</h3>
-            <p className="text-[#4a6e4c] italic mb-3">{t('doctorCard:doctors.dr-zhou.title')}</p>
-            <p className="text-gray-600 mb-4">{t('doctorCard:doctors.dr-zhou.description')}</p>
-            <Link to="/physicians" className="text-[#395c3b] font-bold">{t('doctorCard:viewProfile')}</Link>
+          <div className="p-4 sm:p-6">
+            <h3 className="text-[#395c3b] text-lg sm:text-xl mb-1">{t('doctorCard:doctors.dr-zhou.name')}</h3>
+            <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-sm sm:text-base">{t('doctorCard:doctors.dr-zhou.title')}</p>
+            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{t('doctorCard:doctors.dr-zhou.description')}</p>
+            <Link to="/physicians" className="text-[#395c3b] font-bold text-sm sm:text-base">{t('doctorCard:viewProfile')}</Link>
           </div>
         </div>
       </div>
     </section>
-    <section className="bg-[#f1f9f0] px-5 py-14">
+    <section className="bg-[#f1f9f0] px-4 sm:px-5 py-8 md:py-14">
       <div className="text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl text-[#395c3b] mb-3">{t('services:title')}</h2>
-        <p className="text-gray-600">{t('services:intro')}</p>
+        <h2 className="text-2xl sm:text-3xl text-[#395c3b] mb-2 md:mb-3">{t('services:title')}</h2>
+        <p className="text-sm sm:text-base text-gray-600">{t('services:intro')}</p>
       </div>
-      <div className="mt-10 max-w-[1200px] mx-auto flex flex-wrap justify-center gap-8">
+      <div className="mt-6 md:mt-10 max-w-[1200px] mx-auto flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
         {serviceItems.map((s) => (
           <ServiceCard key={s.key} imageSrc={s.img} title={t(`services:items.${s.key}.title`)} description={t(`services:items.${s.key}.desc`)} />
         ))}
@@ -88,7 +88,7 @@ export const HomePage: React.FC = () => {
     <HistorySection backgroundImageUrl={faceImg} />
     <HoursSection />
     <section className="bg-gray-100">
-      <div className="w-full h-[450px]">
+      <div className="w-full h-[300px] sm:h-[350px] md:h-[450px]">
         <iframe
           title="clinic-map"
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14055.353746469302!2d-81.3390036!3d28.2729154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed674992cf3991ee!2sDragon%20Phoenix%20Acupuncture!5e0!3m2!1sen!2sin!4v1596731702074!5m2!1sen!2sin"

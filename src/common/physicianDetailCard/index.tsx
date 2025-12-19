@@ -150,7 +150,7 @@ export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor
             </div>
           </div>
           <div className="flex-1">
-            <h1 className="text-3xl font-bold text-brand-primary mb-1">{name}</h1>
+            <h2 className="text-3xl font-bold text-brand-primary mb-1">{name}</h2>
             <p className="text-lg text-gray-700 mb-2">{title}</p>
             {license && (
               <p className="text-base text-gray-600 mb-1">{license}</p>

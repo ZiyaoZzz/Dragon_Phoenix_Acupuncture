@@ -25,14 +25,14 @@ export const Footer: React.FC = () => {
   ] as const;
 
   return (
-    <footer className="bg-brand-primary text-white py-10 px-5">
-      <div className="flex justify-between max-w-6xl mx-auto gap-8 lg:flex-row flex-col text-center lg:text-left">
+    <footer className="bg-brand-primary text-white py-6 sm:py-8 md:py-10 px-4 sm:px-5">
+      <div className="flex justify-between max-w-6xl mx-auto gap-6 sm:gap-8 lg:flex-row flex-col text-center lg:text-left">
         <div className="flex-1">
-          <h3 className="text-white text-xl mb-5 font-normal">{t('about.title')}</h3>
-          <p className="text-base mb-4">{t('about.description')}</p>
+          <h3 className="text-white text-lg sm:text-xl mb-3 sm:mb-5 font-normal">{t('about.title')}</h3>
+          <p className="text-sm sm:text-base mb-3 sm:mb-4">{t('about.description')}</p>
           <Link 
             to="/physicians#top" 
-            className="text-brand-secondary hover:text-brand-light transition-colors duration-300 inline-block mt-2"
+            className="text-brand-secondary hover:text-brand-light transition-colors duration-300 inline-block mt-2 text-sm sm:text-base"
           >
             {t('about.learnMore')}
           </Link>
@@ -40,30 +40,30 @@ export const Footer: React.FC = () => {
 
         <div className="flex-1">
           <h3 className={sectionTitleClass}>{t('contact.title')}</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-1.5 sm:space-y-2">
             <li>
-              <a href="https://maps.app.goo.gl/Ga5r1nwyWbH2PsfE6" target="_blank" rel="noopener noreferrer" className={contactLinkClass}>
+              <a href="https://maps.app.goo.gl/Ga5r1nwyWbH2PsfE6" target="_blank" rel="noopener noreferrer" className={`${contactLinkClass} text-sm sm:text-base`}>
                 {t('contact.address')}
               </a>
             </li>
             <li>
-              <a href="tel:4079324818" className={contactLinkClass}>{t('contact.phone')}</a>
+              <a href="tel:4079324818" className={`${contactLinkClass} text-sm sm:text-base`}>{t('contact.phone')}</a>
             </li>
             <li>
-              <a href="fax:4079322888" className={contactLinkClass}>{t('contact.fax')}</a>
+              <a href="fax:4079322888" className={`${contactLinkClass} text-sm sm:text-base`}>{t('contact.fax')}</a>
             </li>
             <li>
-              <a href="mailto:dragonphoenix40@netscape.net" className={contactLinkClass}>{t('contact.email')}</a>
+              <a href="mailto:dragonphoenix40@netscape.net" className={`${contactLinkClass} text-sm sm:text-base`}>{t('contact.email')}</a>
             </li>
           </ul>
         </div>
 
         <div className="flex-1">
           <h3 className={sectionTitleClass}>{t('gallery.title')}</h3>
-          <div className="grid grid-cols-3 grid-rows-2 gap-2 mt-4 max-w-md mx-auto lg:mx-0">
+          <div className="grid grid-cols-3 grid-rows-2 gap-2 mt-3 sm:mt-4 max-w-md mx-auto lg:mx-0">
             {galleryImages.map((src, idx) => (
               <Link key={idx} to="/gallery" className="block aspect-square overflow-hidden rounded">
-                <img src={src} alt={`gallery-${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                <img src={src} alt={`gallery-${idx + 1}`} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" loading="lazy" />
               </Link>
             ))}
           </div>
@@ -71,14 +71,14 @@ export const Footer: React.FC = () => {
 
         <div className="flex-1">
           <h3 className={sectionTitleClass}>{t('hours.title')}</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-1.5 sm:space-y-2">
             {dayKeys.map((k) => (
-              <li key={k} className="flex justify-between py-1">
+              <li key={k} className="flex justify-between py-1 text-sm sm:text-base">
                 <span>{t(k)}</span>
                 <span>{t('hours.schedule.operationTimeRange')}</span>
               </li>
             ))}
-            <li className="flex justify-between py-1">
+            <li className="flex justify-between py-1 text-sm sm:text-base">
               <span>{t('hours.sunday')}</span>
               <span className="text-red-400 font-bold">{t('hours.schedule.closed')}</span>
             </li>

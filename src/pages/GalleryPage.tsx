@@ -46,20 +46,20 @@ export const GalleryPage: React.FC = () => {
       <Header />
       
       <main className="flex-1 bg-[#f1f9f0]">
-        <section className="max-w-6xl mx-auto px-5 py-12">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-800 mb-6">{t('title')}</h1>
+        <section className="max-w-6xl mx-auto px-4 sm:px-5 py-6 sm:py-8 md:py-12">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">{t('title')}</h1>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {galleryImages.map((image, index) => (
                 <div key={index} className="gallery-item group">
                   <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                     <img 
                       src={image.src} 
                       alt={image.alt}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
                   </div>
@@ -68,20 +68,20 @@ export const GalleryPage: React.FC = () => {
             </div>
 
             {/* Practitioners Section */}
-            <div className="mt-12">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">{t('practitioner.title')}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="mt-8 sm:mt-10 md:mt-12">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 sm:mb-8 text-center">{t('practitioner.title')}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
                 {practitioners.map((practitioner, index) => (
                   <div key={index} className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                     <img 
                       src={practitioner.src} 
                       alt={practitioner.name}
-                      className="w-full h-80 object-cover"
+                      className="w-full h-64 sm:h-72 md:h-80 object-cover"
                       loading="lazy"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                      <h3 className="text-white text-2xl font-bold mb-2">{practitioner.name}</h3>
-                      <p className="text-white text-lg">{practitioner.title}</p>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 sm:p-6">
+                      <h3 className="text-white text-xl sm:text-2xl font-bold mb-1 sm:mb-2">{practitioner.name}</h3>
+                      <p className="text-white text-base sm:text-lg">{practitioner.title}</p>
                     </div>
                   </div>
                 ))}

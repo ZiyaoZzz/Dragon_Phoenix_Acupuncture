@@ -39,10 +39,11 @@ export const PhysiciansPage: React.FC = () => {
     <div className="min-h-screen bg-brand-light/20">
       <Header />
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 md:px-4 py-4 sm:py-6 md:py-8">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">Our Physicians</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           <div className="lg:col-span-1">
-            <div className="sticky top-8">
+            <div className="lg:sticky lg:top-8">
               <Sidebar
                 items={doctors}
                 selectedItem={selectedDoctor}
@@ -52,7 +53,7 @@ export const PhysiciansPage: React.FC = () => {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {displayedDoctors.map((doctor) => (
                 <div key={doctor.id} id={`doctor-${doctor.id}`}>
                   <PhysicianDetailCard doctor={doctor} />
