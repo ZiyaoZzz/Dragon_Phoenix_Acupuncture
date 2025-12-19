@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Dragon Phoenix Acupuncture</title>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
     <script type="text/javascript">
-      (function() {
-        var pathSegmentsToKeep = 0;
-        var l = window.location;
-        
-        var staticFiles = ['sitemap.xml', 'robots.txt', 'favicon.ico', 'favicon.svg'];
-        var pathname = l.pathname.toLowerCase();
-        var isStaticFile = staticFiles.some(function(file) {
-          return pathname.endsWith('/' + file) || pathname === '/' + file;
-        });
-        
-        if (isStaticFile) {
-          return;
-        }
-        
-        var path = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).filter(function(p) { return p; });
-        if (path.length === 0) {
-          l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
-          return;
-        }
-        
-        var newPath = '/' + path.join('/').replace(/&/g, '~and~');
-        var query = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
-        var hash = l.hash || '';
-        
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          '/?/' + newPath.slice(1) + query + hash
-        );
-      })();
+      var redirectTo = '/' + window.location.search + window.location.hash;
+      window.location.replace(redirectTo);
     </script>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
