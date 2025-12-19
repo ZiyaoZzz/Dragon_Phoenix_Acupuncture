@@ -8,7 +8,7 @@ export interface ServiceCardProps {
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ imageSrc, title, description }) => {
   return (
-    <div className="flex-[0_0_calc(33.33%_-_30px)] min-w-[280px] bg-white rounded shadow text-center overflow-hidden">
+    <div className="w-full sm:flex-[0_0_calc(33.33%_-_30px)] sm:min-w-[280px] max-w-[280px] sm:max-w-none bg-white rounded shadow text-center overflow-hidden">
       <div className="h-56 overflow-hidden">
         <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
       </div>

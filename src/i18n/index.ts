@@ -2,18 +2,16 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Auto-load any JSON under **/translations with name pattern {namespace}.{lng}.json
-// Example: ../common/header/translations/header.en.json → ns=header, lng=en
 type JsonDict = Record<string, unknown>;
 const modules = import.meta.glob('../**/translations/*.json', { eager: true }) as Record<string, { default: unknown } | JsonDict>;
 
-type Resources = Record<string, Record<string, JsonDict>>; // { lng: { ns: dict } }
+type Resources = Record<string, Record<string, JsonDict>>;
 const resources: Resources = {};
 
 Object.entries(modules).forEach(([path, modValue]) => {
-  const file = path.split('/').pop() as string; // e.g. header.en.json
+  const file = path.split('/').pop() as string;
   const parts = file.split('.');
-  if (parts.length < 3) return; // not matching {ns}.{lng}.json
+  if (parts.length < 3) return;
   const ns = parts[0];
   const lng = parts[1];
   if (!['en', 'zh', 'es'].includes(lng)) return;
@@ -25,12 +23,32 @@ Object.entries(modules).forEach(([path, modValue]) => {
   }
 });
 
+const detectLanguage = (): string => {
+  const stored = localStorage.getItem('i18nextLng');
+  if (stored && ['en', 'zh', 'es'].includes(stored)) {
+    return stored;
+  }
+
+  const browserLang = navigator.language || (navigator as Navigator & { userLanguage?: string }).userLanguage || 'en';
+  const langCode = browserLang.toLowerCase().split('-')[0];
+
+  if (langCode === 'es') {
+    return 'es';
+  }
+
+  if (langCode === 'zh') {
+    return 'zh';
+  }
+
+  return 'en';
+};
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en',
+    lng: detectLanguage(),
     fallbackLng: 'en',
     debug: import.meta.env.DEV,
     
@@ -39,8 +57,22 @@ i18n
     },
     
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['localStorage', 'querystring', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng',
+      convertDetectedLanguage: (lng: string): string => {
+        const langCode = lng.toLowerCase().split('-')[0];
+
+        if (langCode === 'es') {
+          return 'es';
+        }
+
+        if (langCode === 'zh') {
+          return 'zh';
+        }
+
+        return 'en';
+      },
     },
   });
 

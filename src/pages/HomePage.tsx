@@ -33,7 +33,7 @@ export const HomePage: React.FC = () => {
     { key: 'eyePoints', img: s8 },
   ];
   return (
-  <div className="min-h-screen flex flex-col">
+  <div className="min-h-screen flex flex-col overflow-x-hidden">
     <Header />
     <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[620px] overflow-hidden mb-4 md:mb-8">
       <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-full object-cover" loading="eager" />

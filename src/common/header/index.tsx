@@ -35,7 +35,6 @@ export const Header: React.FC = () => {
             />
           </div>
 
-          {/* Desktop Contact Info */}
           <div className="hidden lg:flex flex-wrap justify-end items-center gap-6 xl:gap-8">
             <div className="flex items-center space-x-3">
               <img 
@@ -74,7 +73,6 @@ export const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-gray-800 hover:bg-gray-100 rounded-md transition-colors"
@@ -102,7 +100,6 @@ export const Header: React.FC = () => {
       
       <nav className="bg-brand-primary relative">
         <div className="max-w-8xl mx-auto px-4">
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-4 py-4">
             <ul className="flex w-full items-center divide-x divide-white/30 text-sm md:text-base">
               {navItems.map(({ to, labelKey }) => (
@@ -118,7 +115,6 @@ export const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Navigation */}
           <div className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
             isMobileMenuOpen ? 'max-h-screen py-4' : 'max-h-0 py-0'
           }`}>
