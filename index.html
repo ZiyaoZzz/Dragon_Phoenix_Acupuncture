@@ -58,9 +58,10 @@
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+          var pathAndQuery = decoded.split('?');
+          var path = pathAndQuery[0] || '/';
+          var query = pathAndQuery.length > 1 ? '?' + pathAndQuery.slice(1).join('?') : '';
+          window.history.replaceState(null, null, path + query + l.hash);
         }
       }(window.location))
     </script>

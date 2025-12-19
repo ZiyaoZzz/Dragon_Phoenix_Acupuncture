@@ -23,13 +23,13 @@
         return;
       }
       
-      var newPath = path.join('/').replace(/&/g, '~and~');
+      var newPath = '/' + path.join('/').replace(/&/g, '~and~');
       var query = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
       var hash = l.hash || '';
       
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        '/?/' + newPath + query + hash
+        '/?/' + newPath.slice(1) + query + hash
       );
     </script>
   </head>
