@@ -1,91 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dragon Phoenix Acupuncture | Acupuncture & Chinese Medicine in Kissimmee, FL</title>
-    <meta name="description" content="Dragon Phoenix Acupuncture offers professional acupuncture and traditional Chinese medicine in Kissimmee, FL. We provide personalized treatment for pain relief, stress, insomnia, digestive issues, and chronic conditions." />
-    <meta name="keywords" content="acupuncture Kissimmee, Chinese medicine Florida, pain relief acupuncture, stress acupuncture, insomnia treatment, holistic healing, traditional Chinese medicine clinic" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["MedicalBusiness", "LocalBusiness"],
-      "name": "Dragon Phoenix Acupuncture",
-      "image": "https://dragonphoenixacupuncture.com/favicon.svg",
-      "@id": "https://dragonphoenixacupuncture.com",
-      "url": "https://dragonphoenixacupuncture.com",
-      "telephone": "+1-407-932-4818",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2579 Oak Street",
-        "addressLocality": "Kissimmee",
-        "addressRegion": "FL",
-        "postalCode": "34744",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 28.2729154,
-        "longitude": -81.3390036
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "09:00",
-          "closes": "17:00"
-        }
-      ],
-      "priceRange": "$$",
-      "medicalSpecialty": "Acupuncture",
-      "areaServed": {
-        "@type": "City",
-        "name": "Kissimmee"
-      }
-    }
-    </script>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
     <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          var pathAndQuery = decoded.split('?');
-          var path = pathAndQuery[0] || '/';
-          var query = pathAndQuery.length > 1 ? '?' + pathAndQuery.slice(1).join('?') : '';
-          window.history.replaceState(null, null, path + query + l.hash);
-        } else {
-          var pathSegmentsToKeep = 0;
-          var staticFiles = ['sitemap.xml', 'robots.txt', 'favicon.ico', 'favicon.svg'];
-          var pathname = l.pathname.toLowerCase();
-          var isStaticFile = staticFiles.some(function(file) {
-            return pathname.endsWith('/' + file) || pathname === '/' + file;
-          });
-          
-          if (!isStaticFile && l.pathname !== '/') {
-            var path = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).filter(function(p) { return p; });
-            if (path.length > 0) {
-              var newPath = '/' + path.join('/').replace(/&/g, '~and~');
-              var query = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
-              var hash = l.hash || '';
-              window.history.replaceState(null, null, '/?/' + newPath.slice(1) + query + hash);
-              l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/?/' + newPath.slice(1) + query + hash);
-            }
-          }
-        }
-      }(window.location))
+      var redirectTo = '/' + window.location.search + window.location.hash;
+      window.location.replace(redirectTo);
     </script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <body></body>
 </html>
