@@ -20,5 +20,14 @@
   "anyTime": "任意时间",
   "additionalInfo": "补充信息",
   "submit": "提交预约请求",
-  "formNote": "* 所有字段均为必填。您的信息将被安全地发送至本诊所。"
+  "formNote": "* 所有字段均为必填。您的信息将被安全地发送至本诊所。",
+  "weekdays": {
+    "sunday": "星期日",
+    "monday": "星期一",
+    "tuesday": "星期二",
+    "wednesday": "星期三",
+    "thursday": "星期四",
+    "friday": "星期五",
+    "saturday": "星期六"
+  }
 } 

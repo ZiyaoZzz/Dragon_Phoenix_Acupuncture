@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import whoImg from '../../asserts/Xiu_Feng_Searcy.jpg';
 
 export const HomepageBanner: React.FC = () => {
-  const { t } = useTranslation('homepageBanner');
+  const { t, i18n } = useTranslation('homepageBanner');
   const [weekdayDisplay, setWeekdayDisplay] = useState('');
   const [timezone, setTimezone] = useState('');
 
@@ -30,8 +30,9 @@ export const HomepageBanner: React.FC = () => {
     const selectedDate = event.target.value;
     if (selectedDate) {
       const date = new Date(selectedDate);
-      const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-      const weekday = weekdays[date.getDay()];
+      const dayIndex = date.getDay();
+      const weekdayKeys = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+      const weekday = t(`weekdays.${weekdayKeys[dayIndex]}`);
       setWeekdayDisplay(weekday);
     } else {
       setWeekdayDisplay('');
@@ -44,7 +45,8 @@ export const HomepageBanner: React.FC = () => {
     
     if (clientTimeInput) {
       const now = new Date();
-      const timezoneInfo = `${now.toLocaleString('zh-CN', { timeZone: timezone })} (${timezone})`;
+      const locale = i18n.language === 'zh' ? 'zh-CN' : i18n.language === 'es' ? 'es-ES' : 'en-US';
+      const timezoneInfo = `${now.toLocaleString(locale, { timeZone: timezone })} (${timezone})`;
       clientTimeInput.value = timezoneInfo;
     }
   };

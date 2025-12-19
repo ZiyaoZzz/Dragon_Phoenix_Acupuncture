@@ -20,5 +20,14 @@
   "anyTime": "Cualquier hora",
   "additionalInfo": "Información adicional",
   "submit": "Enviar solicitud de cita",
-  "formNote": "* Todos los campos son obligatorios. Su información se enviará de forma segura a nuestra clínica."
+  "formNote": "* Todos los campos son obligatorios. Su información se enviará de forma segura a nuestra clínica.",
+  "weekdays": {
+    "sunday": "Domingo",
+    "monday": "Lunes",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles",
+    "thursday": "Jueves",
+    "friday": "Viernes",
+    "saturday": "Sábado"
+  }
 } 
