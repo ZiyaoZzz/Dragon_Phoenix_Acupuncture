@@ -40,7 +40,7 @@ export const PhysiciansPage: React.FC = () => {
       <Header />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-4 py-4 sm:py-6 md:py-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">Our Physicians</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">{}</h1>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           <div className="lg:col-span-1">
             <div className="lg:sticky lg:top-8">

@@ -5,7 +5,6 @@ import whoImg from '../../asserts/Xiu_Feng_Searcy.jpg';
 
 export const HomepageBanner: React.FC = () => {
   const { t, i18n } = useTranslation('homepageBanner');
-  const [weekdayDisplay, setWeekdayDisplay] = useState('');
   const [timezone, setTimezone] = useState('');
 
   useEffect(() => {
@@ -26,18 +25,6 @@ export const HomepageBanner: React.FC = () => {
 
   const dateConstraints = getDateConstraints();
 
-  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedDate = event.target.value;
-    if (selectedDate) {
-      const date = new Date(selectedDate);
-      const dayIndex = date.getDay();
-      const weekdayKeys = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-      const weekday = t(`weekdays.${weekdayKeys[dayIndex]}`);
-      setWeekdayDisplay(weekday);
-    } else {
-      setWeekdayDisplay('');
-    }
-  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const form = event.target as HTMLFormElement;
@@ -113,13 +100,7 @@ export const HomepageBanner: React.FC = () => {
                   min={dateConstraints.min}
                   max={dateConstraints.max}
                   className="border border-gray-300 rounded px-3 py-2.5 text-sm sm:text-base" 
-                  onChange={handleDateChange}
                 />
-                {weekdayDisplay && (
-                  <span className="text-gray-600 text-xs sm:text-sm mt-1">
-                    {weekdayDisplay}
-                  </span>
-                )}
                 <span id="date-warning" className="text-red-600 text-xs sm:text-sm mt-1 hidden" />
               </div>
               <div className="flex flex-col">

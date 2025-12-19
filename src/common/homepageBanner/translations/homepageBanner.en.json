@@ -20,14 +20,5 @@
   "anyTime": "Any time",
   "additionalInfo": "Additional Information",
   "submit": "Submit Appointment Request",
-  "formNote": "* All fields are required. Your information will be sent securely to our clinic.",
-  "weekdays": {
-    "sunday": "Sunday",
-    "monday": "Monday",
-    "tuesday": "Tuesday",
-    "wednesday": "Wednesday",
-    "thursday": "Thursday",
-    "friday": "Friday",
-    "saturday": "Saturday"
-  }
+  "formNote": "* All fields are required. Your information will be sent securely to our clinic."
 } 
