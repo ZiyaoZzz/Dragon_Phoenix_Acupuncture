@@ -35,8 +35,8 @@ export const HomePage: React.FC = () => {
   return (
   <div className="min-h-screen flex flex-col overflow-x-hidden">
     <Header />
-    <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[620px] overflow-hidden mb-4 md:mb-8">
-      <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-full object-cover" loading="eager" />
+    <div className="w-full h-auto overflow-hidden -mt-1">
+      <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-auto object-contain" loading="eager" style={{ transform: 'scaleY(0.8)', transformOrigin: 'top center' }} />
     </div>
    <HomepageBanner />
     <section className="bg-white max-w-[1400px] mx-auto px-4 sm:px-5 pb-8 md:pb-14">

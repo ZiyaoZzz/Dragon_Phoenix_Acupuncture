@@ -1,9 +1,30 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { readFileSync, writeFileSync } from 'fs'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // https://vite.dev/config/
 export default defineConfig(() => ({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'copy-404',
+      closeBundle() {
+        const indexPath = join(__dirname, 'dist', 'index.html')
+        const notFoundPath = join(__dirname, 'dist', '404.html')
+        try {
+          const indexContent = readFileSync(indexPath, 'utf-8')
+          writeFileSync(notFoundPath, indexContent)
+        } catch (error) {
+          console.warn('Failed to copy index.html to 404.html:', error)
+        }
+      }
+    }
+  ],
   base: '/',
   build: {
     outDir: 'dist',
