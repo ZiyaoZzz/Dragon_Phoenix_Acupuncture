@@ -60,12 +60,12 @@
     "dr-zhou": {
       "name": "Dr. Wei Zhou, LAc",
       "title": "Acupunturista",
-      "description": "Especializado en medicina tradicional china con amplia experiencia en acupuntura y herbolaria durante más de 45 años.",
-      "summary": "El Dr. Zhou ha estado recibiendo educación profesional formal en MTC en la universidad de MTC de China desde 1978. Ha practicado Medicina Tradicional China en instituciones médicas chinas durante más de 40 años. Tiene un título profesional senior y es miembro de la Asociación China de Medicina China.",
+      "description": "El Dr. Zhou posee un Doctorado en Medicina Tradicional China y es acupunturista licenciado especializado en medicina tradicional china con amplia experiencia en acupuntura y herbolaria durante más de 45 años. Su formación doctoral fortalece su capacidad para analizar condiciones de salud complejas y diseñar planes de tratamiento adaptados a cada paciente.",
+      "summary": "El Dr. Zhou posee un Doctorado en Medicina Tradicional China y ha estado recibiendo educación profesional formal en MTC en la universidad de MTC de China desde 1978. Ha practicado Medicina Tradicional China en instituciones médicas chinas durante más de 40 años. Su formación doctoral enfatiza la práctica basada en evidencia y planes de tratamiento individualizados para condiciones crónicas y complejas. Tiene un título profesional senior y es miembro de la Asociación China de Medicina China.",
       "credentials": [
+        "Doctorado, Acupunturista Licenciado",
         "A.P. (Florida), Diploma de Acupuntura (NCCAOM), M.D. (China)",
-        "Maestría en Medicina Oriental - FCIM (USA)",
-        "Candidato a Doctorado en Medicina Oriental - ATOM (USA)"
+        "Maestría en Medicina Oriental - FCIM (USA)"
       ],
       "specialties": ["Fórmulas de Hierbas MTC", "Acupuntura", "Ventosas", "Tuina", "Gua Sha", "Reflexología"],
       "specialtiesDescription": "Se especializa en el tratamiento de varias enfermedades clínicas comunes y difíciles usando técnicas de medicina tradicional china.",
@@ -73,9 +73,9 @@
         {
           "title": "Educación y Credenciales",
           "details": [
+            "Doctorado en Medicina Tradicional China",
             "Doctor en Medicina (M.D.) - China",
             "Maestría en Medicina Oriental - FCIM, EE.UU.",
-            "Estudios doctorales en Medicina Oriental - ATOM, EE.UU. (En curso)",
             "Diploma de Acupuntura NCCAOM",
             "Acupunturista Licenciado en Florida (A.P.)"
           ]

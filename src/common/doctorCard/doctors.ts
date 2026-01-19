@@ -94,25 +94,25 @@ export const doctors: DoctorData[] = [
     img: Physician_Wei_ZhouImg,
     href: '/physicians#dr-zhou',
     credentials: [
+      'PhD, Licensed Acupuncturist',
       'A.P. (Florida), Diploma of Acupuncture (NCCAOM), M.D. (China)',
       "Master's Degree in Oriental Medicine - FCIM (USA)",
-      'Doctoral Candidate in Oriental Medicine - ATOM (USA)',
     ],
     description:
-    'Specialized in traditional Chinese medicine with extensive acupuncture and herbal experience over 45 years.',
+    'Dr. Zhou holds a PhD in Traditional Chinese Medicine and is a licensed acupuncturist specialized in traditional Chinese medicine with extensive acupuncture and herbal experience over 45 years.',
     education: [
       {
         title: "Education & Credentials",
         details: [
+          "PhD in Traditional Chinese Medicine",
           "Medical Doctor (M.D.) - China",
           "Master's in Oriental Medicine - FCIM, USA",
-          "Doctoral Studies in Oriental Medicine - ATOM, USA (In Progress)",
           'NCCAOM Diploma of Acupuncture',
           'Florida Licensed Acupuncture Physician (A.P.)',
         ],
       },
     ],
-    summary: "Dr. Zhou has been receiving formal TCM professional education in China university of TCM since 1978. He has practiced Traditional Chinese Medicine in Chinese medical institutions for more than 40+ years. He has a senior professional title and is a member of the Chinese Association of Chinese Medicine.",
+    summary: "Dr. Zhou holds a PhD in Traditional Chinese Medicine and has been receiving formal TCM professional education in China university of TCM since 1978. He has practiced Traditional Chinese Medicine in Chinese medical institutions for more than 40+ years. He has a senior professional title and is a member of the Chinese Association of Chinese Medicine.",
     specialties: ['TCM Herbs Formula', 'Acupuncture', 'Cupping', 'Tuina', 'Gua Sha', 'Reflexology'],
     specialtiesDescription: 'Specializes in treating various common and difficult clinical diseases using traditional Chinese medicine techniques.',
     memberships: [
