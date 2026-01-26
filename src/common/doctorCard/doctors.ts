@@ -96,7 +96,8 @@ export const doctors: DoctorData[] = [
     credentials: [
       'PhD, Licensed Acupuncturist',
       'A.P. (Florida), Diploma of Acupuncture (NCCAOM), M.D. (China)',
-      "Master's Degree in Oriental Medicine - FCIM (USA)",
+      "Master's Degree in Oriental Medicine - FCIM (USA-2021)",
+      "Doctoral's Degree in Acupuncture and Oriental Medicine - ATOM (USA-2025)",
     ],
     description:
     'Dr. Zhou holds a PhD in Traditional Chinese Medicine and is a licensed acupuncturist specialized in traditional Chinese medicine with extensive acupuncture and herbal experience over 45 years.',
