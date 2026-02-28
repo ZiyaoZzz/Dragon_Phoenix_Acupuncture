@@ -41,17 +41,19 @@ const loginLimiter = rateLimit({
 });
 
 function setAuthCookie(res, token) {
+  const sameSite = COOKIE_SECURE ? 'none' : 'lax';
   res.cookie(COOKIE_NAME, token, {
     httpOnly: true,
     secure: COOKIE_SECURE,
-    sameSite: 'lax',
+    sameSite,
     maxAge: 24 * 60 * 60 * 1000,
     path: '/',
   });
 }
 
 function clearAuthCookie(res) {
-  res.clearCookie(COOKIE_NAME, { path: '/', httpOnly: true, secure: COOKIE_SECURE, sameSite: 'lax' });
+  const sameSite = COOKIE_SECURE ? 'none' : 'lax';
+  res.clearCookie(COOKIE_NAME, { path: '/', httpOnly: true, secure: COOKIE_SECURE, sameSite });
 }
 
 app.post('/api/auth/login', loginLimiter, async (req, res) => {
