@@ -1,100 +1,62 @@
-# Dragon Phoenix Acupuncture Website
+Dragon Phoenix Acupuncture
 
-A modern React-based website for Dragon Phoenix Acupuncture clinic in Kissimmee, FL.
+Modern multilingual website for a Traditional Chinese Medicine clinic in Kissimmee, Florida (20+ years in practice).
 
-## Features
+This project modernizes a legacy static website into a scalable, full-stack web application with a decoupled frontend–backend architecture.
 
-- 🌐 Multi-language support (English, Spanish, Chinese)
-- 📱 Responsive design
-- 🎨 Modern UI with Tailwind CSS
-- ⚡ Fast loading with Vite
-- 🚀 Deployed on GitHub Pages
+🌿 Overview
 
-## Development
+- Responsive, mobile-first design  
+- Multilingual support (English / Chinese / Spanish)  
+- Admin-protected art gallery management (50+ items)  
+- SEO and AI crawler optimized  
+- Production-ready deployment structure  
 
-### Prerequisites
+🧩 Tech Stack
 
-- Node.js 18 or higher
-- npm or yarn
+Frontend
 
-### Installation
+- React + TypeScript  
+- Tailwind CSS  
+- i18next  
+- Vite  
 
-```bash
-npm install
-```
+Backend
 
-### Development Server
+- Node.js + Express  
+- JWT-based authentication  
+- HTTP-only cookies  
+- CORS-controlled API  
 
-```bash
-npm run dev
-```
+Deployment
 
-### Build for Production
+- Frontend: GitHub Pages  
+- Backend: Render  
+- Custom domain with subdomain API routing  
 
-```bash
-npm run build
-```
+🏗 Architecture
 
-### Preview Production Build
+Frontend (SPA) and backend are deployed separately:
 
-```bash
-npm run preview
-```
+- `dragonphoenixacupuncture.com` → Static frontend  
+- `api.dragonphoenixacupuncture.com` → Node backend (Render)  
 
-## Deployment to GitHub Pages
+🔎 SEO & Search
 
-### Automatic Deployment
+- `sitemap.xml`  
+- `robots.txt` (AI crawler policies included)  
+- `llms.txt` for model attribution guidelines  
+- Integrated with Google Search Console  
 
-The website is automatically deployed to GitHub Pages when you push to the `main` or `master` branch. The deployment is handled by GitHub Actions.
+🚀 Project Goals
 
-### Manual Deployment
+- Modernize a legacy website  
+- Improve accessibility across languages  
+- Establish a scalable technical foundation  
+- Demonstrate full-stack production deployment  
 
-If you need to deploy manually:
+👩‍💻 Author
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Deploy to GitHub Pages:
-   ```bash
-   npm run deploy
-   ```
-
-### GitHub Pages Configuration
-
-1. Go to your repository settings
-2. Navigate to "Pages" section
-3. Set source to "GitHub Actions"
-4. The site will be available at: `https://yourusername.github.io/Dragon_Phoenix_Acupuncture/`
-
-## Project Structure
-
-```
-├── src/
-│   ├── common/          # Reusable components
-│   ├── pages/           # Page components
-│   ├── i18n/           # Internationalization
-│   └── main.tsx        # App entry point
-├── public/             # Static assets
-├── dist/              # Build output
-└── backup-static-version/ # Backup of original static site
-```
-
-## Technologies Used
-
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS
-- React Router
-- i18next (Internationalization)
-- React i18next
-
-## Backup
-
-The original static HTML version has been backed up in the `backup-static-version/` directory.
-
-## License
-
-This project is private and proprietary to Dragon Phoenix Acupuncture.
+Ziyao (Zoey) Zhou  
+UC San Diego  
+Software Engineering \| Cognitive Science with a Specialization in Machine Learning and Neural Computation
