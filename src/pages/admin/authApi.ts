@@ -25,6 +25,18 @@ export function clearToken() {
   }
 }
 
+export interface AdminAppointment {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  newClient: boolean;
+  appointmentDate: string;
+  appointmentTime: string;
+  additionalInfo?: string;
+  createdAt: string;
+}
+
 async function request<T>(
   path: string,
   options: RequestInit & { method?: string } = {}
@@ -70,4 +82,8 @@ export async function checkAuth() {
 export async function logout() {
   clearToken();
   return request<{ success?: boolean }>('/api/auth/logout', { method: 'POST' });
+}
+
+export async function fetchAppointments() {
+  return request<{ items: AdminAppointment[] }>('/api/admin/appointments');
 }

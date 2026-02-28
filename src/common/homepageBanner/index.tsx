@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import whoImg from '../../asserts/Xiu_Feng_Searcy.jpg';
 
+const API_BASE = import.meta.env.VITE_API_URL ?? '';
+
 export const HomepageBanner: React.FC = () => {
   const { t, i18n } = useTranslation('homepageBanner');
   const [timezone, setTimezone] = useState('');
@@ -35,6 +37,30 @@ export const HomepageBanner: React.FC = () => {
       const locale = i18n.language === 'zh' ? 'zh-CN' : i18n.language === 'es' ? 'es-ES' : 'en-US';
       const timezoneInfo = `${now.toLocaleString(locale, { timeZone: timezone })} (${timezone})`;
       clientTimeInput.value = timezoneInfo;
+    }
+
+    // Fire-and-forget API call to record appointment for admin dashboard
+    try {
+      const formData = new FormData(form);
+      const payload = {
+        name: String(formData.get('name') ?? ''),
+        email: String(formData.get('email') ?? ''),
+        phone: String(formData.get('phone') ?? ''),
+        newClient: String(formData.get('new-client') ?? '') === 'Yes',
+        appointmentDate: String(formData.get('appointment-date') ?? ''),
+        appointmentTime: String(formData.get('appointment-time') ?? ''),
+        additionalInfo: String(formData.get('additional-info') ?? ''),
+      };
+
+      if (API_BASE) {
+        void fetch(`${API_BASE}/api/appointments`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      }
+    } catch {
+      // ignore tracking errors; keep Formspree submission working
     }
   };
 

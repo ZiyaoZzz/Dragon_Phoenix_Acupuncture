@@ -88,6 +88,62 @@ app.post('/api/auth/logout', (_req, res) => {
   return res.status(200).json({ success: true });
 });
 
+// In-memory appointment storage (resets when server restarts)
+const appointments = [];
+
+app.post('/api/appointments', async (req, res) => {
+  const {
+    name,
+    email,
+    phone,
+    newClient,
+    appointmentDate,
+    appointmentTime,
+    additionalInfo,
+  } = req.body ?? {};
+
+  if (!name || !email || !phone || !appointmentDate || !appointmentTime) {
+    return res.status(400).json({ error: 'Missing required fields.' });
+  }
+
+  const createdAt = new Date().toISOString();
+  const item = {
+    id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    name,
+    email,
+    phone,
+    newClient: Boolean(newClient),
+    appointmentDate,
+    appointmentTime,
+    additionalInfo: additionalInfo || '',
+    createdAt,
+  };
+
+  appointments.unshift(item);
+  return res.status(201).json({ success: true });
+});
+
+function requireAdmin(req, res, next) {
+  const authHeader = req.headers.authorization || '';
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
+  if (!token) {
+    return res.status(401).json({ error: 'Not authenticated' });
+  }
+  try {
+    const payload = jwt.verify(token, JWT_SECRET);
+    if (payload.sub !== ADMIN_USER_ID) {
+      return res.status(401).json({ error: 'Not authenticated' });
+    }
+    next();
+  } catch {
+    return res.status(401).json({ error: 'Not authenticated' });
+  }
+}
+
+app.get('/api/admin/appointments', requireAdmin, (_req, res) => {
+  return res.status(200).json({ items: appointments });
+});
+
 app.listen(PORT, () => {
   console.log(`Auth server running at http://localhost:${PORT}`);
 });
