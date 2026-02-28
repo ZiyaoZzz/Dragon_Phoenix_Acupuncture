@@ -1,13 +1,46 @@
 const API_BASE = import.meta.env.VITE_API_URL ?? '';
+const TOKEN_KEY = 'adminToken';
+
+function getToken(): string | null {
+  try {
+    return window.localStorage.getItem(TOKEN_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function setToken(token: string) {
+  try {
+    window.localStorage.setItem(TOKEN_KEY, token);
+  } catch {
+    // ignore storage errors
+  }
+}
+
+export function clearToken() {
+  try {
+    window.localStorage.removeItem(TOKEN_KEY);
+  } catch {
+    // ignore storage errors
+  }
+}
 
 async function request<T>(
   path: string,
   options: RequestInit & { method?: string } = {}
 ): Promise<{ data?: T; status: number; error?: string }> {
+  const headers: HeadersInit = {
+    'Content-Type': 'application/json',
+    ...options.headers,
+  };
+  const token = getToken();
+  if (token) {
+    (headers as Record<string, string>).Authorization = `Bearer ${token}`;
+  }
+
   const res = await fetch(`${API_BASE}${path}`, {
     ...options,
-    credentials: 'include',
-    headers: { 'Content-Type': 'application/json', ...options.headers },
+    headers,
   });
   let data: unknown;
   try {
@@ -20,10 +53,14 @@ async function request<T>(
 }
 
 export async function login(userId: string, password: string) {
-  return request<{ success?: boolean }>('/api/auth/login', {
+  const result = await request<{ success?: boolean; token?: string }>('/api/auth/login', {
     method: 'POST',
     body: JSON.stringify({ userId, password }),
   });
+  if (result.status === 200 && result.data?.token) {
+    setToken(result.data.token);
+  }
+  return result;
 }
 
 export async function checkAuth() {
@@ -31,5 +68,6 @@ export async function checkAuth() {
 }
 
 export async function logout() {
+  clearToken();
   return request<{ success?: boolean }>('/api/auth/logout', { method: 'POST' });
 }

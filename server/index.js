@@ -1,7 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
@@ -12,17 +11,14 @@ const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:5173';
 const ADMIN_USER_ID = (process.env.ADMIN_USER_ID || '').trim();
 const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '';
 const JWT_SECRET = process.env.JWT_SECRET || '';
-const COOKIE_SECURE = process.env.COOKIE_SECURE === 'true';
-const COOKIE_NAME = 'auth';
 
 if (!ADMIN_USER_ID || !ADMIN_PASSWORD_HASH || !JWT_SECRET) {
   console.error('Missing required env: ADMIN_USER_ID, ADMIN_PASSWORD_HASH, JWT_SECRET. See .env.example');
   process.exit(1);
 }
 
-app.use(cors({ origin: CORS_ORIGIN, credentials: true }));
+app.use(cors({ origin: CORS_ORIGIN }));
 app.use(express.json());
-app.use(cookieParser());
 
 app.get('/', (_req, res) => {
   return res.status(200).type('text').send('OK');
@@ -39,22 +35,6 @@ const loginLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
 });
-
-function setAuthCookie(res, token) {
-  const sameSite = COOKIE_SECURE ? 'none' : 'lax';
-  res.cookie(COOKIE_NAME, token, {
-    httpOnly: true,
-    secure: COOKIE_SECURE,
-    sameSite,
-    maxAge: 24 * 60 * 60 * 1000,
-    path: '/',
-  });
-}
-
-function clearAuthCookie(res) {
-  const sameSite = COOKIE_SECURE ? 'none' : 'lax';
-  res.clearCookie(COOKIE_NAME, { path: '/', httpOnly: true, secure: COOKIE_SECURE, sameSite });
-}
 
 app.post('/api/auth/login', loginLimiter, async (req, res) => {
   const userId = (req.body?.userId ?? '').trim();
@@ -86,12 +66,12 @@ app.post('/api/auth/login', loginLimiter, async (req, res) => {
     JWT_SECRET,
     { expiresIn: '24h' }
   );
-  setAuthCookie(res, token);
-  return res.status(200).json({ success: true });
+  return res.status(200).json({ success: true, token });
 });
 
 app.get('/api/auth/check', (req, res) => {
-  const token = req.cookies?.[COOKIE_NAME];
+  const authHeader = req.headers.authorization || '';
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
   if (!token) {
     return res.status(401).json({ error: 'Not authenticated' });
   }
@@ -100,13 +80,11 @@ app.get('/api/auth/check', (req, res) => {
     if (payload.sub !== ADMIN_USER_ID) return res.status(401).json({ error: 'Not authenticated' });
     return res.status(200).json({ user: payload.sub });
   } catch (_) {
-    clearAuthCookie(res);
     return res.status(401).json({ error: 'Not authenticated' });
   }
 });
 
 app.post('/api/auth/logout', (_req, res) => {
-  clearAuthCookie(res);
   return res.status(200).json({ success: true });
 });
 
