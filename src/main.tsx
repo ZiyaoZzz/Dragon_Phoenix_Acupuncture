@@ -8,6 +8,8 @@ import { GalleryPage } from './pages/GalleryPage'
 import { ContactPage } from './pages/ContactPage'
 import { BrochuresPage } from './pages/BrochuresPage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { AdminLoginPage } from './pages/admin/AdminLoginPage'
+import { AdminDashboard } from './pages/admin/AdminDashboard'
 import './i18n/index'
 import './index.css'
 
@@ -22,6 +24,8 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/brochures" element={<BrochuresPage />} />
       <Route path="/gallery" element={<GalleryPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin/login" element={<AdminLoginPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   </Router>
