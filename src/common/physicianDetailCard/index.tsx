@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import type { DoctorData } from '../doctorCard/doctors';
+import { doctorPortraitObjectStyle, type DoctorData } from '../doctorCard/doctors';
 
 interface PhysicianDetailCardProps {
   doctor: DoctorData;
@@ -144,6 +144,7 @@ export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor
               src={doctor.img}
               alt={doctor.name}
               className="w-32 h-32 rounded-xl object-cover shadow-md border border-gray-100"
+              style={doctorPortraitObjectStyle(doctor)}
             />
             <div className="absolute -bottom-2 -right-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold border border-green-200">
               LAc

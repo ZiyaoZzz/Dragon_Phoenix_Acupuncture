@@ -31,7 +31,15 @@ export interface DoctorData {
   specialtiesDescription?: string;
   memberships?: string[];
   credentials?: string[];
+  imageObjectPosition?: string;
   [key: string]: unknown;
+}
+
+export function doctorPortraitObjectStyle(
+  doctor: Pick<DoctorData, 'imageObjectPosition'> | undefined
+): { objectPosition: string } | undefined {
+  const pos = doctor?.imageObjectPosition;
+  return pos ? { objectPosition: pos } : undefined;
 }
 
 export const doctors: DoctorData[] = [
@@ -92,6 +100,7 @@ export const doctors: DoctorData[] = [
     title: 'Acupuncturist',
     subtitle: 'Acupuncturist',
     img: Physician_Wei_ZhouImg,
+    imageObjectPosition: 'center 38%',
     href: '/physicians#dr-zhou',
     credentials: [
       'PhD, Licensed Acupuncturist',

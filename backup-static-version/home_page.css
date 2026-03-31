@@ -325,6 +325,10 @@
     transition: transform 0.5s ease;
 }
 
+.member-image.member-image--zhou img {
+    object-position: center 14%;
+}
+
 .team-member:hover .member-image img {
     transform: scale(1.05);
 }

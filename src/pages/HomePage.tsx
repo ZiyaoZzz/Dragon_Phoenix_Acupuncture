@@ -19,6 +19,7 @@ import { useTranslation } from 'react-i18next';
 import { HomepageBanner } from '../common/homepageBanner';
 import { HistorySection } from '../common/historySection';
 import { HoursSection } from '../common/hoursSection';
+import { doctors, doctorPortraitObjectStyle } from '../common/doctorCard/doctors';
 
 export const HomePage: React.FC = () => {
   const { t } = useTranslation();
@@ -62,7 +63,13 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#f0f9f1] rounded-lg overflow-hidden shadow w-full max-w-md">
           <Link to="/physicians">
             <div className="h-64 sm:h-72 overflow-hidden">
-              <img src={Physician_Wei_ZhouImg} alt={t('doctorCard:doctors.dr-zhou.name')} className="w-full h-full object-cover" loading="lazy" />
+              <img
+                src={Physician_Wei_ZhouImg}
+                alt={t('doctorCard:doctors.dr-zhou.name')}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                style={doctorPortraitObjectStyle(doctors.find((d) => d.id === 'dr-zhou'))}
+              />
             </div>
           </Link>
           <div className="p-4 sm:p-6">
