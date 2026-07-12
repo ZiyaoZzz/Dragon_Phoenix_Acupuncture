@@ -7,8 +7,8 @@ import weiImg from '../assets/Physician_Wei_Zhou.jpeg';
 import reviewImg from '../assets/google_review.jpg';
 import { usePageSeo } from '../common/seo/usePageSeo';
 
-export const ContactPage: React.FC = () => {
-  usePageSeo('contact', '/contact');
+export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) => {
+  usePageSeo('contact', localePath ?? '/contact');
   const { t } = useTranslation('contact');
 
   const subjectRef = useRef<HTMLInputElement | null>(null);

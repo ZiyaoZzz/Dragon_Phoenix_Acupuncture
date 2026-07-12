@@ -22,9 +22,9 @@ import { HoursSection } from '../common/hoursSection';
 import { doctors, doctorPortraitObjectStyle } from '../common/doctorCard/doctors';
 import { usePageSeo } from '../common/seo/usePageSeo';
 
-export const HomePage: React.FC = () => {
+export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
   const { t } = useTranslation();
-  usePageSeo('home', '/');
+  usePageSeo('home', localePath ?? '/');
   const serviceItems = [
     { key: 'traditional', img: s1 },
     { key: 'scalpEar', img: s2 },

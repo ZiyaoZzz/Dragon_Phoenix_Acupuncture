@@ -29,6 +29,8 @@ const BASE_URL = `http://localhost:${PORT}`;
 
 const ROUTES = [
   '/',
+  '/es',
+  '/zh',
   '/physicians',
   '/faqs',
   '/conditions',
@@ -45,6 +47,8 @@ const ROUTES = [
   '/brochures/menopause',
   '/gallery',
   '/contact',
+  '/es/contact',
+  '/zh/contact',
   '/admin',
   '/admin/login',
 ];
