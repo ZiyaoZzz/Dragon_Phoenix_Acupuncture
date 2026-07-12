@@ -45,7 +45,7 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
     <section className="bg-white max-w-[1400px] mx-auto px-4 sm:px-5 pb-8 md:pb-14">
       <div className="text-center mb-6 md:mb-10">
         <h2 className="text-2xl sm:text-3xl text-[#395c3b] mb-2 md:mb-3">{t('doctorCard:ourTeam')}</h2>
-        <p className="text-sm sm:text-base text-gray-600">{t('doctorCard:meetOurTeam')}</p>
+        <p className="text-base sm:text-lg text-gray-600">{t('doctorCard:meetOurTeam')}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 justify-items-center">
         <div className="bg-[#f0f9f1] rounded-lg overflow-hidden shadow w-full max-w-md">
@@ -56,9 +56,9 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
           </Link>
           <div className="p-4 sm:p-6">
             <h3 className="text-[#395c3b] text-lg sm:text-xl mb-1">{t('doctorCard:doctors.dr-xiu.name')}</h3>
-            <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-sm sm:text-base">{t('doctorCard:doctors.dr-xiu.title')}</p>
-            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{t('doctorCard:doctors.dr-xiu.description')}</p>
-            <Link to="/physicians" className="text-[#395c3b] font-bold text-sm sm:text-base">{t('doctorCard:viewProfile')}</Link>
+            <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-base sm:text-lg">{t('doctorCard:doctors.dr-xiu.title')}</p>
+            <p className="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">{t('doctorCard:doctors.dr-xiu.description')}</p>
+            <Link to="/physicians" className="text-[#395c3b] font-bold text-base sm:text-lg">{t('doctorCard:viewProfile')}</Link>
           </div>
         </div>
         
@@ -76,9 +76,9 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
           </Link>
           <div className="p-4 sm:p-6">
             <h3 className="text-[#395c3b] text-lg sm:text-xl mb-1">{t('doctorCard:doctors.dr-zhou.name')}</h3>
-            <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-sm sm:text-base">{t('doctorCard:doctors.dr-zhou.title')}</p>
-            <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{t('doctorCard:doctors.dr-zhou.description')}</p>
-            <Link to="/physicians" className="text-[#395c3b] font-bold text-sm sm:text-base">{t('doctorCard:viewProfile')}</Link>
+            <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-base sm:text-lg">{t('doctorCard:doctors.dr-zhou.title')}</p>
+            <p className="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">{t('doctorCard:doctors.dr-zhou.description')}</p>
+            <Link to="/physicians" className="text-[#395c3b] font-bold text-base sm:text-lg">{t('doctorCard:viewProfile')}</Link>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
     <section className="bg-[#f1f9f0] px-4 sm:px-5 py-8 md:py-14">
       <div className="text-center max-w-3xl mx-auto">
         <h2 className="text-2xl sm:text-3xl text-[#395c3b] mb-2 md:mb-3">{t('services:title')}</h2>
-        <p className="text-sm sm:text-base text-gray-600">{t('services:intro')}</p>
+        <p className="text-base sm:text-lg text-gray-600">{t('services:intro')}</p>
       </div>
       <div className="mt-6 md:mt-10 max-w-[1200px] mx-auto flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
         {serviceItems.map((s) => (

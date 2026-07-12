@@ -13,7 +13,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ imageSrc, title, descr
         <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
       </div>
       <h3 className="text-[#395c3b] mt-4 mb-2 px-4 text-lg">{title}</h3>
-      <p className="text-gray-600 px-4 pb-5">{description}</p>
+      <p className="text-gray-600 px-4 pb-5 text-base sm:text-lg">{description}</p>
     </div>
   );
 }; 

@@ -89,7 +89,7 @@ export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) =
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-gray-900">{t('info.phoneLabel')}</h3>
-                  <p>{t('info.phone')}</p>
+                  <p><a href="tel:+14079324818" className="hover:text-brand-primary">{t('info.phone')}</a></p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-gray-900">{t('info.faxLabel')}</h3>
@@ -130,14 +130,14 @@ export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) =
                     <img src={xiuImg} alt="Xiu Feng Searcy" className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg object-cover flex-shrink-0" loading="lazy" />
                     <div>
                       <h3 className="font-semibold text-base sm:text-lg text-gray-900">{t('practitioners.xiu.name')}</h3>
-                      <p className="text-gray-600 text-sm sm:text-base">{t('practitioners.phone')}</p>
+                      <p className="text-gray-600 text-sm sm:text-base"><a href="tel:+14079324818" className="hover:text-brand-primary">{t('practitioners.phone')}</a></p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 sm:gap-6">
                     <img src={weiImg} alt="Wei Zhou" className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg object-cover flex-shrink-0" loading="lazy" />
                     <div>
                       <h3 className="font-semibold text-base sm:text-lg text-gray-900">{t('practitioners.wei.name')}</h3>
-                      <p className="text-gray-600 text-sm sm:text-base">{t('practitioners.phone')}</p>
+                      <p className="text-gray-600 text-sm sm:text-base"><a href="tel:+14079324818" className="hover:text-brand-primary">{t('practitioners.phone')}</a></p>
                     </div>
                   </div>
                 </div>
