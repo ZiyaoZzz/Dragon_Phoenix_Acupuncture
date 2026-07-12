@@ -69,9 +69,15 @@ function waitForServer(url, timeoutMs = 20000) {
 }
 
 async function main() {
+  // Spawn the local `vite` binary directly rather than through `npx`: npx forks
+  // its own child to run vite, so killing the npx wrapper in cleanup() below
+  // left the real preview server (npx's grandchild) running and holding the
+  // port/stdio open — the script's own work finished but the process tree
+  // never exited, hanging the CI job indefinitely. node_modules/.bin is
+  // already on PATH here because this runs as an npm postbuild lifecycle script.
   const previewProcess = spawn(
-    'npx',
-    ['vite', 'preview', '--port', String(PORT), '--strictPort'],
+    'vite',
+    ['preview', '--port', String(PORT), '--strictPort'],
     { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] }
   );
   let serverLog = '';
@@ -109,7 +115,9 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error('Prerender failed:', err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error('Prerender failed:', err);
+    process.exit(1);
+  });
