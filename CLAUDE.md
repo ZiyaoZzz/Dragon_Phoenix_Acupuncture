@@ -34,8 +34,11 @@ backend alongside the frontend when testing the contact form or admin dashboard 
 ### Frontend/backend split
 
 - Frontend is a static SPA built by Vite, deployed to GitHub Pages at `dragonphoenixacupuncture.com`
-  (`.github/workflows/deploy.yml`: on push to `main`, builds with `VITE_API_URL` injected from a
-  repo secret, publishes `dist/` via `peaceiris/actions-gh-pages`).
+  (`.github/workflows/deploy.yml`: on push to `main`, `master`, or `react-version` — `react-version`
+  is the actual production branch in practice — builds with `VITE_API_URL` injected from a repo
+  secret, publishes `dist/` via the official `actions/upload-pages-artifact` +
+  `actions/deploy-pages`, with the repo's Pages "Source" set to "GitHub Actions" rather than the
+  older "Deploy from a branch" mode).
 - Backend (`server/`) is a standalone Express app, deployed separately (Render, per README) at
   `api.dragonphoenixacupuncture.com`. It only exists to gate the `/admin` dashboard behind a
   single hardcoded admin account and to accept appointment-request submissions.

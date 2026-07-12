@@ -42,17 +42,17 @@ jobs:
         VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
     - name: Setup Pages
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/react-version'
       uses: actions/configure-pages@v5
 
     - name: Upload Pages artifact
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/react-version'
       uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
 
   deploy:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/react-version'
     needs: build
     runs-on: ubuntu-latest
     environment:
