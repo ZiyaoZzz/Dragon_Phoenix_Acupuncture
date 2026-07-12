@@ -27,11 +27,70 @@ export const HomepageBanner: React.FC = () => {
 
   const dateConstraints = getDateConstraints();
 
+  const parseDateValue = (dateValue: string) => {
+    const [year, month, day] = dateValue.split('-').map(Number);
+    return new Date(year, month - 1, day);
+  };
+
+  const formatDateValue = (date: Date) =>
+    `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+
+  const isSunday = (dateValue: string) => {
+    if (!dateValue) return false;
+    return parseDateValue(dateValue).getDay() === 0;
+  };
+
+  // Native <input type="date"> has no way to grey out individual weekdays in its
+  // picker, so a Sunday can still be clicked there. Instead of silently blanking
+  // the field (which looks like the click did nothing), bump the selection forward
+  // to the next open day so the field always visibly lands on a bookable date.
+  const nextAvailableDate = (dateValue: string) => {
+    const next = parseDateValue(dateValue);
+    next.setDate(next.getDate() + 1);
+    return formatDateValue(next);
+  };
+
+  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target;
+    const warning = input.nextElementSibling as HTMLElement | null;
+
+    if (isSunday(input.value)) {
+      const adjusted = nextAvailableDate(input.value);
+      input.value = adjusted <= dateConstraints.max ? adjusted : '';
+      input.setCustomValidity('');
+      if (warning) {
+        warning.textContent = t('sundayWarning');
+        warning.classList.remove('hidden');
+      }
+    } else {
+      input.setCustomValidity('');
+      if (warning) {
+        warning.classList.add('hidden');
+      }
+    }
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const form = event.target as HTMLFormElement;
+    const dateInput = form.querySelector('#appointment-date') as HTMLInputElement;
+
+    // Fail-safe in case a Sunday reaches submit without the change handler
+    // catching it (e.g. a pasted value): bump it forward the same way, or
+    // block submission if there's no valid day left in the bookable window.
+    if (dateInput && isSunday(dateInput.value)) {
+      const adjusted = nextAvailableDate(dateInput.value);
+      if (adjusted <= dateConstraints.max) {
+        dateInput.value = adjusted;
+      } else {
+        event.preventDefault();
+        dateInput.setCustomValidity(t('sundayWarning'));
+        dateInput.reportValidity();
+        return;
+      }
+    }
+
     const clientTimeInput = form.querySelector('#clientTime') as HTMLInputElement;
-    
+
     if (clientTimeInput) {
       const now = new Date();
       const locale = i18n.language === 'zh' ? 'zh-CN' : i18n.language === 'es' ? 'es-ES' : 'en-US';
@@ -88,6 +147,9 @@ export const HomepageBanner: React.FC = () => {
 
         <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-3 md:mb-4">{t('formTitle')}</h2>
+          <p className="text-brand-primary font-medium mb-3 md:mb-4 text-sm sm:text-base">
+            {t('formConvenience')}
+          </p>
           <p className="text-gray-700 mb-4 md:mb-6 text-sm sm:text-base">
             {t('formLead')}
           </p>
@@ -125,7 +187,8 @@ export const HomepageBanner: React.FC = () => {
                   required 
                   min={dateConstraints.min}
                   max={dateConstraints.max}
-                  className="border border-gray-300 rounded px-3 py-2.5 text-sm sm:text-base" 
+                  onChange={handleDateChange}
+                  className="border border-gray-300 rounded px-3 py-2.5 text-sm sm:text-base"
                 />
                 <span id="date-warning" className="text-red-600 text-xs sm:text-sm mt-1 hidden" />
               </div>

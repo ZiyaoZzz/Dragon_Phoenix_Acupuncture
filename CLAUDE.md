@@ -127,15 +127,42 @@ on `/conditions` (from the same proven/probable condition lists rendered on the 
 structured data worth marking up.
 
 **Brochures are one route per topic**: `/brochures` (intro) and `/brochures/:topic` (`fertility`,
-`fibromyalgia`, `lower-back-pain`, `stop-smoking`, `weight-loss`) each render `BrochuresPage`, which
-reads the topic from `useParams()` and calls `usePageSeo` with a topic-specific key
-(`SEO_KEY_BY_TOPIC` map in `BrochuresPage.tsx`) and its own canonical path. The sidebar calls
-`navigate()` instead of just swapping local state, so each topic is a real, independently-crawlable,
-independently-titled URL — before this, only whichever tab was selected by default ever made it into
-the prerendered HTML, so the other four topics were invisible to search engines. If you add a 6th
-brochure topic: add it to `BrochureSectionId` (`src/common/brochures/types.ts`), `renderer.tsx`,
-the `items`/`SEO_KEY_BY_TOPIC` maps in `BrochuresPage.tsx`, a `seo.*.json` entry, the
-`scripts/prerender.mjs` `ROUTES` array, and `public/sitemap.xml`.
+`fibromyalgia`, `lower-back-pain`, `stop-smoking`, `weight-loss`, `migraine`, `joint-pain`,
+`insomnia`, `anxiety`, `menopause`) each render `BrochuresPage`, which reads the topic from
+`useParams()` and calls `usePageSeo` with a topic-specific key (`SEO_KEY_BY_TOPIC` map in
+`BrochuresPage.tsx`) and its own canonical path. The sidebar calls `navigate()` instead of just
+swapping local state, so each topic is a real, independently-crawlable, independently-titled URL —
+before this, only whichever tab was selected by default ever made it into the prerendered HTML, so
+the other topics were invisible to search engines. `BrochuresPage.tsx` also renders a prev/next
+pager below the article (real `<Link>`s, not just buttons, so they're crawlable too), computed from
+the same ordered `items` array the sidebar uses — first/last topic only render the side that exists.
+If you add another brochure topic: add it to `BrochureSectionId` (`src/common/brochures/types.ts`),
+a new section component + `renderer.tsx` case, the `items`/`SEO_KEY_BY_TOPIC` maps in
+`BrochuresPage.tsx` (position in `items` determines its place in the pager and sidebar), a
+`seo.*.json` entry (all 3 languages), the `scripts/prerender.mjs` `ROUTES` array, and
+`public/sitemap.xml`.
+
+The condition-specific topics (migraine, joint pain, insomnia, anxiety, menopause) were chosen by
+cross-referencing US prevalence data (CDC) against NIH/NCCIH/Cochrane-documented acupuncture
+evidence, and each cites real, named sources in a `sourceNote` paragraph at the end of its section.
+Keep citing real, checkable sources if you add more condition brochures, and state honestly where
+evidence is mixed (e.g. menopause: acupuncture beats no-treatment but not clearly sham acupuncture;
+anxiety: mechanism-based rather than disorder-specific evidence). The anxiety topic in particular is
+written to frame acupuncture as complementary to (not a replacement for) medical/mental-health care.
+
+The original 6 topics (intro, fertility, fibromyalgia, lower-back-pain, stop-smoking, weight-loss)
+used to mix real content with fabricated-sounding citations — specific named "Chinese researchers"
+and journals (e.g. "Qiu Wan-Xing, in Zhe Jiang Zhong Yi Za Zhi") with suspiciously precise cure
+rates, and an unsourced "90-95% quit smoking" claim that directly contradicts real evidence (Cochrane
+found no consistent long-term quitting effect from acupuncture). These have been rewritten to the
+same real-source standard as the newer topics — lower-back-pain in particular was restructured
+(ACP 2017 guideline + a 2025 Kaiser Permanente/NIH study replaced ~20 paragraphs of invented study
+data). If you're ever unsure whether a specific-sounding citation in this codebase is real, treat
+that as a signal to verify or replace it, not to copy the pattern.
+
+The sidebar wrapper (`BrochuresPage.tsx`) is just `sticky` with no `max-height`/`overflow` — an
+earlier version capped it at viewport height with an inner scrollbar, which clipped items once the
+topic list grew past ~6 entries. Keep it height-unconstrained if you add more topics.
 
 **Image weight**: `npm run optimize-images` (`scripts/optimize-images.mjs`, uses `sharp`) resizes
 anything in `src/assets/` wider than 1600px and re-compresses JPEG/PNG in place, same filename/
@@ -215,3 +242,14 @@ in `npm run dev` in at least English and one other language (missing keys fail s
   content, so all 5 topics are independently indexable; deleted unused `back.jpg`/`hand.jpg`; and
   added `npm run optimize-images` (`scripts/optimize-images.mjs`) which cut `src/assets/` from ~9.7MB
   to ~1.9MB by resizing/recompressing in place (ran once already; re-run after adding new photos).
+- Added 5 new brochure topics (migraine, osteoarthritis/joint pain, insomnia, anxiety, menopause),
+  chosen from CDC prevalence data cross-referenced with NIH/NCCIH/Cochrane acupuncture evidence —
+  see "Brochures are one route per topic" above for the sourcing/citation convention used.
+- Added a prev/next pager to `BrochuresPage.tsx` (real links, ordered by the `items` array) and
+  fixed the sidebar wrapper, which had a `max-height` + inner scrollbar that started clipping the
+  topic list once it grew past ~6 items — it's now just `sticky` with no height cap.
+- Rewrote the original 6 brochure topics' research/evidence claims to the same real-source standard
+  as the newer ones — removed fabricated-sounding named-researcher citations (mainly in
+  lower-back-pain, which was restructured around two real sources) and an unsourced "90-95% quit
+  smoking" claim in stop-smoking that contradicted actual Cochrane evidence; added real citations to
+  fertility, fibromyalgia, and weight-loss where claims previously had none.

@@ -1,7 +1,16 @@
 import React from 'react';
 import type { BrochureSectionId } from './types';
 import { IntroSection, FertilitySection, FibromyalgiaSection } from './sections';
-import { LowerBackPainSection, StopSmokingSection, WeightLossSection } from './additional-sections';
+import {
+  LowerBackPainSection,
+  StopSmokingSection,
+  WeightLossSection,
+  MigraineSection,
+  JointPainSection,
+  InsomniaSection,
+  AnxietySection,
+  MenopauseSection,
+} from './additional-sections';
 
 export const renderBrochureSection = (sectionId: BrochureSectionId): React.ReactElement => {
   switch (sectionId) {
@@ -17,6 +26,16 @@ export const renderBrochureSection = (sectionId: BrochureSectionId): React.React
       return <StopSmokingSection />;
     case 'weight-loss':
       return <WeightLossSection />;
+    case 'migraine':
+      return <MigraineSection />;
+    case 'joint-pain':
+      return <JointPainSection />;
+    case 'insomnia':
+      return <InsomniaSection />;
+    case 'anxiety':
+      return <AnxietySection />;
+    case 'menopause':
+      return <MenopauseSection />;
     default:
       return <IntroSection />;
   }

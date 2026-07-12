@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useMemo } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import { Sidebar } from '../common/sidebar';
@@ -18,7 +18,16 @@ const SEO_KEY_BY_TOPIC: Record<BrochureSectionId, string> = {
   'lower-back-pain': 'brochuresLowerBackPain',
   'stop-smoking': 'brochuresStopSmoking',
   'weight-loss': 'brochuresWeightLoss',
+  migraine: 'brochuresMigraine',
+  'joint-pain': 'brochuresJointPain',
+  insomnia: 'brochuresInsomnia',
+  anxiety: 'brochuresAnxiety',
+  menopause: 'brochuresMenopause',
 };
+
+function topicPath(id: string): string {
+  return id === 'intro' ? '/brochures' : `/brochures/${id}`;
+}
 
 export const BrochuresPage: React.FC = () => {
   const { t } = useTranslation('brochures');
@@ -32,17 +41,27 @@ export const BrochuresPage: React.FC = () => {
     { id: 'lower-back-pain', name: t('sidebar.items.lower-back-pain') },
     { id: 'stop-smoking', name: t('sidebar.items.stop-smoking') },
     { id: 'weight-loss', name: t('sidebar.items.weight-loss') },
+    { id: 'migraine', name: t('sidebar.items.migraine') },
+    { id: 'joint-pain', name: t('sidebar.items.joint-pain') },
+    { id: 'insomnia', name: t('sidebar.items.insomnia') },
+    { id: 'anxiety', name: t('sidebar.items.anxiety') },
+    { id: 'menopause', name: t('sidebar.items.menopause') },
   ], [t]);
 
-  const selected = items.find((i) => i.id === topic) ?? items[0];
+  const rawIndex = items.findIndex((i) => i.id === topic);
+  const selectedIndex = rawIndex === -1 ? 0 : rawIndex;
+  const selected = items[selectedIndex];
+  const prevItem = selectedIndex > 0 ? items[selectedIndex - 1] : null;
+  const nextItem = selectedIndex < items.length - 1 ? items[selectedIndex + 1] : null;
 
-  usePageSeo(
-    SEO_KEY_BY_TOPIC[selected.id as BrochureSectionId],
-    selected.id === 'intro' ? '/brochures' : `/brochures/${selected.id}`
-  );
+  usePageSeo(SEO_KEY_BY_TOPIC[selected.id as BrochureSectionId], topicPath(selected.id));
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [selected.id]);
 
   const handleSelect = (item: SidebarItem) => {
-    navigate(item.id === 'intro' ? '/brochures' : `/brochures/${item.id}`);
+    navigate(topicPath(item.id));
   };
 
   return (
@@ -54,7 +73,7 @@ export const BrochuresPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8">
             <div className="md:col-span-3">
-              <div className="md:sticky md:top-28 lg:top-32 max-h-[calc(100vh-8rem)] overflow-auto">
+              <div className="md:sticky md:top-28 lg:top-32">
                 <Sidebar
                   title={t('sidebar.title')}
                   items={items}
@@ -66,6 +85,33 @@ export const BrochuresPage: React.FC = () => {
 
             <div className="md:col-span-9 space-y-6 sm:space-y-8 md:space-y-10">
               {renderBrochureSection(selected.id as BrochureSectionId)}
+
+              <nav className="flex items-stretch justify-between gap-4 pt-4 border-t border-gray-300" aria-label={t('pager.label', { defaultValue: 'Brochure pagination' })}>
+                {prevItem ? (
+                  <Link
+                    to={topicPath(prevItem.id)}
+                    className="group flex-1 max-w-[48%] rounded-xl p-4 sm:p-5"
+                  >
+                    <span className="text-sm text-gray-500 flex items-center gap-1 group-hover:text-brand-primary transition-colors">
+                      <span aria-hidden="true" className="inline-block transition-transform group-hover:-translate-x-1">←</span>
+                      {t('pager.previous', { defaultValue: 'Previous' })}
+                    </span>
+                    <span className="block text-brand-primary font-semibold mt-1">{prevItem.name}</span>
+                  </Link>
+                ) : <span />}
+                {nextItem ? (
+                  <Link
+                    to={topicPath(nextItem.id)}
+                    className="group flex-1 max-w-[48%] rounded-xl p-4 sm:p-5 text-right"
+                  >
+                    <span className="text-sm text-gray-500 flex items-center justify-end gap-1 group-hover:text-brand-primary transition-colors">
+                      {t('pager.next', { defaultValue: 'Next' })}
+                      <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                    </span>
+                    <span className="block text-brand-primary font-semibold mt-1">{nextItem.name}</span>
+                  </Link>
+                ) : <span />}
+              </nav>
             </div>
           </div>
         </section>

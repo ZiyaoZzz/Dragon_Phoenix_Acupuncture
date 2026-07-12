@@ -102,6 +102,56 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dragonphoenixacupuncture.com/brochures/weight-loss"/>
   </url>
   <url>
+    <loc>https://dragonphoenixacupuncture.com/brochures/migraine</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dragonphoenixacupuncture.com/brochures/migraine"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dragonphoenixacupuncture.com/brochures/migraine"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dragonphoenixacupuncture.com/brochures/migraine"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dragonphoenixacupuncture.com/brochures/migraine"/>
+  </url>
+  <url>
+    <loc>https://dragonphoenixacupuncture.com/brochures/joint-pain</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dragonphoenixacupuncture.com/brochures/joint-pain"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dragonphoenixacupuncture.com/brochures/joint-pain"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dragonphoenixacupuncture.com/brochures/joint-pain"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dragonphoenixacupuncture.com/brochures/joint-pain"/>
+  </url>
+  <url>
+    <loc>https://dragonphoenixacupuncture.com/brochures/insomnia</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dragonphoenixacupuncture.com/brochures/insomnia"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dragonphoenixacupuncture.com/brochures/insomnia"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dragonphoenixacupuncture.com/brochures/insomnia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dragonphoenixacupuncture.com/brochures/insomnia"/>
+  </url>
+  <url>
+    <loc>https://dragonphoenixacupuncture.com/brochures/anxiety</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dragonphoenixacupuncture.com/brochures/anxiety"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dragonphoenixacupuncture.com/brochures/anxiety"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dragonphoenixacupuncture.com/brochures/anxiety"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dragonphoenixacupuncture.com/brochures/anxiety"/>
+  </url>
+  <url>
+    <loc>https://dragonphoenixacupuncture.com/brochures/menopause</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dragonphoenixacupuncture.com/brochures/menopause"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dragonphoenixacupuncture.com/brochures/menopause"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dragonphoenixacupuncture.com/brochures/menopause"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dragonphoenixacupuncture.com/brochures/menopause"/>
+  </url>
+  <url>
     <loc>https://dragonphoenixacupuncture.com/gallery</loc>
     <lastmod>2025-12-19</lastmod>
     <changefreq>monthly</changefreq>

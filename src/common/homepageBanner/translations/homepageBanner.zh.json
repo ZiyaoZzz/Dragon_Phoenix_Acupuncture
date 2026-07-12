@@ -7,6 +7,7 @@
   "recognition": "龙凤针灸被评为基西米地区顶尖针灸诊所之一。由 Opencare.com 核实。",
   "altDoctor": "谢秀凤医师",
   "formTitle": "预约就诊",
+  "formConvenience": "无需致电排队等候——在线预约不到一分钟即可完成，全天24小时随时可提交。",
   "formLead": "我们会尽快与您联系；若24小时内未收到回复，请致电基西米（Kissimmee）诊所 (407) 932-4818 确认。",
   "nameLabel": "姓名",
   "emailLabel": "邮箱",
@@ -18,6 +19,7 @@
   "dateLabel": "期望的就诊日期",
   "timeLabel": "期望的时间段",
   "anyTime": "任意时间",
+  "sundayWarning": "周日诊所不营业，已为您自动调整到下一个可预约日期。",
   "additionalInfo": "补充信息",
   "submit": "提交预约请求",
   "formNote": "* 所有字段均为必填。您的信息将被安全地发送至本诊所。"

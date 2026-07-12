@@ -11,114 +11,50 @@ export const LowerBackPainSection: React.FC = () => {
   return (
     <section id="lower-back-pain" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
       <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.lowerBackPain.title')}</h2>
-      
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.overview')}</h3>
       <P
         k="sections.lowerBackPain.p1"
-        d="More and more Western doctors are now considering acupuncture treatment to relieve both acute and chronic lower back pain. Most acupuncturists here in the United States use a combination of acupuncture, massage, Chinese herbs (either internally administered or applied topically), Chinese diet therapy, and various types of Chinese exercise therapy. Anyone of these forms of treatment can significantly improve or even cure lower back pain."
+        d="More and more Western doctors are now considering acupuncture treatment to relieve both acute and chronic lower back pain. Most acupuncturists here in the United States use a combination of acupuncture, massage, Chinese herbs (either internally administered or applied topically), Chinese diet therapy, and various types of Chinese exercise therapy. Any one of these forms of treatment can significantly improve, and often help manage, lower back pain."
         className="text-gray-700 leading-relaxed mb-6"
       />
 
-      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.research')}</h3>
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.summaryHeading')}</h3>
       <P
         k="sections.lowerBackPain.p2"
-        d="Qiu Wan-Xing, in Zhe Jiang Zhong Yi Za Zhi (Zhejiang Journal of Chinese Medicine – 1993), studied twenty patients with acute lumbar sprain with a formula first recorded in Chinese medical literature in 200 AD. Six patients were cured in 3 days; the remaining fourteen were cured in less than 6 days. When combined with other treatments, Chinese methods provide one of the best and most effective treatment protocols available in the world today."
+        d="Lower back pain is one of the most common complaints. It accounts for millions of lost hours from work and even more spent on treatment and medication. It can either be acute (such as an acute lumbar sprain) or chronic (such as degenerative disc disease), and can range from mildly annoying to physically and emotionally debilitating."
         className="text-gray-700 leading-relaxed mb-6"
       />
 
-      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.summary')}</h3>
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.researchHeading')}</h3>
       <P
         k="sections.lowerBackPain.p3"
-        d="Lower back pain is one of the most common complaints. It accounts for millions of lost hours from work and even more spent on treatment and medication."
+        d="In 2017, the American College of Physicians (ACP) published a clinical practice guideline recommending that patients with chronic low back pain try non-drug approaches — including acupuncture, exercise, and multidisciplinary rehabilitation — before turning to medication. The guideline was based on a systematic review of randomized controlled trials and found moderate-quality evidence that acupuncture improves pain, with effects on function ranging from none to moderate depending on what it was compared against."
         className="text-gray-700 leading-relaxed mb-4"
       />
       <P
         k="sections.lowerBackPain.p4"
-        d="Lower back pain can either be acute (i.e. Acute lumbar sprain) or chronic (i.e. Chronic degenerative disc disease). It can be annoying or irritating or can produce unbearable physical and emotional suffering."
-        className="text-gray-700 leading-relaxed mb-4"
-      />
-      <P
-        k="sections.lowerBackPain.p5"
-        d="Acupuncture and its adjunctive therapies can indeed treat both acute and chronic back pain, including sciatica, successfully."
+        d="More recently, a 2025 study led by Kaiser Permanente researchers and funded by the National Institutes of Health found that acupuncture is a safe and effective treatment for older adults with persistent (chronic) low back pain — one of the more rigorous trials of its kind in this age group."
         className="text-gray-700 leading-relaxed mb-6"
       />
 
-      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.insight')}</h3>
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.treatmentHeading')}</h3>
+      <P
+        k="sections.lowerBackPain.p5"
+        d="At Dragon Phoenix Acupuncture, treatment for lower back pain typically combines acupuncture with Tuina massage, moxibustion or cupping, and Chinese herbal support as needed, addressing both acute flare-ups (such as an acute lumbar sprain) and chronic conditions like degenerative disc disease or sciatica."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.expectHeading')}</h3>
       <P
         k="sections.lowerBackPain.p6"
-        d="The following studies were conducted in China in the early 1990s, showing the success rate of acupuncture treatment for lower back pain."
-        className="text-gray-700 leading-relaxed mb-6"
-      />
-
-      <h4 className="text-xl font-semibold text-gray-900 mb-2">{t('sections.lowerBackPain.generalFindings')}</h4>
-      <P
-        k="sections.lowerBackPain.p7"
-        d="Wang Wen-Yuan et al., in Beijing Zhong Yi (Beijing Chinese Medicine – 1993), studied 5,461 patients with neck, shoulder, lower back and knee pain. The patients studied were between the ages of 28-85; 55% were male, 45% were female. Of these, 215 patients had acute lumbar sprain, 186 patients had sciatica. Patients received acupuncture treatment once daily for a total of ten treatments. Overall, 76% of the patients were cured, 97% of the patients showed significant improvement."
-        className="text-gray-700 leading-relaxed mb-6"
-      />
-
-      <h4 className="text-xl font-semibold text-gray-900 mb-2">{t('sections.lowerBackPain.acuteFindings')}</h4>
-      <P
-        k="sections.lowerBackPain.p8"
-        d="Shu Hong-Wen, in Shanghai Zhen Jiu Za Zhi (Shanghai Acupuncture Journal – 1994), studied 129 patients with acute lumbar sprain (ages 19-82). Most patients had been ill for periods ranging from two hours to fifteen days, with an average of three days. Patients were treated with acupuncture needles at a single point. A control group was treated with needles at several points. Both groups of patients were either completely cured or greatly improved:"
-        className="text-gray-700 leading-relaxed mb-4"
-      />
-      
-      <div className="ml-6 mb-4">
-        <h5 className="text-lg font-semibold text-gray-900 mb-2">{t('sections.lowerBackPain.p9')}</h5>
-        <ul className="list-disc pl-6 mb-4">
-          <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p10')}</li>
-          <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p11')}</li>
-          <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p12')}</li>
-        </ul>
-        <P
-          k="sections.lowerBackPain.p13"
-          d="Overall, this group had 114 patients cured, with a success rate of 88%."
-          className="text-gray-700 mb-4"
-        />
-        
-        <h5 className="text-lg font-semibold text-gray-900 mb-2">{t('sections.lowerBackPain.p14')}</h5>
-        <ul className="list-disc pl-6 mb-4">
-          <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p15')}</li>
-          <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p16')}</li>
-          <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p17')}</li>
-        </ul>
-      </div>
-
-      <P
-        k="sections.lowerBackPain.p18"
-        d="Kan Jin-Qi et al., in Shanghai Zhen Jiu Za Zhi (Shanghai Acupuncture Journal – 1994), conducted another study that further supported the success rate of the first study. Jin-Qi treated 130 patients with acute lower back pain (ages 27-82). Patients had been ill for periods ranging from a few hours to seven days. Of these, 110 patients were cured after one treatment, with a success rate of 85%. Meanwhile, the remaining 20 patients were cured after two treatments."
-        className="text-gray-700 leading-relaxed mb-6"
-      />
-
-      <h4 className="text-xl font-semibold text-gray-900 mb-2">{t('sections.lowerBackPain.degenerative')}</h4>
-      <P
-        k="sections.lowerBackPain.p19"
-        d="Guo Jian-Hua, in Jiang Su Zhong Yi (Jiangsu Chinese Medicine – 1994), reported treating 78 patients with disc protrusion using a combination of acupuncture, massage, heat therapy and acupoint pressure:"
-        className="text-gray-700 leading-relaxed mb-4"
-      />
-      <ul className="list-disc pl-6 mb-4">
-        <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p20')}</li>
-        <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p21')}</li>
-        <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p22')}</li>
-      </ul>
-
-      <h4 className="text-xl font-semibold text-gray-900 mb-2">{t('sections.lowerBackPain.protrusion')}</h4>
-      <P
-        k="sections.lowerBackPain.p23"
-        d="Wu Shi-Qian, in Tian Jin Zhong Yi (Tianjin Chinese Medicine – 1994), treated 50 patients with lumbar disc protrusion (ages 30-60) with acupuncture. Patients were treated daily for ten days, with 4-6 points per treatment, for a total of one course or cycle of treatment. Patients typically received three complete courses or cycles of treatment."
-        className="text-gray-700 leading-relaxed mb-4"
-      />
-      <ul className="list-disc pl-6 mb-6">
-        <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p24')}</li>
-        <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p25')}</li>
-        <li className="text-gray-700 mb-1">{t('sections.lowerBackPain.p26')}</li>
-      </ul>
-
-      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.lowerBackPain.canHelp')}</h3>
-      <P
-        k="sections.lowerBackPain.p5"
-        d="Acupuncture and its adjunctive therapies can indeed treat both acute and chronic back pain, including sciatica, successfully."
+        d="Treatment length depends on whether the pain is acute or chronic. Acute lumbar sprains often respond within a handful of sessions, while chronic conditions typically call for a longer course of 10–15 treatments, followed by maintenance visits as needed."
         className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.lowerBackPain.sourceNote"
+        d="Sources: American College of Physicians, 2017 Clinical Practice Guideline (Annals of Internal Medicine); Kaiser Permanente Washington Health Research Institute / National Institutes of Health, 2025."
       />
     </section>
   );
@@ -199,12 +135,12 @@ export const StopSmokingSection: React.FC = () => {
       />
       <P
         k="sections.stopSmoking.p12"
-        d="90-95% quit smoking after 3 or 4 consecutive treatments."
+        d="Research on acupuncture for smoking cessation is genuinely mixed. A Cochrane systematic review found that acupuncture-based techniques appeared more effective than sham (placebo) acupuncture in the short term, but did not show a clear long-term quitting effect, and acupuncture alone was found to be less effective than nicotine replacement therapies such as gum or patches. We are upfront about this with patients: acupuncture works best as one part of a quit-smoking plan — often alongside, not instead of, other evidence-based approaches — and many patients find it a helpful, medication-free way to manage cravings and withdrawal symptoms."
         className="text-gray-700 leading-relaxed mb-4"
       />
       <P
         k="sections.stopSmoking.p13"
-        d="The effectiveness of this program, therefore the most important aspect is the treatment induces endorphins, which are key to mental and physical relaxation, as well as a general sense of well-being."
+        d="One proposed reason acupuncture helps with cravings is that treatment induces endorphins, which are associated with relaxation, both mentally and physically, in addition to a feeling of overall well-being."
         className="text-gray-700 leading-relaxed mb-4"
       />
       <P
@@ -263,6 +199,11 @@ export const StopSmokingSection: React.FC = () => {
         k="sections.stopSmoking.p24"
         d="Dragon Phoenix Acupuncture has a unique, effective plan that has helped hundreds of smokers quit."
         className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.stopSmoking.sourceNote"
+        d='Source: Cochrane systematic review, "Acupuncture and related interventions for smoking cessation."'
       />
     </section>
   );
@@ -332,6 +273,18 @@ export const WeightLossSection: React.FC = () => {
       <P
         k="sections.weightLoss.p18"
         d="Acupuncture, auricular acupuncture (ear acupuncture) and herbs are the best defense against obesity and normalizing body functions. According to Traditional Chinese Medicine, obesity is due to insufficient biological energy and spleen and stomach dampness. By sticking to the program, patients will not experience the traditional 'yo-yo' syndrome and will continue to lose weight."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.weightLoss.researchHeading')}</h3>
+      <P
+        k="sections.weightLoss.p35"
+        d="A systematic review of 8 randomized controlled trials (403 participants) found that acupuncture led to modest average reductions of 1.85 kg in body weight and 1.0 kg/m² in BMI compared with sham acupuncture. A larger review of 23 trials (1,808 participants) similarly found acupuncture more effective than sham treatment or no treatment for weight reduction, with or without lifestyle changes."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.weightLoss.p36"
+        d="These effects are real but modest, and reviewers note that many of the underlying studies have clinical heterogeneity and methodological limitations — acupuncture is best thought of as a potential support for a weight-management plan that also includes diet and exercise, not a stand-alone solution."
         className="text-gray-700 leading-relaxed mb-6"
       />
 
@@ -420,6 +373,318 @@ export const WeightLossSection: React.FC = () => {
         k="sections.weightLoss.p34"
         d="Fruits: 1 grapefruit, apple, plum, papaya daily. Avoid bananas, grapes, pineapple and cantaloupe."
         className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.weightLoss.sourceNote"
+        d="Sources: systematic reviews and meta-analyses of acupuncture for weight management, published in peer-reviewed journals including Frontiers in Medicine and the Journal of Pain Research."
+      />
+    </section>
+  );
+};
+
+const SourceNote: React.FC<{ k: string; d: string }> = ({ k, d }) => (
+  <P k={k} d={d} className="text-sm text-gray-500 italic mt-6 pt-4 border-t border-gray-200" />
+);
+
+export const MigraineSection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="migraine" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.migraine.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.migraine.overview')}</h3>
+      <P
+        k="sections.migraine.p1"
+        d="Migraine is one of the most common neurological conditions in the United States, affecting more than 40 million Americans — about 1 in 4 households has someone who lives with migraine. It typically causes throbbing, often one-sided head pain along with nausea and sensitivity to light and sound, and can last anywhere from a few hours to several days."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.migraine.p2"
+        d="For many people, migraine is more than an occasional headache — it is a recurring condition that can interfere with work, family life, and daily activities. Frequent use of pain medication can also lead to its own complications, which is why many patients look for complementary approaches like acupuncture to reduce how often migraines occur."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.migraine.causesHeading')}</h3>
+      <P
+        k="sections.migraine.p3"
+        d="In Traditional Chinese Medicine, headaches and migraines are commonly associated with an imbalance in the flow of Qi and Blood, often described as Liver Yang rising, Liver Qi stagnation, or invasion of Wind — patterns that can be aggravated by stress, poor sleep, and diet. Western medicine points to triggers such as hormonal changes, stress, certain foods, and sleep disruption. Acupuncture addresses both pictures: calming the nervous system while also treating the underlying pattern of imbalance."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.migraine.researchHeading')}</h3>
+      <P
+        k="sections.migraine.p4"
+        d="The National Center for Complementary and Integrative Health (NCCIH), part of the National Institutes of Health, reports moderate-quality evidence that acupuncture can reduce how often migraines occur, based on a 2016 review of 22 clinical trials involving nearly 5,000 people."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.migraine.p5"
+        d="A 2020 review comparing acupuncture with medications commonly used to prevent migraine found acupuncture was slightly more effective, and patients receiving acupuncture were far less likely to drop out of treatment due to side effects than those taking preventive medication."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.migraine.treatmentHeading')}</h3>
+      <P
+        k="sections.migraine.p6"
+        d="At Dragon Phoenix Acupuncture, migraine treatment typically combines body acupuncture with auricular (ear) acupuncture to calm the nervous system, along with points selected to address the individual pattern behind each patient's headaches. Cupping or Tuina may be added for patients whose migraines are linked to neck and shoulder tension."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.migraine.expectHeading')}</h3>
+      <P
+        k="sections.migraine.p7"
+        d="Most patients begin with acupuncture sessions once or twice a week. Because migraine is a recurring condition, a course of 8–10 treatments is often recommended before reassessing frequency and severity, and many patients continue with maintenance visits during high-stress seasons."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.migraine.sourceNote"
+        d="Sources: National Center for Complementary and Integrative Health (NCCIH), National Institutes of Health."
+      />
+    </section>
+  );
+};
+
+export const JointPainSection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="joint-pain" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.jointPain.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.jointPain.overview')}</h3>
+      <P
+        k="sections.jointPain.p1"
+        d="Osteoarthritis is the most common form of arthritis in the United States, affecting an estimated 32.5 million adults according to the Centers for Disease Control and Prevention. It develops when the cartilage that cushions joints — most often the knees, hips, hands, and spine — gradually wears down, leading to pain, stiffness, and reduced range of motion."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.jointPain.symptomsHeading')}</h3>
+      <P
+        k="sections.jointPain.p2"
+        d="Joint pain from osteoarthritis often worsens with activity and improves with rest in the early stages, but can become more constant over time. Many patients also notice stiffness after sitting still, swelling around the joint, and a grinding or creaking sensation with movement."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.jointPain.causesHeading')}</h3>
+      <P
+        k="sections.jointPain.p3"
+        d="Traditional Chinese Medicine describes joint pain as a form of Bi syndrome — an obstruction of Qi and Blood in and around the joints, often brought on by the invasion of Wind, Cold, or Dampness, or by a gradual decline in Kidney and Liver energy that naturally occurs with age. Acupuncture and Tuina work to restore circulation to the affected joint and relieve the obstruction causing pain and stiffness."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.jointPain.researchHeading')}</h3>
+      <P
+        k="sections.jointPain.p4"
+        d="A 2018 research review found that acupuncture was more effective than no treatment across 10 studies (2,413 participants), and more effective than sham (placebo) acupuncture across 9 studies (2,376 participants), for osteoarthritis pain."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.jointPain.p5"
+        d="In 2019, the American College of Rheumatology and the Arthritis Foundation issued a clinical practice guideline that conditionally recommends acupuncture for arthritis of the hand, hip, or knee — with the strongest evidence for knee osteoarthritis specifically."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.jointPain.treatmentHeading')}</h3>
+      <P
+        k="sections.jointPain.p6"
+        d="Dragon Phoenix Acupuncture treats joint pain with a combination of acupuncture and electroacupuncture directly at and around the affected joint, along with moxibustion or cupping to improve local circulation and Tuina massage to relax surrounding muscles and improve mobility."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.jointPain.expectHeading')}</h3>
+      <P
+        k="sections.jointPain.p7"
+        d="Because osteoarthritis is a chronic, progressive condition, treatment is usually structured as an initial series of 10–15 sessions to reduce pain and improve mobility, followed by periodic maintenance visits to help manage symptoms long-term."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.jointPain.sourceNote"
+        d="Sources: Centers for Disease Control and Prevention (CDC); American College of Rheumatology and Arthritis Foundation, 2019 Clinical Practice Guideline."
+      />
+    </section>
+  );
+};
+
+export const InsomniaSection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="insomnia" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.insomnia.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.insomnia.overview')}</h3>
+      <P
+        k="sections.insomnia.p1"
+        d="Sleep problems are widespread in the United States — the CDC reports that roughly 1 in 3 adults regularly get less sleep than recommended, and a large share of adults report symptoms of chronic insomnia, including trouble falling asleep, waking frequently during the night, or waking too early."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.insomnia.impactHeading')}</h3>
+      <P
+        k="sections.insomnia.p2"
+        d="Poor sleep does not stay contained to the night — it affects mood, concentration, and immune function, and can worsen existing pain conditions and cardiovascular health over time. Many patients try sleep medication first, but are looking for an approach without next-day grogginess or dependency."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.insomnia.causesHeading')}</h3>
+      <P
+        k="sections.insomnia.p3"
+        d="In Traditional Chinese Medicine, insomnia is generally linked to an imbalance among the Heart, Spleen, Liver, and Kidney systems — commonly described as Heart-Kidney disharmony, Blood deficiency failing to nourish the Shen (spirit/mind), or excess Heat disturbing the mind at night. Treatment is tailored to which pattern is present, rather than treating all insomnia the same way."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.insomnia.researchHeading')}</h3>
+      <P
+        k="sections.insomnia.p4"
+        d="Multiple systematic reviews, including a 2025 meta-analysis of randomized controlled trials, found that acupuncture significantly improves subjective sleep quality — measured by tools such as the Pittsburgh Sleep Quality Index — compared with sham acupuncture, and is also associated with improvements in anxiety, depression, and fatigue that commonly accompany insomnia."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.insomnia.p5"
+        d="Researchers note that acupuncture's effect on objective sleep measures, such as data from sleep-tracking devices, is less consistently proven than its effect on how rested patients feel — an important distinction we discuss with patients when setting expectations. Across the available studies, acupuncture has shown a strong safety profile with minimal side effects."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.insomnia.treatmentHeading')}</h3>
+      <P
+        k="sections.insomnia.p6"
+        d="At Dragon Phoenix Acupuncture, insomnia treatment combines body acupuncture points selected to calm the Shen and address the underlying pattern (such as nourishing Blood or clearing excess Heat), often paired with auricular (ear) acupuncture, which many patients find especially calming."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.insomnia.expectHeading')}</h3>
+      <P
+        k="sections.insomnia.p7"
+        d="Most patients notice improved sleep onset and fewer awakenings within the first few sessions, though a full course of 8–10 treatments is typically recommended to build a lasting improvement, alongside simple sleep-hygiene guidance."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.insomnia.sourceNote"
+        d="Sources: Centers for Disease Control and Prevention (CDC); peer-reviewed systematic reviews and meta-analyses on acupuncture for chronic insomnia disorder."
+      />
+    </section>
+  );
+};
+
+export const AnxietySection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="anxiety" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.anxiety.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.anxiety.overview')}</h3>
+      <P
+        k="sections.anxiety.p1"
+        d="Stress and anxiety are among the fastest-growing health concerns in the United States. CDC survey data shows the share of young adults reporting depression symptoms rose from 16.4% to 25.0% between 2019 and 2023, and stress-related complaints — tension, racing thoughts, trouble unwinding — are one of the most common reasons patients seek acupuncture."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.anxiety.symptomsHeading')}</h3>
+      <P
+        k="sections.anxiety.p2"
+        d="Chronic stress and anxiety can show up as more than worry — many patients also experience muscle tension (especially in the neck and shoulders), disrupted sleep, digestive upset, fatigue, and a general sense of being unable to relax."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.anxiety.causesHeading')}</h3>
+      <P
+        k="sections.anxiety.p3"
+        d="Traditional Chinese Medicine most often links stress and anxiety to Liver Qi stagnation and a disturbance of the Shen (spirit/mind) housed in the Heart. When Qi does not flow smoothly, patients commonly experience the tightness, irritability, and racing thoughts associated with stress."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.anxiety.researchHeading')}</h3>
+      <P
+        k="sections.anxiety.p4"
+        d="Research on acupuncture specifically for anxiety and stress is still developing compared to research on pain conditions, but studies point to a plausible mechanism: acupuncture has been shown to trigger the release of endorphins and to help regulate the body's stress-response (HPA axis) activity, which may explain why many patients report feeling calmer and more relaxed after treatment."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.anxiety.p5"
+        d="Acupuncture is best used as a complementary approach alongside — not a replacement for — care from your primary care physician or a licensed mental health provider, particularly for anxiety that is persistent, severe, or affecting daily functioning."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.anxiety.treatmentHeading')}</h3>
+      <P
+        k="sections.anxiety.p6"
+        d="Dragon Phoenix Acupuncture's approach to stress and anxiety combines body acupuncture to release Liver Qi stagnation with auricular (ear) acupuncture, a protocol widely used for relaxation and stress reduction, sometimes paired with Tuina for patients carrying tension in the neck and shoulders."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.anxiety.expectHeading')}</h3>
+      <P
+        k="sections.anxiety.p7"
+        d="Many patients notice a sense of calm during and immediately after their first session. For lasting change, a series of weekly treatments is typically recommended, and many patients continue with periodic visits during particularly stressful periods."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.anxiety.sourceNote"
+        d="This information is educational and not a substitute for medical or mental health advice. If you are experiencing severe anxiety, please also consult your physician or a licensed mental health provider."
+      />
+    </section>
+  );
+};
+
+export const MenopauseSection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="menopause" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.menopause.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.menopause.overview')}</h3>
+      <P
+        k="sections.menopause.p1"
+        d="Menopause is a natural life stage every woman eventually goes through — roughly 6,000 women in the United States reach menopause every day, about 1.3 million a year. The years leading up to and following menopause, known as perimenopause, often bring a range of physical and emotional symptoms as hormone levels shift."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.menopause.symptomsHeading')}</h3>
+      <P
+        k="sections.menopause.p2"
+        d="Vasomotor symptoms are the most common complaint: surveys find that about 81% of menopausal women experience hot flashes and 80% experience night sweats. Sleep disturbances affect 70–80% of women during this transition, and joint or muscular discomfort affects roughly two-thirds. Despite how common these symptoms are, many women never discuss them with a healthcare provider or seek treatment."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.menopause.causesHeading')}</h3>
+      <P
+        k="sections.menopause.p3"
+        d="In Traditional Chinese Medicine, menopause is understood as the natural decline of Kidney essence (Tian Gui) that occurs with age. As Kidney Yin declines, it can no longer balance Yang, leading to what is described as empty heat rising — the pattern most closely associated with hot flashes and night sweats. Liver Qi stagnation is often involved as well, contributing to the irritability, mood swings, and sleep disruption many women experience during this transition."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.menopause.researchHeading')}</h3>
+      <P
+        k="sections.menopause.p4"
+        d="A Cochrane systematic review of 16 randomized controlled trials involving 1,155 women found that acupuncture reduced the frequency and severity of hot flashes, and improved quality of life, compared with no treatment or being placed on a waiting list."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.menopause.p5"
+        d="The same review found acupuncture's advantage over sham (placebo) acupuncture was less clear, meaning some of the benefit may come from factors beyond the specific acupuncture points used. A separate 2018 systematic review supported by the North American Menopause Society concluded that acupuncture meaningfully reduces hot flash frequency and severity, with effects that persist over time."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.menopause.treatmentHeading')}</h3>
+      <P
+        k="sections.menopause.p6"
+        d="At Dragon Phoenix Acupuncture, treatment for menopausal symptoms focuses on nourishing Kidney Yin and calming empty heat, with points selected to also address Liver Qi stagnation when mood or sleep symptoms are prominent. Auricular (ear) acupuncture and Chinese herbal support may be added depending on each patient's presentation."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.menopause.expectHeading')}</h3>
+      <P
+        k="sections.menopause.p7"
+        d="Many patients notice a reduction in hot flash frequency and improved sleep within the first several sessions. Because menopause is a multi-year transition, an initial course of 8–10 treatments is typically recommended, followed by periodic visits to manage symptoms as they change over time."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.menopause.sourceNote"
+        d="Sources: Cochrane systematic review of acupuncture for menopausal hot flushes; 2018 systematic review supported by the North American Menopause Society (NAMS)."
       />
     </section>
   );

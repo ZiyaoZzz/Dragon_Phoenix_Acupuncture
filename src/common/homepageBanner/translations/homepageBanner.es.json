@@ -7,6 +7,7 @@
   "recognition": "Dragon Phoenix Acupuncture ha sido reconocido como una de las mejores clínicas de acupuntura en Kissimmee. Verificado por Opencare.com",
   "altDoctor": "Dra. Xiu Feng Searcy",
   "formTitle": "Programar una cita",
+  "formConvenience": "No necesita llamar ni esperar en línea telefónica: solicitar su cita en línea toma menos de un minuto, a cualquier hora del día o de la noche.",
   "formLead": "Nos comunicaremos con usted lo antes posible. Si no recibe noticias en un período de 24 horas, por favor llámenos a la ubicación de Kissimmee, (407) 932-4818 para verificar que recibimos su solicitud.",
   "nameLabel": "Nombre",
   "emailLabel": "Correo electrónico",
@@ -18,6 +19,7 @@
   "dateLabel": "Fecha de cita preferida",
   "timeLabel": "Horario preferido",
   "anyTime": "Cualquier hora",
+  "sundayWarning": "Los domingos permanecemos cerrados, así que ajustamos su fecha al siguiente día disponible.",
   "additionalInfo": "Información adicional",
   "submit": "Enviar solicitud de cita",
   "formNote": "* Todos los campos son obligatorios. Su información se enviará de forma segura a nuestra clínica."

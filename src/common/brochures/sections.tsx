@@ -5,6 +5,10 @@ const P: React.FC<{ k: string; d: string; className?: string }> = ({ k, d, class
   return <p className={className}>{t(k, { defaultValue: d })}</p>;
 };
 
+const SourceNote: React.FC<{ k: string; d: string }> = ({ k, d }) => (
+  <P k={k} d={d} className="text-sm text-gray-500 italic mt-6 pt-4 border-t border-gray-200" />
+);
+
 const IntroSection: React.FC = () => {
   const { t } = useTranslation('brochures');
   return (
@@ -122,7 +126,7 @@ const FertilitySection: React.FC = () => {
       <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.fertility.ivfSupport')}</h3>
       <P
         k="sections.fertility.p1"
-        d="If you are like many women, you have probably heard that acupuncture combined with In Vitro Fertilization (IVF) can help increase the chance of a successful pregnancy. Many women are having great results utilizing acupuncture to complement the IVF cycle. A recent study found acupuncture improves pregnancy success rate by 50% in women undergoing IVF. So how does this 3,000-year-old medicine actually help support IVF?"
+        d="If you are like many women, you have probably heard that acupuncture combined with In Vitro Fertilization (IVF) can help increase the chance of a successful pregnancy. Interest in this approach has grown steadily, and research on acupuncture as a complement to the IVF cycle continues to evolve. So how does this 3,000-year-old medicine actually help support IVF?"
         className="text-gray-700 leading-relaxed mb-6"
       />
 
@@ -141,7 +145,7 @@ const FertilitySection: React.FC = () => {
       <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.fertility.researchFindings')}</h3>
       <P
         k="sections.fertility.p4"
-        d="Researchers from The Center for Reproductive Medicine and Infertility, Weill Medical College of Cornell University, New York, NY have found that acupuncture helps:"
+        d="Systematic reviews and meta-analyses of randomized controlled trials published in 2023 and 2024 found that acupuncture was associated with a higher clinical pregnancy rate compared with sham acupuncture. However, the same reviews found no significant difference in live birth rate between acupuncture and control groups, and rated the overall quality of evidence as low — an important distinction, since a clinical pregnancy and a live birth are not the same outcome. Researchers have proposed several mechanisms for how acupuncture may help:"
         className="text-gray-700 leading-relaxed mb-4"
       />
       <ul className="list-disc pl-6 mb-6">
@@ -158,13 +162,18 @@ const FertilitySection: React.FC = () => {
       />
       <P
         k="sections.fertility.p6"
-        d="Chinese herbal remedies and acupuncture aim at promoting the growth and maturation of ovarian follicles as well as induce ovulation. When used in conjunction with IVF Chinese medicine improves the quality of follicles. Endometrial thickness and uterine artery blood flow are important for implantation of human embryos during the transfer stage of IVF. With its central effect on the nervous system, acupuncture may contribute by dilating uterine arteries and blood vessels, thereby increasing blood flow to the endometrium. With a healthy endometrial lining, chances of a stable implantation and healthy pregnancy are increased."
+        d="Chinese herbal remedies and acupuncture aim at promoting the growth and maturation of ovarian follicles as well as induce ovulation. When used in conjunction with IVF, Chinese medicine may improve the quality of follicles. Endometrial thickness and uterine artery blood flow are important for implantation of human embryos during the transfer stage of IVF. With its central effect on the nervous system, acupuncture may contribute by dilating uterine arteries and blood vessels, thereby increasing blood flow to the endometrium."
         className="text-gray-700 leading-relaxed mb-4"
       />
       <P
         k="sections.fertility.p7"
-        d="Acupuncture in non-toxic, affordable and is increasingly being used as a successful complement to In Vitro Fertilization."
+        d="Acupuncture is non-toxic, affordable, and is increasingly used alongside In Vitro Fertilization — though as with any complementary approach, it should be discussed with your fertility specialist as part of your overall treatment plan."
         className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.fertility.sourceNote"
+        d="Sources: systematic reviews and meta-analyses of acupuncture for IVF outcomes published in Archives of Gynecology and Obstetrics (2023) and the Chinese Journal of Integrative Medicine (2023)."
       />
     </section>
   );
@@ -263,6 +272,18 @@ const FibromyalgiaSection: React.FC = () => {
         className="text-gray-700 leading-relaxed mb-6"
       />
 
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.fibromyalgia.researchHeading')}</h3>
+      <P
+        k="sections.fibromyalgia.p17"
+        d="A 2013 Cochrane review of 9 studies involving 395 participants found low-to-moderate quality evidence that acupuncture improves pain and stiffness in people with fibromyalgia, compared with no treatment or standard care alone."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.fibromyalgia.p18"
+        d="The same review found that acupuncture's effect did not clearly differ from sham (placebo) acupuncture for pain, fatigue, sleep, or overall well-being. A 2020 evidence update found a small improvement in physical function compared with sham acupuncture, but no effect on pain itself — research in this area continues, and results across studies remain mixed."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
       <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.fibromyalgia.clinicTreatment')}</h3>
       <P
         k="sections.fibromyalgia.p15"
@@ -282,6 +303,11 @@ const FibromyalgiaSection: React.FC = () => {
         <li className="text-gray-700 mb-2">{t('sections.fibromyalgia.commitmentList3')}</li>
         <li className="text-gray-700 mb-2">{t('sections.fibromyalgia.commitmentList4')}</li>
       </ul>
+
+      <SourceNote
+        k="sections.fibromyalgia.sourceNote"
+        d="Sources: Cochrane systematic review of acupuncture for fibromyalgia (2013); Agency for Healthcare Research and Quality evidence update, cited by the National Center for Complementary and Integrative Health (NCCIH), 2020."
+      />
     </section>
   );
 };
