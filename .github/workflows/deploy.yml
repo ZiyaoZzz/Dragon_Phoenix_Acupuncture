@@ -22,7 +22,10 @@ jobs:
         
     - name: Install dependencies
       run: npm ci
-      
+
+    - name: Install Playwright Chromium (used by the postbuild prerender step)
+      run: npx playwright install --with-deps chromium
+
     - name: Build
       run: npm run build
       env:

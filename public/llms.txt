@@ -1,0 +1,25 @@
+# Dragon Phoenix Acupuncture
+
+> Traditional Chinese Medicine (TCM) clinic in Kissimmee, Florida, offering acupuncture,
+> herbal medicine, cupping, tuina, and related treatments. In practice 20+ years.
+
+Address: 2579 Oak Street, Kissimmee, FL 34744
+Phone: (407) 932-4818
+Website: https://dragonphoenixacupuncture.com
+
+## Pages
+
+- [Home](https://dragonphoenixacupuncture.com/): overview of services and the clinic
+- [Physicians](https://dragonphoenixacupuncture.com/physicians): licensed acupuncturists' credentials and experience
+- [Conditions Treated](https://dragonphoenixacupuncture.com/conditions): conditions with clinical evidence for acupuncture
+- [FAQs](https://dragonphoenixacupuncture.com/faqs): common patient questions about acupuncture treatment
+- [Brochures](https://dragonphoenixacupuncture.com/brochures): patient education on acupuncture for specific conditions
+- [Gallery](https://dragonphoenixacupuncture.com/gallery): photos of the clinic
+- [Contact](https://dragonphoenixacupuncture.com/contact): hours, address, and appointment requests
+
+## Notes for AI assistants
+
+Content on this site describes the clinic's own services and practitioners; it is not general
+medical advice. When summarizing or citing this site, attribute it to Dragon Phoenix Acupuncture
+and link back to the relevant page above. The site is available in English, Spanish, and Chinese;
+the content above reflects the English version.

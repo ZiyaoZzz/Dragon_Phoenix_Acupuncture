@@ -1,0 +1,42 @@
+{
+  "home": {
+    "title": "Dragon Phoenix Acupuncture | Acupuntura y Medicina China en Kissimmee, FL",
+    "description": "Dragon Phoenix Acupuncture ofrece acupuntura profesional y medicina tradicional china en Kissimmee, FL. Brindamos tratamiento personalizado para el dolor, el estrés, el insomnio, problemas digestivos y afecciones crónicas."
+  },
+  "physicians": {
+    "title": "Nuestros Médicos | Dragon Phoenix Acupuncture",
+    "description": "Conozca a la Dra. Xiu Feng Searcy y al Dr. Wei Zhou, acupunturistas con licencia y más de 45 años de experiencia combinada en Medicina Tradicional China en Dragon Phoenix Acupuncture, Kissimmee, FL."
+  },
+  "faqs": {
+    "title": "Preguntas Frecuentes | Dragon Phoenix Acupuncture",
+    "description": "Respuestas a las preguntas más comunes sobre el tratamiento de acupuntura, técnicas y qué esperar en Dragon Phoenix Acupuncture, Kissimmee, FL."
+  },
+  "conditions": {
+    "title": "Afecciones que Tratamos | Dragon Phoenix Acupuncture",
+    "description": "La acupuntura ha demostrado eficacia clínica para el dolor, las migrañas, el insomnio, problemas digestivos y muchas otras afecciones. Vea la lista completa en Dragon Phoenix Acupuncture."
+  },
+  "brochures": {
+    "title": "Folletos para Pacientes | Dragon Phoenix Acupuncture",
+    "description": "Folletos educativos sobre acupuntura para fertilidad, fibromialgia, dolor lumbar, dejar de fumar, pérdida de peso y más, de Dragon Phoenix Acupuncture."
+  },
+  "gallery": {
+    "title": "Galería de la Clínica | Dragon Phoenix Acupuncture",
+    "description": "Conozca por dentro la clínica de Dragon Phoenix Acupuncture en Kissimmee, FL: salas de tratamiento, equipo e instalaciones."
+  },
+  "contact": {
+    "title": "Contáctenos | Dragon Phoenix Acupuncture",
+    "description": "Programe una cita o comuníquese con Dragon Phoenix Acupuncture en 2579 Oak Street, Kissimmee, FL. Llame al (407) 932-4818 o envíenos un mensaje en línea."
+  },
+  "notFound": {
+    "title": "Página No Encontrada | Dragon Phoenix Acupuncture",
+    "description": "La página que busca no existe. Vuelva a la página principal de Dragon Phoenix Acupuncture."
+  },
+  "admin": {
+    "title": "Panel de Administración | Dragon Phoenix Acupuncture",
+    "description": "Panel de administración solo para personal autorizado."
+  },
+  "adminLogin": {
+    "title": "Inicio de Sesión de Administrador | Dragon Phoenix Acupuncture",
+    "description": "Inicio de sesión solo para personal autorizado."
+  }
+}

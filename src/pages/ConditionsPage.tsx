@@ -2,8 +2,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const ConditionsPage: React.FC = () => {
+  usePageSeo('conditions', '/conditions');
   const { t } = useTranslation('conditions');
 
   const provenConditions = [

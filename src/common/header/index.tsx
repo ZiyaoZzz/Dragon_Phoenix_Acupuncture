@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
-import clinicLogo from '../../asserts/clinic_logo.png';
-import phoneIcon from '../../asserts/phone.png';
-import locationIcon from '../../asserts/location.png';
-import clockIcon from '../../asserts/clock.png';
+import clinicLogo from '../../assets/clinic_logo.png';
+import phoneIcon from '../../assets/phone.png';
+import locationIcon from '../../assets/location.png';
+import clockIcon from '../../assets/clock.png';
 
 export const Header: React.FC = () => {
   const { t } = useTranslation('header');

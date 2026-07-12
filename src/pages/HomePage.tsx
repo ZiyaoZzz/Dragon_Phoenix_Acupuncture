@@ -2,27 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
-import bannerImg from '../asserts/Dragon.jpg';
-import s1 from '../asserts/dragon_phoenix_3.png';
-import s2 from '../asserts/dragon_phoenix_6.png';
-import s4 from '../asserts/cupping.jpg';
-import s5 from '../asserts/herbal_medicine.jpg';
-import s6 from '../asserts/tuina.jpg';
-import s7 from '../asserts/Facial_Acupuncture.jpg';
-import s8 from '../asserts/Eye_Acupoint_Acupuncture.jpg';
-import s9 from '../asserts/Bioelectric_Therapy.jpg';
-import faceImg from '../asserts/face.jpg';
-import Physician_Xiu_Feng_SearcyImg from '../asserts/Xiu_Feng_Searcy.jpg';
-import Physician_Wei_ZhouImg from '../asserts/Physician_Wei_Zhou.jpeg';
+import bannerImg from '../assets/Dragon.jpg';
+import s1 from '../assets/dragon_phoenix_3.png';
+import s2 from '../assets/dragon_phoenix_6.png';
+import s4 from '../assets/cupping.jpg';
+import s5 from '../assets/herbal_medicine.jpg';
+import s6 from '../assets/tuina.jpg';
+import s7 from '../assets/Facial_Acupuncture.jpg';
+import s8 from '../assets/Eye_Acupoint_Acupuncture.jpg';
+import s9 from '../assets/Bioelectric_Therapy.jpg';
+import faceImg from '../assets/face.jpg';
+import Physician_Xiu_Feng_SearcyImg from '../assets/Xiu_Feng_Searcy.jpg';
+import Physician_Wei_ZhouImg from '../assets/Physician_Wei_Zhou.jpeg';
 import { ServiceCard } from '../common/ServiceCard';
 import { useTranslation } from 'react-i18next';
 import { HomepageBanner } from '../common/homepageBanner';
 import { HistorySection } from '../common/historySection';
 import { HoursSection } from '../common/hoursSection';
 import { doctors, doctorPortraitObjectStyle } from '../common/doctorCard/doctors';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const HomePage: React.FC = () => {
   const { t } = useTranslation();
+  usePageSeo('home', '/');
   const serviceItems = [
     { key: 'traditional', img: s1 },
     { key: 'scalpEar', img: s2 },

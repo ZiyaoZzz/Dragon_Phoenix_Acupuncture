@@ -4,8 +4,10 @@ import { Footer } from '../common/footer';
 import { PhysicianDetailCard } from '../common/physicianDetailCard';
 import { Sidebar } from '../common/sidebar';
 import { doctors } from '../common/doctorCard/doctors';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const PhysiciansPage: React.FC = () => {
+  usePageSeo('physicians', '/physicians');
   const [selectedDoctor, setSelectedDoctor] = React.useState(doctors[0]);
 
   React.useEffect(() => {

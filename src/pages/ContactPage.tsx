@@ -2,11 +2,13 @@ import React, { type FormEvent, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
-import xiuImg from '../asserts/Xiu_Feng_Searcy.jpg';
-import weiImg from '../asserts/Physician_Wei_Zhou.jpeg';
-import reviewImg from '../asserts/google_review.jpg';
+import xiuImg from '../assets/Xiu_Feng_Searcy.jpg';
+import weiImg from '../assets/Physician_Wei_Zhou.jpeg';
+import reviewImg from '../assets/google_review.jpg';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const ContactPage: React.FC = () => {
+  usePageSeo('contact', '/contact');
   const { t } = useTranslation('contact');
 
   const subjectRef = useRef<HTMLInputElement | null>(null);

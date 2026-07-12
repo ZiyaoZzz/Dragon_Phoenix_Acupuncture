@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import whoImg from '../../asserts/Xiu_Feng_Searcy.jpg';
+import whoImg from '../../assets/Xiu_Feng_Searcy.jpg';
 
 const API_BASE = import.meta.env.VITE_API_URL ?? '';
 

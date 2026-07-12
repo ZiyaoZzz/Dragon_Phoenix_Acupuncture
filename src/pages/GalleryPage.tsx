@@ -3,18 +3,20 @@ import { useTranslation } from 'react-i18next';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 
-import dragonPhoenix1 from '../asserts/dragon_phoenix_1.jpg';
-import dragonPhoenix2 from '../asserts/dragon_phoenix_2.jpg';
-import dragonPhoenix3 from '../asserts/dragon_phoenix_3.png';
-import dragonPhoenix4 from '../asserts/dragon_phoenix_4.png';
-import dragonPhoenix5 from '../asserts/dragon_phoenix_5.png';
-import dragonPhoenix6 from '../asserts/dragon_phoenix_6.png';
-import dragonPhoenix7 from '../asserts/dragon_phoenix_7.png';
-import dragonPhoenix8 from '../asserts/dragon_phoenix_8.png';
-import xiuFengSearcy from '../asserts/Xiu_Feng_Searcy.jpg';
-import weiZhou from '../asserts/Physician_Wei_Zhou.jpeg';
+import dragonPhoenix1 from '../assets/dragon_phoenix_1.jpg';
+import dragonPhoenix2 from '../assets/dragon_phoenix_2.jpg';
+import dragonPhoenix3 from '../assets/dragon_phoenix_3.png';
+import dragonPhoenix4 from '../assets/dragon_phoenix_4.png';
+import dragonPhoenix5 from '../assets/dragon_phoenix_5.png';
+import dragonPhoenix6 from '../assets/dragon_phoenix_6.png';
+import dragonPhoenix7 from '../assets/dragon_phoenix_7.png';
+import dragonPhoenix8 from '../assets/dragon_phoenix_8.png';
+import xiuFengSearcy from '../assets/Xiu_Feng_Searcy.jpg';
+import weiZhou from '../assets/Physician_Wei_Zhou.jpeg';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const GalleryPage: React.FC = () => {
+  usePageSeo('gallery', '/gallery');
   const { t } = useTranslation('gallery');
 
   const galleryImages = [

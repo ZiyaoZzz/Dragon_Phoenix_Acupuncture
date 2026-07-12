@@ -1,5 +1,5 @@
-import Physician_Xiu_Feng_SearcyImg from '../../asserts/Xiu_Feng_Searcy.jpg';
-import Physician_Wei_ZhouImg from '../../asserts/Physician_Wei_Zhou.jpeg';
+import Physician_Xiu_Feng_SearcyImg from '../../assets/Xiu_Feng_Searcy.jpg';
+import Physician_Wei_ZhouImg from '../../assets/Physician_Wei_Zhou.jpeg';
 
 export interface DoctorExperienceItem {
   period?: string;

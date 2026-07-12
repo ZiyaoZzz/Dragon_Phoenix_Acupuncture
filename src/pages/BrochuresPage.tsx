@@ -6,8 +6,10 @@ import type { SidebarItem } from '../common/sidebar';
 import { renderBrochureSection } from '../common/brochures/renderer';
 import type { BrochureSectionId } from '../common/brochures/types';
 import { useTranslation } from 'react-i18next';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const BrochuresPage: React.FC = () => {
+  usePageSeo('brochures', '/brochures');
   const { t } = useTranslation('brochures');
 
   const items: SidebarItem[] = useMemo(() => [

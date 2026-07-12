@@ -1,0 +1,42 @@
+{
+  "home": {
+    "title": "Dragon Phoenix Acupuncture | Acupuncture & Chinese Medicine in Kissimmee, FL",
+    "description": "Dragon Phoenix Acupuncture offers professional acupuncture and traditional Chinese medicine in Kissimmee, FL. We provide personalized treatment for pain relief, stress, insomnia, digestive issues, and chronic conditions."
+  },
+  "physicians": {
+    "title": "Our Physicians | Dragon Phoenix Acupuncture",
+    "description": "Meet Dr. Xiu Feng Searcy and Dr. Wei Zhou, licensed acupuncturists with 45+ years of combined experience in Traditional Chinese Medicine at Dragon Phoenix Acupuncture in Kissimmee, FL."
+  },
+  "faqs": {
+    "title": "FAQs | Dragon Phoenix Acupuncture",
+    "description": "Answers to common questions about acupuncture treatment, techniques, and what to expect at Dragon Phoenix Acupuncture in Kissimmee, FL."
+  },
+  "conditions": {
+    "title": "Conditions We Treat | Dragon Phoenix Acupuncture",
+    "description": "Acupuncture has shown clinical effectiveness for pain, migraines, insomnia, digestive issues, and dozens of other conditions. See the full list treated at Dragon Phoenix Acupuncture."
+  },
+  "brochures": {
+    "title": "Patient Brochures | Dragon Phoenix Acupuncture",
+    "description": "Educational brochures on acupuncture for fertility, fibromyalgia, lower back pain, smoking cessation, weight loss, and more, from Dragon Phoenix Acupuncture."
+  },
+  "gallery": {
+    "title": "Clinic Gallery | Dragon Phoenix Acupuncture",
+    "description": "Take a look inside Dragon Phoenix Acupuncture's clinic in Kissimmee, FL: treatment rooms, equipment, and facilities."
+  },
+  "contact": {
+    "title": "Contact Us | Dragon Phoenix Acupuncture",
+    "description": "Schedule an appointment or reach Dragon Phoenix Acupuncture at 2579 Oak Street, Kissimmee, FL. Call (407) 932-4818 or send us a message online."
+  },
+  "notFound": {
+    "title": "Page Not Found | Dragon Phoenix Acupuncture",
+    "description": "The page you're looking for doesn't exist. Return to the Dragon Phoenix Acupuncture homepage."
+  },
+  "admin": {
+    "title": "Admin Dashboard | Dragon Phoenix Acupuncture",
+    "description": "Staff-only admin dashboard."
+  },
+  "adminLogin": {
+    "title": "Admin Login | Dragon Phoenix Acupuncture",
+    "description": "Staff-only admin login."
+  }
+}

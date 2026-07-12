@@ -5,47 +5,53 @@
 ```
 src/
 ├── i18n/
-│   ├── index.ts              # i18n 配置文件
-│   ├── translationLoader.ts  # 动态翻译加载器
-│   ├── devTools.ts          # 开发工具
-│   └── README.md            # 使用指南
-├── common/
-│   ├── header/
-│   │   ├── index.tsx
-│   │   └── translations/
-│   │       ├── header.en.json
-│   │       └── header.zh.json
-│   └── footer/
-│       ├── index.tsx
-│       └── translations/
-│           ├── footer.en.json
-│           └── footer.zh.json
-└── components/
-    └── LanguageSwitcher.tsx
+│   ├── index.ts              # i18n 配置 + 动态翻译加载（唯一的文件）
+│   └── README.md             # 使用指南
+└── common/
+    ├── header/
+    │   ├── index.tsx
+    │   └── translations/
+    │       ├── header.en.json
+    │       ├── header.es.json
+    │       └── header.zh.json
+    ├── footer/
+    │   ├── index.tsx
+    │   └── translations/
+    │       ├── footer.en.json
+    │       ├── footer.es.json
+    │       └── footer.zh.json
+    └── LanguageSwitcher/
+        └── LanguageSwitcher.tsx
 ```
 
 ## ✨ 动态加载系统
 
-**无需手动配置！** 系统会自动扫描并加载所有符合以下模式的翻译文件：
+**无需手动配置！** `src/i18n/index.ts` 用
+`import.meta.glob('../**/translations/*.json', { eager: true })`
+在构建时自动扫描并加载所有符合以下模式的翻译文件：
 - `**/translations/*.en.json` (英文翻译)
+- `**/translations/*.es.json` (西班牙语翻译)
 - `**/translations/*.zh.json` (中文翻译)
 
 ### 文件命名规范
 - 翻译文件必须放在 `translations/` 文件夹中
-- 文件名格式：`{组件名}.{语言}.json`
-- 例如：`header.en.json`, `footer.zh.json`
+- 文件名格式：`{命名空间}.{语言}.json`
+- 命名空间就是 `useTranslation('命名空间')` 或 `t('命名空间:key')` 里用到的那个名字，
+  通常和组件文件夹名一致（但不强制），例如：`header.en.json`, `footer.zh.json`
 
 ## 如何添加新组件翻译
 
 ### 1. 创建翻译文件
 
-在组件文件夹中创建 `translations` 文件夹，并添加语言文件：
+在组件文件夹中创建 `translations` 文件夹，并添加三种语言的文件（en / es / zh 三个都要建，
+否则该语言下会 fallback 到英文）：
 
 ```bash
-src/components/MyComponent/
+src/common/MyComponent/
 ├── index.tsx
 └── translations/
     ├── mycomponent.en.json
+    ├── mycomponent.es.json
     └── mycomponent.zh.json
 ```
 
@@ -77,7 +83,8 @@ src/components/MyComponent/
 
 ### 3. 自动加载 ✨
 
-**无需手动配置！** 系统会自动检测并加载新的翻译文件。只要文件符合命名规范，就会自动生效。
+**无需手动配置！** 只要文件符合命名规范，重启 `npm run dev`（或下次构建）时就会自动生效，
+不需要在 `i18n/index.ts` 里手动 import。
 
 ### 4. 在组件中使用
 
@@ -101,10 +108,10 @@ export const MyComponent: React.FC = () => {
 
 ## 语言切换器
 
-使用 `LanguageSwitcher` 组件：
+使用 `LanguageSwitcher` 组件（位于 `src/common/LanguageSwitcher/`）：
 
 ```tsx
-import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { LanguageSwitcher } from '../../common/LanguageSwitcher/LanguageSwitcher';
 
 export const MyComponent = () => {
   return (
@@ -115,51 +122,23 @@ export const MyComponent = () => {
 };
 ```
 
-## 可用的翻译键
-
-### Header 翻译键
-- `nav.home`, `nav.physicians`, `nav.faqs`, `nav.brochures`, `nav.conditions`, `nav.gallery`, `nav.contact`
-- `contact.phone`, `contact.consultation`, `contact.address`, `contact.location`, `contact.hours`, `contact.closed`
-
-### Footer 翻译键
-- `about.title`, `about.description`, `about.learnMore`
-- `contact.title`, `contact.address`, `contact.phone`, `contact.fax`, `contact.email`
-- `gallery.title`, `gallery.description`
-- `hours.title`, `hours.schedule.operationTimeRange`, `hours.schedule.closed`
+语言选择会缓存到 `localStorage`（key: `i18nextLng`），下次访问自动沿用。未缓存时按浏览器语言
+检测（`es`→西班牙语，`zh`→中文，其余一律回退到英文）。
 
 ## 添加新语言
 
-1. 创建新的语言文件（如 `header.es.json`）
-2. 在 `i18n/index.ts` 中导入并添加到 resources
-3. 在 `LanguageSwitcher.tsx` 中添加新语言选项
+新增语言（例如法语 `fr`）需要改三处代码，而不只是加翻译文件：
 
-## 开发工具
-
-### 自动验证
-在开发模式下，系统会自动：
-- 扫描所有翻译文件
-- 验证翻译完整性
-- 在控制台显示加载状态
-
-### 手动调试
-```typescript
-import { printLoadedComponents, validateAllTranslations } from './i18n/devTools';
-
-// 打印所有已加载的组件
-printLoadedComponents();
-
-// 验证所有翻译
-const validation = validateAllTranslations();
-console.log('有效的组件:', validation.valid);
-console.log('无效的组件:', validation.invalid);
-```
+1. 给每个用到的 namespace 建 `xxx.fr.json`
+2. 在 `src/i18n/index.ts` 里，把 `['en', 'zh', 'es']` 的两处白名单加上 `'fr'`
+   （一处是 glob 扫描时的语言过滤，一处是 `detection.convertDetectedLanguage`）
+3. 在 `LanguageSwitcher.tsx` 的 `languages` 数组里加一项
 
 ## 最佳实践
 
 1. **命名规范**: 翻译文件名应该与组件文件夹名相同
 2. **键名规范**: 使用小写字母和点号分隔，如 `button.submit`
 3. **嵌套结构**: 使用嵌套对象组织相关翻译
-4. **后备语言**: 始终提供英文作为后备语言
-5. **类型安全**: 考虑使用 TypeScript 类型定义翻译键
-6. **文件组织**: 每个组件管理自己的翻译文件
-7. **自动加载**: 利用动态加载系统，无需手动配置
+4. **后备语言**: 三种语言（en/es/zh）都要提供，缺失的语言会 fallback 到英文，但不会报错——
+   容易漏翻译却发现不了，改完文案后建议三个语言文件都过一遍
+5. **文件组织**: 每个组件/页面管理自己的翻译文件，不要塞进别的 namespace

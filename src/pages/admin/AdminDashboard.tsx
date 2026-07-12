@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { checkAuth, logout, fetchAppointments, type AdminAppointment } from './authApi';
+import { usePageSeo } from '../../common/seo/usePageSeo';
 
 export const AdminDashboard: React.FC = () => {
+  usePageSeo('admin', '/admin', { noindex: true });
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<string | null>(null);

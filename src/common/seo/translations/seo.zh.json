@@ -1,0 +1,42 @@
+{
+  "home": {
+    "title": "Dragon Phoenix Acupuncture | 佛罗里达州基西米针灸与中医诊所",
+    "description": "Dragon Phoenix Acupuncture 位于佛罗里达州基西米，提供专业针灸与传统中医治疗，针对疼痛、压力、失眠、消化问题及慢性病提供个性化诊疗方案。"
+  },
+  "physicians": {
+    "title": "医师团队 | Dragon Phoenix Acupuncture",
+    "description": "认识周伟博士与 Xiu Feng Searcy 博士——拥有45年以上中医针灸经验的持证针灸师，坐诊于佛罗里达州基西米 Dragon Phoenix Acupuncture。"
+  },
+  "faqs": {
+    "title": "常见问题 | Dragon Phoenix Acupuncture",
+    "description": "关于针灸治疗、技术及就诊须知的常见问题解答，来自佛罗里达州基西米 Dragon Phoenix Acupuncture。"
+  },
+  "conditions": {
+    "title": "可治疗病症 | Dragon Phoenix Acupuncture",
+    "description": "针灸对疼痛、偏头痛、失眠、消化问题等数十种病症均有临床疗效证明，查看 Dragon Phoenix Acupuncture 的完整病症列表。"
+  },
+  "brochures": {
+    "title": "患者宣传手册 | Dragon Phoenix Acupuncture",
+    "description": "Dragon Phoenix Acupuncture 提供关于生育、纤维肌痛、腰痛、戒烟、减肥等主题的针灸科普手册。"
+  },
+  "gallery": {
+    "title": "诊所相册 | Dragon Phoenix Acupuncture",
+    "description": "一览佛罗里达州基西米 Dragon Phoenix Acupuncture 诊所环境——治疗室、设备与整体设施。"
+  },
+  "contact": {
+    "title": "联系我们 | Dragon Phoenix Acupuncture",
+    "description": "预约或联系 Dragon Phoenix Acupuncture，地址：2579 Oak Street, Kissimmee, FL。电话 (407) 932-4818，或在线给我们留言。"
+  },
+  "notFound": {
+    "title": "页面未找到 | Dragon Phoenix Acupuncture",
+    "description": "您访问的页面不存在，返回 Dragon Phoenix Acupuncture 首页。"
+  },
+  "admin": {
+    "title": "管理后台 | Dragon Phoenix Acupuncture",
+    "description": "仅限内部员工使用的管理后台。"
+  },
+  "adminLogin": {
+    "title": "管理员登录 | Dragon Phoenix Acupuncture",
+    "description": "仅限内部员工使用的管理员登录页。"
+  }
+}

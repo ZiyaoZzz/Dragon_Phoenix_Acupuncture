@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import { useTranslation } from 'react-i18next';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const NotFoundPage: React.FC = () => {
+  usePageSeo('notFound', '/404', { noindex: true });
   const { t } = useTranslation('notFoundPage');
 
   return (

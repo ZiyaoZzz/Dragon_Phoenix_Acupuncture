@@ -1,11 +1,13 @@
 import React, { type FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from './authApi';
+import { usePageSeo } from '../../common/seo/usePageSeo';
 
 /**
  * Admin login page. No public header/footer; minimal layout for backend access.
  */
 export const AdminLoginPage: React.FC = () => {
+  usePageSeo('adminLogin', '/admin/login', { noindex: true });
   const navigate = useNavigate();
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');

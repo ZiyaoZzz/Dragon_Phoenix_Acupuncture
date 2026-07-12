@@ -1,0 +1,181 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What this is
+
+Marketing site for Dragon Phoenix Acupuncture, a TCM clinic in Kissimmee, FL. A React SPA
+(frontend) plus a small Express API (backend, admin auth + appointment intake), deployed as two
+separate services. Trilingual (English / Spanish / Chinese).
+
+## Commands
+
+```bash
+# Frontend (repo root)
+npm run dev       # Vite dev server, http://localhost:5173
+npm run build     # tsc -b && vite build -> dist/
+npm run lint      # eslint .
+npm run preview   # serve the built dist/ locally
+npm run deploy    # gh-pages -d dist (manual publish; CI also does this on push, see below)
+
+# Backend (server/)
+cd server && npm run dev    # node --watch index.js, http://localhost:3001
+cd server && npm start      # node index.js
+```
+
+There is no test suite in this repo. Verify changes with `npm run build` (type errors surface at
+build time via `tsc -b`) and `npm run lint`, plus a manual check in the browser for anything visual.
+
+Frontend dev server proxies `/api/*` to `http://localhost:3001` (see `vite.config.ts`), so run the
+backend alongside the frontend when testing the contact form or admin dashboard locally.
+
+## Architecture
+
+### Frontend/backend split
+
+- Frontend is a static SPA built by Vite, deployed to GitHub Pages at `dragonphoenixacupuncture.com`
+  (`.github/workflows/deploy.yml`: on push to `main`, builds with `VITE_API_URL` injected from a
+  repo secret, publishes `dist/` via `peaceiris/actions-gh-pages`).
+- Backend (`server/`) is a standalone Express app, deployed separately (Render, per README) at
+  `api.dragonphoenixacupuncture.com`. It only exists to gate the `/admin` dashboard behind a
+  single hardcoded admin account and to accept appointment-request submissions.
+- The two are not in the same npm workspace — `server/` has its own `package.json` and
+  `node_modules`. Root `.env`/`server/.env` are gitignored; copy `server/.env.example`.
+
+### Backend (`server/index.js`)
+
+- Single admin user, credentials from env (`ADMIN_USER_ID`, `ADMIN_PASSWORD_HASH` — generate with
+  `server/scripts/hash-password.js`), JWT (`JWT_SECRET`) returned to the client and sent back as
+  `Authorization: Bearer <token>` (not a cookie, despite `cookie-parser` being a dependency).
+- `POST /api/appointments` accepts the contact form's appointment requests and stores them in a
+  plain in-memory array — **this resets on every server restart/deploy and there is no email/DB
+  persistence.** `GET /api/admin/appointments` (JWT-protected) is how the admin dashboard reads
+  them back. If appointments start actually mattering operationally, this in-memory store is the
+  first thing to replace.
+- Everything is in one file; there's no router/controller split. Fine at this size — don't add
+  layers preemptively if extending it.
+
+### Frontend structure
+
+- `src/pages/*.tsx` — one file per route, wired up in `src/main.tsx`. Admin routes live under
+  `src/pages/admin/` (`AdminLoginPage`, `AdminDashboard`, `authApi.ts` for the fetch wrapper that
+  attaches the JWT from `localStorage`).
+- `src/common/<feature>/` — the shared component/content layer. Two flavors coexist under the same
+  convention:
+  - **Real components**: `header`, `footer`, `ServiceCard`, `doctorCard`, `physicianDetailCard`,
+    `sidebar`, `historySection`, `hoursSection`, `homepageBanner`, `brochures`,
+    `LanguageSwitcher` — each has an `index.tsx`.
+  - **Translation-only namespaces**: `conditionsCard`, `contact`, `gallery` have *no* component —
+    just a `translations/` folder. The corresponding page (`ConditionsPage.tsx`, `ContactPage.tsx`,
+    `GalleryPage.tsx`) renders inline and pulls copy from that namespace. Don't go looking for a
+    `ConditionsCard` component; it doesn't exist by design.
+- `src/common/doctorCard/doctors.ts` is the single source of truth for physician bios (experience,
+  education, credentials, memberships) as structured data, consumed by both `HomePage` (summary
+  cards) and `PhysiciansPage` (full profile via `physicianDetailCard`). Update a doctor's info once
+  here, not per-page.
+- `src/assets/` — all images, imported directly into components (Vite fingerprints them on build).
+
+### i18n
+
+Full guide: `src/i18n/README.md`. The short version: every translatable namespace lives at
+`<folder>/translations/<namespace>.<lang>.json` (lang ∈ `en`, `es`, `zh`), and `src/i18n/index.ts`
+auto-discovers all of them via `import.meta.glob` — **no manual registration needed**, just add the
+three JSON files and use `useTranslation('namespace')`. All three language files should be kept in
+sync; a missing key silently falls back to English rather than erroring, so gaps are easy to miss.
+
+### SEO / GitHub Pages prerendering
+
+GitHub Pages is a plain static host with no server-side routing. Client-side routes like
+`/physicians` only exist as files at build time if something generates them; otherwise a direct
+request 404s at the HTTP level even though the SPA would render the right page once JS loads.
+`scripts/prerender.mjs` fixes this: it runs automatically after `vite build` (wired up as the
+`postbuild` npm script, see `package.json`), boots the built app in headless Chromium (Playwright),
+visits every known route, and writes the fully-rendered HTML to a physical file
+(`dist/physicians/index.html`, etc.) so GitHub Pages serves each route with a real 200.
+
+Per-route `<title>`, `<meta name="description">`, `<link rel="canonical">`, and
+`<meta name="robots">` are set client-side by `src/common/seo/usePageSeo.ts`, called once near the
+top of every page component (`usePageSeo('routeKey', '/path')`; pass `{ noindex: true }` for pages
+that shouldn't be indexed, e.g. the admin routes). The prerender script waits for that effect to run
+before capturing the HTML, so the static files carry the correct per-page tags too — this also
+matters for crawlers that don't execute JavaScript (most non-Google bots, including AI crawlers).
+Copy for these tags lives in `src/common/seo/translations/seo.*.json`, one `title`/`description`
+pair per route key.
+
+**When adding a new public route**, do all of:
+1. Add the route in `src/main.tsx`.
+2. Call `usePageSeo('newRouteKey', '/new-path')` in the page component.
+3. Add a `newRouteKey` entry to all three `src/common/seo/translations/seo.*.json` files.
+4. Add the path to the `ROUTES` array in `scripts/prerender.mjs`.
+5. Add a `<url>` entry to `public/sitemap.xml`.
+6. Run `npm run build` and check `dist/<new-path>/index.html` was generated with the right title/meta.
+
+`public/robots.txt` disallows `/admin`; `public/llms.txt` is a short site summary for AI crawlers
+that don't render JS. Both are static files, edit them directly.
+
+`dist/404.html` (generated by the `copy-404` Vite plugin in `vite.config.ts`) stays a plain,
+un-prerendered app shell — it's what GitHub Pages serves (with a real 404 status) for any path that
+isn't one of the routes above, and it lets the client-side router show `NotFoundPage`.
+
+### Styling
+
+Tailwind, with brand colors defined in `tailwind.config.js` (`brand-primary` etc. = `#395c3b`).
+In practice most components use raw hex classes like `text-[#395c3b]` instead of the `brand-*`
+utilities — both work, but prefer the named `brand-*`/`clinic-*` utilities in new code so the
+palette stays greppable in one place.
+
+## Content update guide
+
+Routine, no-code-change content edits — this is most of what "updating the site" means day to day:
+
+- **Doctor bios / credentials**: `src/common/doctorCard/doctors.ts`
+- **Any page copy (nav, hours, FAQs, conditions list, contact info, footer, homepage banner
+  text)**: the relevant `translations/<namespace>.<lang>.json` files under `src/common/*/translations/`
+  or `src/pages/*/translations/`. Edit all three languages together.
+- **Services shown on the homepage**: `serviceItems` array in `src/pages/HomePage.tsx` (image +
+  key) plus `src/common/ServiceCard/translations/services.*.json` (title/description text).
+- **Gallery images**: add files to `src/assets/`, wire into `GalleryPage.tsx`.
+- **Brochure content**: `src/common/brochures/sections.tsx` / `additional-sections.tsx` (structure)
+  + `src/common/brochures/translations/` (copy).
+- **SEO/meta**: per-route title/description in `src/common/seo/translations/seo.*.json` (see SEO
+  section below); sitewide JSON-LD business info (address, hours, phone) in `index.html`;
+  `public/sitemap.xml` if routes change.
+
+After content edits: `npm run build` to catch typos in i18n key references, then eyeball the page
+in `npm run dev` in at least English and one other language (missing keys fail silently).
+
+## Known tech debt (not yet fixed, worth knowing about before "optimizing" further)
+
+- Appointment submissions are in-memory only on the backend (see above) — no persistence, no
+  notification email. Silent data loss on every backend restart.
+- File/folder naming is inconsistent: most page files are PascalCase (`HomePage.tsx`) but
+  `src/pages/faqPage.tsx` is camelCase; most `src/common/*` folders are lowercase-first
+  (`header`, `gallery`) while a few are PascalCase (`ServiceCard`, `LanguageSwitcher`). Not worth a
+  drive-by rename; fix opportunistically if you're already touching those files.
+- Root-level `CNAME` and `public/CNAME` are duplicates (same content). `public/CNAME` is the one
+  that actually matters — it gets copied into `dist/` by Vite and is what GitHub Pages reads from
+  the deployed branch. The root one appears unused by the current build/deploy path.
+- Brand color Tailwind utilities (`brand-*`, `clinic-*`) are underused in favor of raw hex
+  arbitrary-value classes (see Styling above).
+- All three languages share the same URL per page (language is a client-side `localStorage`
+  preference, not part of the route). `public/sitemap.xml`'s `hreflang` alternates all point to the
+  identical URL for en/es/zh, which is a valid-but-minimal pattern — Google's preferred setup is a
+  distinct URL per language (e.g. `/es/physicians`). Not addressed here; would mean adding
+  language-prefixed routing, a bigger change than today's fix.
+- Playwright (used only by `scripts/prerender.mjs`) is a devDependency that downloads a Chromium
+  binary; CI installs it explicitly in `.github/workflows/deploy.yml`. If prerendering is ever
+  dropped, remove that step and the `postbuild` script too.
+
+## Recently cleaned up
+
+- Removed `backup-static-version/` (the pre-React static HTML site) and a stray WHOIS PDF from the
+  repo — both were dead weight with no code depending on them; still recoverable from git history
+  if ever needed.
+- Renamed `src/asserts/` → `src/assets/` (was a typo) and updated all imports.
+- Fixed `src/i18n/README.md`, which documented files (`translationLoader.ts`, `devTools.ts`) and a
+  `LanguageSwitcher` path that no longer exist.
+- Added `src/common/seo/usePageSeo.ts` + a post-build prerender step (`scripts/prerender.mjs`) so
+  every route gets a real HTTP 200 and unique title/description/canonical on GitHub Pages, instead
+  of all routes serving the homepage's meta tags behind an HTTP 404. Added `public/robots.txt` and
+  `public/llms.txt`, which previously didn't exist despite being mentioned in the README. See the
+  "SEO / GitHub Pages prerendering" section above.

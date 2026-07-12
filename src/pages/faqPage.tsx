@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import { FAQCard } from '../common/faqCard';
+import { usePageSeo } from '../common/seo/usePageSeo';
 
 export const FAQPage: React.FC = () => {
+  usePageSeo('faqs', '/faqs');
   const { t } = useTranslation('faq');
 
   const faqData = [

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import img3 from '../../asserts/dragon_phoenix_3.png';
-import img4 from '../../asserts/dragon_phoenix_4.png';
-import img5 from '../../asserts/dragon_phoenix_5.png';
-import img6 from '../../asserts/dragon_phoenix_6.png';
-import img7 from '../../asserts/dragon_phoenix_7.png';
-import img8 from '../../asserts/dragon_phoenix_8.png';
+import img3 from '../../assets/dragon_phoenix_3.png';
+import img4 from '../../assets/dragon_phoenix_4.png';
+import img5 from '../../assets/dragon_phoenix_5.png';
+import img6 from '../../assets/dragon_phoenix_6.png';
+import img7 from '../../assets/dragon_phoenix_7.png';
+import img8 from '../../assets/dragon_phoenix_8.png';
 
 export const Footer: React.FC = () => {
   const { t } = useTranslation('footer');
