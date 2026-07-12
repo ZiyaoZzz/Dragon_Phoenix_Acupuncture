@@ -15,9 +15,29 @@
     "title": "Conditions We Treat | Dragon Phoenix Acupuncture",
     "description": "Acupuncture has shown clinical effectiveness for pain, migraines, insomnia, digestive issues, and dozens of other conditions. See the full list treated at Dragon Phoenix Acupuncture."
   },
-  "brochures": {
-    "title": "Patient Brochures | Dragon Phoenix Acupuncture",
-    "description": "Educational brochures on acupuncture for fertility, fibromyalgia, lower back pain, smoking cessation, weight loss, and more, from Dragon Phoenix Acupuncture."
+  "brochuresIntro": {
+    "title": "What Is Acupuncture? | Dragon Phoenix Acupuncture",
+    "description": "How acupuncture works, needle depth, whether it hurts, and what conditions it treats. Patient brochure from Dragon Phoenix Acupuncture in Kissimmee, FL."
+  },
+  "brochuresFertility": {
+    "title": "Fertility & Acupuncture | Dragon Phoenix Acupuncture",
+    "description": "How acupuncture supports IVF and fertility treatment: reducing stress hormones, regulating ovulation, and improving blood flow to the uterus. From Dragon Phoenix Acupuncture."
+  },
+  "brochuresFibromyalgia": {
+    "title": "Fibromyalgia Treatment | Dragon Phoenix Acupuncture",
+    "description": "Causes, symptoms, and how Dragon Phoenix Acupuncture treats fibromyalgia with electroacupuncture, moxibustion, cupping, and Chinese massage."
+  },
+  "brochuresLowerBackPain": {
+    "title": "Lower Back Pain Treatment | Dragon Phoenix Acupuncture",
+    "description": "Clinical research on acupuncture for acute and chronic lower back pain, including sciatica and disc conditions, from Dragon Phoenix Acupuncture."
+  },
+  "brochuresStopSmoking": {
+    "title": "Stop Smoking with Acupuncture | Dragon Phoenix Acupuncture",
+    "description": "How electroacupuncture and auriculotherapy help patients quit smoking without side effects or weight gain, at Dragon Phoenix Acupuncture."
+  },
+  "brochuresWeightLoss": {
+    "title": "Weight Loss with Acupuncture | Dragon Phoenix Acupuncture",
+    "description": "Dragon Phoenix Acupuncture's weight loss management program: electroacupuncture, auriculotherapy, and nutrition counseling in Kissimmee, FL."
   },
   "gallery": {
     "title": "Clinic Gallery | Dragon Phoenix Acupuncture",

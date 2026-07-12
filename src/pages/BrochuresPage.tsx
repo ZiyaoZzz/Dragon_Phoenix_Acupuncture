@@ -1,4 +1,5 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import { Sidebar } from '../common/sidebar';
@@ -8,9 +9,21 @@ import type { BrochureSectionId } from '../common/brochures/types';
 import { useTranslation } from 'react-i18next';
 import { usePageSeo } from '../common/seo/usePageSeo';
 
+// Maps a brochure topic id to its seo.*.json key and its own URL. 'intro' is the default
+// topic and lives at /brochures itself rather than /brochures/intro.
+const SEO_KEY_BY_TOPIC: Record<BrochureSectionId, string> = {
+  intro: 'brochuresIntro',
+  fertility: 'brochuresFertility',
+  fibromyalgia: 'brochuresFibromyalgia',
+  'lower-back-pain': 'brochuresLowerBackPain',
+  'stop-smoking': 'brochuresStopSmoking',
+  'weight-loss': 'brochuresWeightLoss',
+};
+
 export const BrochuresPage: React.FC = () => {
-  usePageSeo('brochures', '/brochures');
   const { t } = useTranslation('brochures');
+  const navigate = useNavigate();
+  const { topic } = useParams<{ topic?: string }>();
 
   const items: SidebarItem[] = useMemo(() => [
     { id: 'intro', name: t('sidebar.items.intro') },
@@ -21,20 +34,16 @@ export const BrochuresPage: React.FC = () => {
     { id: 'weight-loss', name: t('sidebar.items.weight-loss') },
   ], [t]);
 
-  const [selected, setSelected] = useState<SidebarItem>(items[0]);
+  const selected = items.find((i) => i.id === topic) ?? items[0];
+
+  usePageSeo(
+    SEO_KEY_BY_TOPIC[selected.id as BrochureSectionId],
+    selected.id === 'intro' ? '/brochures' : `/brochures/${selected.id}`
+  );
 
   const handleSelect = (item: SidebarItem) => {
-    setSelected(item);
-    window.history.replaceState(null, '', `#${item.id}`);
+    navigate(item.id === 'intro' ? '/brochures' : `/brochures/${item.id}`);
   };
-
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash) {
-      const initial = items.find(i => i.id === hash);
-      if (initial) setSelected(initial);
-    }
-  }, [items]);
 
   return (
     <div className="min-h-screen flex flex-col">

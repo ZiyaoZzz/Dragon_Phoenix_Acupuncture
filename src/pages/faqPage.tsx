@@ -4,6 +4,7 @@ import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import { FAQCard } from '../common/faqCard';
 import { usePageSeo } from '../common/seo/usePageSeo';
+import { useJsonLd } from '../common/seo/useJsonLd';
 
 export const FAQPage: React.FC = () => {
   usePageSeo('faqs', '/faqs');
@@ -50,10 +51,23 @@ export const FAQPage: React.FC = () => {
     }
   ];
 
+  useJsonLd('faq', {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: Array.isArray(faq.solution) ? faq.solution.join(' ') : faq.solution,
+      },
+    })),
+  });
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1 bg-[#f1f9f0]">
         <section className="max-w-6xl mx-auto px-5 py-12">
           <div className="text-center mb-12">

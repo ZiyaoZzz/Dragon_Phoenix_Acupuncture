@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import { usePageSeo } from '../common/seo/usePageSeo';
+import { useJsonLd } from '../common/seo/useJsonLd';
 
 export const ConditionsPage: React.FC = () => {
   usePageSeo('conditions', '/conditions');
@@ -104,6 +105,16 @@ export const ConditionsPage: React.FC = () => {
     t('probable.vascularDementia'),
     t('probable.whoopingCough')
   ];
+
+  useJsonLd('conditions', {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    name: t('title'),
+    about: [...provenConditions, ...probableConditions].map((name) => ({
+      '@type': 'MedicalCondition',
+      name,
+    })),
+  });
 
   return (
     <div className="min-h-screen flex flex-col">

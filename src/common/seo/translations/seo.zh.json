@@ -15,9 +15,29 @@
     "title": "可治疗病症 | Dragon Phoenix Acupuncture",
     "description": "针灸对疼痛、偏头痛、失眠、消化问题等数十种病症均有临床疗效证明，查看 Dragon Phoenix Acupuncture 的完整病症列表。"
   },
-  "brochures": {
-    "title": "患者宣传手册 | Dragon Phoenix Acupuncture",
-    "description": "Dragon Phoenix Acupuncture 提供关于生育、纤维肌痛、腰痛、戒烟、减肥等主题的针灸科普手册。"
+  "brochuresIntro": {
+    "title": "什么是针灸？| Dragon Phoenix Acupuncture",
+    "description": "针灸如何起效、进针深度、是否会痛、可治疗哪些病症——来自佛罗里达州基西米 Dragon Phoenix Acupuncture 的患者科普手册。"
+  },
+  "brochuresFertility": {
+    "title": "生育与针灸 | Dragon Phoenix Acupuncture",
+    "description": "针灸如何辅助试管婴儿(IVF)与生育治疗：降低压力激素、调节排卵、改善子宫血流。来自 Dragon Phoenix Acupuncture。"
+  },
+  "brochuresFibromyalgia": {
+    "title": "纤维肌痛治疗 | Dragon Phoenix Acupuncture",
+    "description": "纤维肌痛的成因、症状，以及 Dragon Phoenix Acupuncture 如何用电针、艾灸、拔罐与中式推拿进行治疗。"
+  },
+  "brochuresLowerBackPain": {
+    "title": "腰痛治疗 | Dragon Phoenix Acupuncture",
+    "description": "针灸治疗急慢性腰痛（含坐骨神经痛与椎间盘病变）的临床研究，来自 Dragon Phoenix Acupuncture。"
+  },
+  "brochuresStopSmoking": {
+    "title": "针灸戒烟 | Dragon Phoenix Acupuncture",
+    "description": "电针与耳穴疗法如何帮助患者在无副作用、不增重的情况下戒烟——Dragon Phoenix Acupuncture。"
+  },
+  "brochuresWeightLoss": {
+    "title": "针灸减肥 | Dragon Phoenix Acupuncture",
+    "description": "Dragon Phoenix Acupuncture 的减肥管理方案：电针、耳穴疗法与营养咨询，佛罗里达州基西米。"
   },
   "gallery": {
     "title": "诊所相册 | Dragon Phoenix Acupuncture",

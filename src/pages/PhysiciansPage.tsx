@@ -5,9 +5,31 @@ import { PhysicianDetailCard } from '../common/physicianDetailCard';
 import { Sidebar } from '../common/sidebar';
 import { doctors } from '../common/doctorCard/doctors';
 import { usePageSeo } from '../common/seo/usePageSeo';
+import { useJsonLd } from '../common/seo/useJsonLd';
+
+const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
 export const PhysiciansPage: React.FC = () => {
   usePageSeo('physicians', '/physicians');
+  useJsonLd('physicians', {
+    '@context': 'https://schema.org',
+    '@graph': doctors.map((doctor) => ({
+      '@type': 'Physician',
+      name: doctor.name,
+      jobTitle: doctor.title,
+      description: doctor.description ?? doctor.summary,
+      image: `${SITE_URL}${doctor.img}`,
+      url: `${SITE_URL}/physicians#${doctor.id}`,
+      worksFor: {
+        '@type': 'MedicalBusiness',
+        name: 'Dragon Phoenix Acupuncture',
+        url: SITE_URL,
+      },
+      ...(doctor.memberships
+        ? { memberOf: doctor.memberships.map((m) => ({ '@type': 'Organization', name: m })) }
+        : {}),
+    })),
+  });
   const [selectedDoctor, setSelectedDoctor] = React.useState(doctors[0]);
 
   React.useEffect(() => {

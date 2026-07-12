@@ -117,6 +117,32 @@ that don't render JS. Both are static files, edit them directly.
 un-prerendered app shell — it's what GitHub Pages serves (with a real 404 status) for any path that
 isn't one of the routes above, and it lets the client-side router show `NotFoundPage`.
 
+**Structured data (JSON-LD)**: `src/common/seo/useJsonLd.ts` injects/removes a
+`<script type="application/ld+json">` tag keyed by an id, same "runs client-side, prerender captures
+it" mechanism as `usePageSeo`. Sitewide `MedicalBusiness`/`LocalBusiness` data lives statically in
+`index.html`. Page-specific schema: `FAQPage` on `/faqs` (built from the same `faqData` that renders
+the visible Q&A), `Physician` (one per doctor, `@graph`) on `/physicians`, `MedicalWebPage`/`about`
+on `/conditions` (from the same proven/probable condition lists rendered on the page), and
+`ImageGallery` on `/gallery`. Add more `useJsonLd(...)` calls the same way if another page has
+structured data worth marking up.
+
+**Brochures are one route per topic**: `/brochures` (intro) and `/brochures/:topic` (`fertility`,
+`fibromyalgia`, `lower-back-pain`, `stop-smoking`, `weight-loss`) each render `BrochuresPage`, which
+reads the topic from `useParams()` and calls `usePageSeo` with a topic-specific key
+(`SEO_KEY_BY_TOPIC` map in `BrochuresPage.tsx`) and its own canonical path. The sidebar calls
+`navigate()` instead of just swapping local state, so each topic is a real, independently-crawlable,
+independently-titled URL — before this, only whichever tab was selected by default ever made it into
+the prerendered HTML, so the other four topics were invisible to search engines. If you add a 6th
+brochure topic: add it to `BrochureSectionId` (`src/common/brochures/types.ts`), `renderer.tsx`,
+the `items`/`SEO_KEY_BY_TOPIC` maps in `BrochuresPage.tsx`, a `seo.*.json` entry, the
+`scripts/prerender.mjs` `ROUTES` array, and `public/sitemap.xml`.
+
+**Image weight**: `npm run optimize-images` (`scripts/optimize-images.mjs`, uses `sharp`) resizes
+anything in `src/assets/` wider than 1600px and re-compresses JPEG/PNG in place, same filename/
+extension so no imports need updating. Run it after adding new photos — most clinic photos come
+straight off a phone/camera at multiple MB and several thousand px wide, which is pure wasted
+payload (and hurts LCP) since the largest they're ever displayed is the ~1500px hero banner.
+
 ### Styling
 
 Tailwind, with brand colors defined in `tailwind.config.js` (`brand-primary` etc. = `#395c3b`).
@@ -134,7 +160,8 @@ Routine, no-code-change content edits — this is most of what "updating the sit
   or `src/pages/*/translations/`. Edit all three languages together.
 - **Services shown on the homepage**: `serviceItems` array in `src/pages/HomePage.tsx` (image +
   key) plus `src/common/ServiceCard/translations/services.*.json` (title/description text).
-- **Gallery images**: add files to `src/assets/`, wire into `GalleryPage.tsx`.
+- **Gallery images**: add files to `src/assets/`, wire into `GalleryPage.tsx`, then run
+  `npm run optimize-images` before committing.
 - **Brochure content**: `src/common/brochures/sections.tsx` / `additional-sections.tsx` (structure)
   + `src/common/brochures/translations/` (copy).
 - **SEO/meta**: per-route title/description in `src/common/seo/translations/seo.*.json` (see SEO
@@ -165,6 +192,9 @@ in `npm run dev` in at least English and one other language (missing keys fail s
 - Playwright (used only by `scripts/prerender.mjs`) is a devDependency that downloads a Chromium
   binary; CI installs it explicitly in `.github/workflows/deploy.yml`. If prerendering is ever
   dropped, remove that step and the `postbuild` script too.
+- No JSON-LD yet on `/brochures` (each topic's page) or `/contact` — reasonable next candidates
+  (`Article`/`MedicalWebPage` and `MedicalBusiness`/`ContactPage` respectively) if you want more of
+  the site eligible for rich results.
 
 ## Recently cleaned up
 
@@ -179,3 +209,9 @@ in `npm run dev` in at least English and one other language (missing keys fail s
   of all routes serving the homepage's meta tags behind an HTTP 404. Added `public/robots.txt` and
   `public/llms.txt`, which previously didn't exist despite being mentioned in the README. See the
   "SEO / GitHub Pages prerendering" section above.
+- Added `FAQPage`/`Physician`/`MedicalWebPage`/`ImageGallery` JSON-LD (`src/common/seo/useJsonLd.ts`)
+  on `/faqs`, `/physicians`, `/conditions`, and `/gallery`; split `/brochures` into one real route
+  per topic (`/brochures/fertility`, etc.) instead of a single URL with client-side tab-switched
+  content, so all 5 topics are independently indexable; deleted unused `back.jpg`/`hand.jpg`; and
+  added `npm run optimize-images` (`scripts/optimize-images.mjs`) which cut `src/assets/` from ~9.7MB
+  to ~1.9MB by resizing/recompressing in place (ran once already; re-run after adding new photos).

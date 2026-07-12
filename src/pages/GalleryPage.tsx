@@ -14,6 +14,9 @@ import dragonPhoenix8 from '../assets/dragon_phoenix_8.png';
 import xiuFengSearcy from '../assets/Xiu_Feng_Searcy.jpg';
 import weiZhou from '../assets/Physician_Wei_Zhou.jpeg';
 import { usePageSeo } from '../common/seo/usePageSeo';
+import { useJsonLd } from '../common/seo/useJsonLd';
+
+const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
 export const GalleryPage: React.FC = () => {
   usePageSeo('gallery', '/gallery');
@@ -29,6 +32,18 @@ export const GalleryPage: React.FC = () => {
     { src: dragonPhoenix7, alt: t('images.treatmentArea') },
     { src: dragonPhoenix8, alt: t('images.clinicEnvironment') },
   ];
+
+  useJsonLd('gallery', {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: t('title'),
+    url: `${SITE_URL}/gallery`,
+    image: galleryImages.map((img) => ({
+      '@type': 'ImageObject',
+      contentUrl: `${SITE_URL}${img.src}`,
+      name: img.alt,
+    })),
+  });
 
   const practitioners = [
     {

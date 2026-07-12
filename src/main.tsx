@@ -22,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/faqs" element={<FAQPage />} />
       <Route path="/conditions" element={<ConditionsPage />} />
       <Route path="/brochures" element={<BrochuresPage />} />
+      <Route path="/brochures/:topic" element={<BrochuresPage />} />
       <Route path="/gallery" element={<GalleryPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/admin" element={<AdminDashboard />} />

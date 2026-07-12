@@ -15,9 +15,29 @@
     "title": "Afecciones que Tratamos | Dragon Phoenix Acupuncture",
     "description": "La acupuntura ha demostrado eficacia clínica para el dolor, las migrañas, el insomnio, problemas digestivos y muchas otras afecciones. Vea la lista completa en Dragon Phoenix Acupuncture."
   },
-  "brochures": {
-    "title": "Folletos para Pacientes | Dragon Phoenix Acupuncture",
-    "description": "Folletos educativos sobre acupuntura para fertilidad, fibromialgia, dolor lumbar, dejar de fumar, pérdida de peso y más, de Dragon Phoenix Acupuncture."
+  "brochuresIntro": {
+    "title": "¿Qué es la Acupuntura? | Dragon Phoenix Acupuncture",
+    "description": "Cómo funciona la acupuntura, la profundidad de las agujas, si duele y qué afecciones trata. Folleto para pacientes de Dragon Phoenix Acupuncture en Kissimmee, FL."
+  },
+  "brochuresFertility": {
+    "title": "Fertilidad y Acupuntura | Dragon Phoenix Acupuncture",
+    "description": "Cómo la acupuntura apoya la FIV y el tratamiento de fertilidad: reduce hormonas del estrés, regula la ovulación y mejora el flujo sanguíneo al útero. De Dragon Phoenix Acupuncture."
+  },
+  "brochuresFibromyalgia": {
+    "title": "Tratamiento de Fibromialgia | Dragon Phoenix Acupuncture",
+    "description": "Causas, síntomas y cómo Dragon Phoenix Acupuncture trata la fibromialgia con electroacupuntura, moxibustión, ventosas y masaje chino."
+  },
+  "brochuresLowerBackPain": {
+    "title": "Tratamiento del Dolor Lumbar | Dragon Phoenix Acupuncture",
+    "description": "Investigación clínica sobre la acupuntura para el dolor lumbar agudo y crónico, incluyendo ciática y afecciones de disco, de Dragon Phoenix Acupuncture."
+  },
+  "brochuresStopSmoking": {
+    "title": "Dejar de Fumar con Acupuntura | Dragon Phoenix Acupuncture",
+    "description": "Cómo la electroacupuntura y la auriculoterapia ayudan a los pacientes a dejar de fumar sin efectos secundarios ni aumento de peso, en Dragon Phoenix Acupuncture."
+  },
+  "brochuresWeightLoss": {
+    "title": "Pérdida de Peso con Acupuntura | Dragon Phoenix Acupuncture",
+    "description": "Programa de manejo de pérdida de peso de Dragon Phoenix Acupuncture: electroacupuntura, auriculoterapia y asesoría nutricional en Kissimmee, FL."
   },
   "gallery": {
     "title": "Galería de la Clínica | Dragon Phoenix Acupuncture",
