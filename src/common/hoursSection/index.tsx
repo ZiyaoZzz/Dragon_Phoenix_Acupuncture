@@ -7,7 +7,7 @@ export const HoursSection: React.FC = () => {
   const end = t('weekdayEnd');
 
   return (
-    <section className="bg-[#f5fff2] py-6">
+    <section className="bg-brand-surface py-6">
       <div className="max-w-[1600px] mx-auto flex justify-around gap-6 px-5">
         <div className="text-center p-6 min-w-[200px]">
           <h3 className="text-3xl text-gray-800 mb-2">

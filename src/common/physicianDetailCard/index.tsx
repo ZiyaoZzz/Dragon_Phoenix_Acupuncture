@@ -136,7 +136,7 @@ export const PhysicianDetailCard: React.FC<PhysicianDetailCardProps> = ({ doctor
   }));
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+    <div className="bg-white rounded-xl shadow-card overflow-hidden border border-gray-100">
       <div className="bg-white p-6 border-b border-gray-100">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
           <div className="relative">

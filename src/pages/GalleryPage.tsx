@@ -62,7 +62,7 @@ export const GalleryPage: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 bg-[#f1f9f0]">
+      <main className="flex-1 bg-brand-surface">
         <section className="max-w-6xl mx-auto px-4 sm:px-5 py-6 sm:py-8 md:py-12">
           <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">{t('title')}</h1>

@@ -27,7 +27,7 @@ export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) =
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 bg-[#f1f9f0]">
+      <main className="flex-1 bg-brand-surface">
         <section className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center text-gray-800 mb-8 sm:mb-12 md:mb-16 lg:mb-24">{t('title')}</h1>
 

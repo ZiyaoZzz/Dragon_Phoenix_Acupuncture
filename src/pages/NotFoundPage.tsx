@@ -12,7 +12,7 @@ export const NotFoundPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 bg-[#f1f9f0] flex items-center justify-center">
+      <main className="flex-1 bg-brand-surface flex items-center justify-center">
         <section className="max-w-2xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20 text-center">
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold text-gray-300 mb-4">404</h1>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">

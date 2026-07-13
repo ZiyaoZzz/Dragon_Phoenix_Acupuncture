@@ -100,7 +100,11 @@ async function main() {
 
   const browser = await chromium.launch();
   try {
-    const page = await browser.newPage();
+    // reducedMotion: 'reduce' makes components that check prefers-reduced-motion
+    // (e.g. TrustBar's AnimatedCounter) skip straight to their final value instead of
+    // a multi-second count-up animation, so the static HTML captured below never
+    // freezes mid-animation (e.g. "37+" baked in instead of the real "90+").
+    const page = await browser.newPage({ reducedMotion: 'reduce' });
     // The same page/browsing context is reused for every route below, so localStorage
     // persists across navigations. Locale-prefixed routes (/es, /zh, ...) call
     // i18n.changeLanguage(), which i18next-browser-languagedetector caches to
@@ -118,6 +122,21 @@ async function main() {
       // usePageSeo() only adds this tag after its effect runs; its presence means
       // the route-specific title/description/canonical have been applied.
       await page.waitForSelector('meta[name="robots"]', { state: 'attached', timeout: 5000 });
+
+      // Scroll-reveal sections (useInView) start hidden until an IntersectionObserver
+      // fires, which never happens on a page that's never scrolled. Without this,
+      // the static HTML below the fold would freeze in its pre-animation (invisible)
+      // state for anything that doesn't run JS a second time (most non-Google crawlers).
+      // Scrolling through in small steps gives each observer a chance to fire.
+      await page.evaluate(async () => {
+        const step = Math.max(window.innerHeight, 400);
+        const height = document.body.scrollHeight;
+        for (let y = 0; y < height; y += step) {
+          window.scrollTo(0, y);
+          await new Promise((resolve) => setTimeout(resolve, 50));
+        }
+        window.scrollTo(0, 0);
+      });
 
       const html = await page.content();
       const outDir = route === '/' ? DIST : join(DIST, route.replace(/^\//, ''));

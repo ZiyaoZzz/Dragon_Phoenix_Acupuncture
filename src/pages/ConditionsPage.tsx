@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
+import { Reveal } from '../common/reveal';
 import { usePageSeo } from '../common/seo/usePageSeo';
 import { useJsonLd } from '../common/seo/useJsonLd';
 
@@ -150,7 +151,7 @@ export const ConditionsPage: React.FC = () => {
         <Link
           key={key}
           to={`/brochures/${topic}`}
-          className={`inline-flex items-center gap-1.5 ${chipClasses} px-3 py-1.5 rounded-full text-sm sm:text-base hover:ring-1 hover:ring-[#395c3b] transition-shadow`}
+          className={`inline-flex items-center gap-1.5 ${chipClasses} px-3 py-1.5 rounded-full text-sm sm:text-base hover:ring-1 hover:ring-brand-primary transition-shadow`}
         >
           <span aria-hidden="true">{mark}</span>
           {label}
@@ -183,7 +184,7 @@ export const ConditionsPage: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-1 bg-[#f1f9f0]">
+      <main className="flex-1 bg-brand-surface">
         <section className="max-w-6xl mx-auto px-5 py-12">
           <div className="text-center mb-8">
             <h1 className="text-5xl font-bold text-gray-800 mb-6">{t('title')}</h1>
@@ -191,7 +192,7 @@ export const ConditionsPage: React.FC = () => {
             <p className="text-gray-600 text-xl">{t('intro.p2')}</p>
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-5 sm:p-6 mb-8 flex flex-col sm:flex-row gap-4 sm:gap-8 sm:items-start">
+          <div className="bg-white rounded-lg shadow-card p-5 sm:p-6 mb-8 flex flex-col sm:flex-row gap-4 sm:gap-8 sm:items-start">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-gray-800 text-sm font-bold shrink-0">✓</span>
               <div>
@@ -210,19 +211,21 @@ export const ConditionsPage: React.FC = () => {
           <p className="text-gray-500 text-sm text-center -mt-4 mb-8">{t('brochureHint')}</p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {CATEGORIES.map((category) => (
-              <div key={category.key} className="bg-white rounded-lg shadow-md p-6 sm:p-7">
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-[#e9f5e9] text-[#395c3b] shrink-0">
-                    <category.icon className="w-6 h-6" />
-                  </span>
-                  <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{t(`categories.${category.key}`)}</h2>
+            {CATEGORIES.map((category, i) => (
+              <Reveal key={category.key} delay={(i % 2) * 100}>
+                <div className="bg-white rounded-lg shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 motion-reduce:transform-none p-6 sm:p-7">
+                  <div className="flex items-center gap-3 mb-5">
+                    <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-brand-surface text-brand-primary shrink-0">
+                      <category.icon className="w-6 h-6" />
+                    </span>
+                    <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{t(`categories.${category.key}`)}</h2>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.proven.map((key) => renderChip(key, 'proven'))}
+                    {category.probable.map((key) => renderChip(key, 'probable'))}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.proven.map((key) => renderChip(key, 'proven'))}
-                  {category.probable.map((key) => renderChip(key, 'probable'))}
-                </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </section>

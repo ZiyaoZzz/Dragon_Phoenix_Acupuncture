@@ -125,7 +125,7 @@ export const HomepageBanner: React.FC = () => {
 
   return (
     <section id="appointment" className="max-w-[1500px] mx-auto px-4 sm:px-5 pb-8 md:pb-12">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-10 items-start">
         <div className="flex flex-col gap-4 md:gap-10 pt-4 md:pt-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-800 mb-3 md:mb-5 font-bold">{t('whoWeAreTitle')}</h2>
           <p className="italic text-gray-600 text-base sm:text-lg mb-3 md:mb-4">{t('whoWeAreLead')}</p>
@@ -215,7 +215,7 @@ export const HomepageBanner: React.FC = () => {
 
             <input type="hidden" id="clientTime" name="clientTime" />
             <input type="hidden" id="timezone" name="timezone" value={timezone} />
-            <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center bg-[#395c3b] text-white px-6 py-3 rounded hover:bg-[#2e7d32] transition-colors text-base sm:text-lg font-medium">{t('submit')}</button>
+            <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center bg-brand-primary text-white px-6 py-3 rounded hover:bg-brand-accent transition-colors text-base sm:text-lg font-medium">{t('submit')}</button>
             <p className="text-gray-600 text-sm sm:text-base">{t('formNote')}</p>
           </form>
         </div>
