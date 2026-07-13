@@ -109,7 +109,7 @@ export const doctors: DoctorData[] = [
       "Doctoral's Degree in Acupuncture and Oriental Medicine - ATOM (USA-2025)",
     ],
     description:
-    'Dr. Zhou holds a PhD in Traditional Chinese Medicine and is a licensed acupuncturist specialized in traditional Chinese medicine with extensive acupuncture and herbal experience over 45 years.',
+    'Dr. Zhou holds a PhD in Traditional Chinese Medicine, with doctoral research focused on ophthalmology and eye acupuncture. He is a licensed acupuncturist with extensive acupuncture and herbal experience over 45 years.',
     education: [
       {
         title: "Education & Credentials",
@@ -122,8 +122,8 @@ export const doctors: DoctorData[] = [
         ],
       },
     ],
-    summary: "Dr. Zhou holds a PhD in Traditional Chinese Medicine and has been receiving formal TCM professional education in China university of TCM since 1978. He has practiced Traditional Chinese Medicine in Chinese medical institutions for more than 40+ years. He has a senior professional title and is a member of the Chinese Association of Chinese Medicine.",
-    specialties: ['TCM Herbs Formula', 'Acupuncture', 'Cupping', 'Tuina', 'Gua Sha', 'Reflexology'],
+    summary: "Dr. Zhou holds a PhD in Traditional Chinese Medicine and has been receiving formal TCM professional education in China university of TCM since 1978. His doctoral research focused on ophthalmology, specializing in eye acupuncture for vision and eye-related conditions. He has practiced Traditional Chinese Medicine in Chinese medical institutions for more than 40+ years. He has a senior professional title and is a member of the Chinese Association of Chinese Medicine.",
+    specialties: ['Eye Acupuncture (Ophthalmology)', 'TCM Herbs Formula', 'Acupuncture', 'Cupping', 'Tuina', 'Gua Sha', 'Reflexology'],
     specialtiesDescription: 'Specializes in treating various common and difficult clinical diseases using traditional Chinese medicine techniques.',
     memberships: [
       'Chinese Association of Chinese Medicine',

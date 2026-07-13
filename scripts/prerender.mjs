@@ -101,6 +101,18 @@ async function main() {
   const browser = await chromium.launch();
   try {
     const page = await browser.newPage();
+    // The same page/browsing context is reused for every route below, so localStorage
+    // persists across navigations. Locale-prefixed routes (/es, /zh, ...) call
+    // i18n.changeLanguage(), which i18next-browser-languagedetector caches to
+    // localStorage — without this, that choice would leak into every route that
+    // follows it in ROUTES and silently prerender them in the wrong language.
+    await page.addInitScript(() => {
+      try {
+        window.localStorage.removeItem('i18nextLng');
+      } catch {
+        // localStorage can throw in some contexts (e.g. about:blank); nothing to clean up then.
+      }
+    });
     for (const route of ROUTES) {
       await page.goto(`${BASE_URL}${route}`, { waitUntil: 'networkidle' });
       // usePageSeo() only adds this tag after its effect runs; its presence means

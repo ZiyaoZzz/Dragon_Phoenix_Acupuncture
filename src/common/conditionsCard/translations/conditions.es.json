@@ -8,6 +8,20 @@
   "provenDescription": "Estudios clínicos controlados han demostrado que la acupuntura ha sido un tratamiento efectivo para las siguientes enfermedades, síntomas o condiciones:",
   "probableTitle": "Condiciones Probablemente Efectivas",
   "probableDescription": "Las siguientes enfermedades, síntomas o condiciones tienen evidencia limitada pero probable para respaldar el uso terapéutico de la acupuntura:",
+  "legend": {
+    "proven": "Eficacia comprobada",
+    "probable": "Respaldado por la investigación"
+  },
+  "brochureHint": "↗ enlaza a una guía detallada",
+  "categories": {
+    "painMusculoskeletal": "Dolor y Sistema Musculoesquelético",
+    "womensHealth": "Salud de la Mujer y Embarazo",
+    "digestive": "Salud Digestiva",
+    "neuroMental": "Salud Neurológica y Mental",
+    "respiratoryEntSkin": "Sistema Respiratorio, ORL y Piel",
+    "cardioMetabolic": "Salud Cardiovascular y Metabólica",
+    "urinaryMens": "Salud Urinaria y Masculina"
+  },
   "proven": {
     "allergicRhinitis": "Rinitis alérgica (incluyendo fiebre del heno)",
     "biliaryColic": "Cólico biliar",

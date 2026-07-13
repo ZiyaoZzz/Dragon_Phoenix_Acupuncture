@@ -8,6 +8,20 @@
   "provenDescription": "Case-controlled clinical studies have shown that acupuncture has been an effective treatment for the following diseases, symptoms or conditions:",
   "probableTitle": "Probable Effective Conditions",
   "probableDescription": "The following diseases, symptoms or conditions have limited but probable evidence to support the therapeutic use of acupuncture:",
+  "legend": {
+    "proven": "Proven effective",
+    "probable": "Research-supported"
+  },
+  "brochureHint": "↗ links to an in-depth guide",
+  "categories": {
+    "painMusculoskeletal": "Pain & Musculoskeletal",
+    "womensHealth": "Women's Health & Pregnancy",
+    "digestive": "Digestive Health",
+    "neuroMental": "Neurological & Mental Health",
+    "respiratoryEntSkin": "Respiratory, ENT & Skin",
+    "cardioMetabolic": "Cardiovascular & Metabolic",
+    "urinaryMens": "Urinary & Men's Health"
+  },
   "proven": {
     "allergicRhinitis": "Allergic rhinitis (including hay fever)",
     "biliaryColic": "Biliary colic",

@@ -8,6 +8,20 @@
   "provenDescription": "病例对照临床研究已表明，针灸对以下疾病、症状或病症是有效的治疗方法：",
   "probableTitle": "可能有效的疾病",
   "probableDescription": "以下疾病、症状或病症有有限但可能的证据支持针灸的治疗用途：",
+  "legend": {
+    "proven": "已证实有效",
+    "probable": "有研究支持"
+  },
+  "brochureHint": "↗ 链接到详细指南",
+  "categories": {
+    "painMusculoskeletal": "疼痛与骨骼肌肉",
+    "womensHealth": "女性健康与孕产",
+    "digestive": "消化系统健康",
+    "neuroMental": "神经与心理健康",
+    "respiratoryEntSkin": "呼吸道、耳鼻喉与皮肤",
+    "cardioMetabolic": "心血管与代谢",
+    "urinaryMens": "泌尿与男性健康"
+  },
   "proven": {
     "allergicRhinitis": "过敏性鼻炎（包括花粉热）",
     "biliaryColic": "胆绞痛",
