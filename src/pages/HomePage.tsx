@@ -112,18 +112,30 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
     </section>
     <HistorySection backgroundImageUrl={faceImg} />
     <HoursSection />
-    <section className="bg-gray-100">
-      <div className="w-full h-[300px] sm:h-[350px] md:h-[450px]">
-        <iframe
-          title="clinic-map"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14055.353746469302!2d-81.3390036!3d28.2729154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed674992cf3991ee!2sDragon%20Phoenix%20Acupuncture!5e0!3m2!1sen!2sin!4v1596731702074!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
+    <section className="bg-brand-surface py-8 md:py-14">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-5">
+        <div className="h-[300px] sm:h-[350px] md:h-[450px] rounded-xl overflow-hidden shadow-card">
+          <iframe
+            title="clinic-map"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14055.353746469302!2d-81.3390036!3d28.2729154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed674992cf3991ee!2sDragon%20Phoenix%20Acupuncture!5e0!3m2!1sen!2sin!4v1596731702074!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+        <div className="text-center mt-4">
+          <a
+            href="https://maps.app.goo.gl/Ga5r1nwyWbH2PsfE6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-brand-primary hover:text-brand-accent underline underline-offset-2 text-base sm:text-lg"
+          >
+            {t('contact:info.viewMap')}
+          </a>
+        </div>
       </div>
     </section>
     <Footer />

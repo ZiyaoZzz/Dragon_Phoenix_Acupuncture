@@ -1,12 +1,12 @@
 {
   "nav": {
-    "home": "HOME",
-    "physicians": "PHYSICIANS",
-    "faqs": "COMMON FAQS",
-    "brochures": "ACUPUNCTURE BROCHURES",
-    "conditions": "CONDITIONS",
-    "gallery": "GALLERY",
-    "contact": "CONTACT US"
+    "home": "Home",
+    "physicians": "Physicians",
+    "faqs": "Common FAQs",
+    "brochures": "Acupuncture Brochures",
+    "conditions": "Conditions",
+    "gallery": "Gallery",
+    "contact": "Contact Us"
   },
   "contact": {
     "phone": "(407) 932-4818",

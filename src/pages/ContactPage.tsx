@@ -69,7 +69,7 @@ export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) =
           <div className="grid grid-cols-1 md:grid-cols-10 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-12 md:mb-16 lg:mb-24">
             <div className="p-0 md:col-span-7 order-2 md:order-1">
               <div className="aspect-video w-full rounded-xl overflow-hidden">
-                <iframe 
+                <iframe
                   title="Google Map"
                   className="w-full h-full"
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14055.353746469302!2d-81.3390036!3d28.2729154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xed674992cf3991ee!2sDragon%20Phoenix%20Acupuncture!5e0!3m2!1sen!2sin!4v1596731702074!5m2!1sen!2sin"
@@ -78,6 +78,14 @@ export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) =
                   aria-hidden="false"
                 />
               </div>
+              <a
+                href="https://maps.app.goo.gl/Ga5r1nwyWbH2PsfE6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-3 text-brand-primary hover:text-brand-accent underline underline-offset-2 text-sm sm:text-base"
+              >
+                {t('info.viewMap')}
+              </a>
             </div>
 
             <div className="p-0 md:col-span-3 order-1 md:order-2">

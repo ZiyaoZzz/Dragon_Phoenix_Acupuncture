@@ -18,7 +18,8 @@
     "email": "dragonphoenix40@netscape.net",
     "hoursLabel": "Horario",
     "hoursWeek": "Lunes-Sábado: 9AM - 5PM",
-    "hoursSun": "Domingo: CERRADO"
+    "hoursSun": "Domingo: CERRADO",
+    "viewMap": "Abrir en Google Maps"
   },
   "review": {
     "title": "Comparta su experiencia con nosotros",

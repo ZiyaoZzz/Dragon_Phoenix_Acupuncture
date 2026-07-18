@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
           <p className="text-sm sm:text-base mb-3 sm:mb-4">{t('about.description')}</p>
           <Link 
             to="/physicians#top" 
-            className="text-brand-secondary hover:text-brand-light transition-colors duration-300 inline-block mt-2 text-sm sm:text-base"
+            className="text-brand-light hover:text-white underline underline-offset-2 transition-colors duration-300 inline-block mt-2 text-sm sm:text-base"
           >
             {t('about.learnMore')}
           </Link>

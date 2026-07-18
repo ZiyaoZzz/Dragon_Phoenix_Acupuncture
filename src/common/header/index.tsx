@@ -113,7 +113,7 @@ export const Header: React.FC = () => {
       <nav className="bg-brand-primary relative">
         <div className="max-w-8xl mx-auto px-4">
           <div className="hidden lg:flex items-center gap-4 py-4">
-            <ul className="flex w-full items-center divide-x divide-white/30 text-sm md:text-base">
+            <ul className="flex w-full items-center divide-x divide-white/30 text-base md:text-lg">
               {navItems.map(({ to, labelKey }) => (
                 <li key={to} className="flex-1 text-center">
                   <Link to={to} className={navLinkClass}>

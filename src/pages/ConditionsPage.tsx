@@ -197,18 +197,18 @@ export const ConditionsPage: React.FC = () => {
               <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-gray-800 text-sm font-bold shrink-0">✓</span>
               <div>
                 <p className="font-semibold text-gray-800">{t('legend.proven')}</p>
-                <p className="text-gray-500 text-sm">{t('provenDescription')}</p>
+                <p className="text-gray-600 text-base">{t('provenDescription')}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-50 text-green-600 text-sm font-bold shrink-0">○</span>
               <div>
                 <p className="font-semibold text-gray-800">{t('legend.probable')}</p>
-                <p className="text-gray-500 text-sm">{t('probableDescription')}</p>
+                <p className="text-gray-600 text-base">{t('probableDescription')}</p>
               </div>
             </div>
           </div>
-          <p className="text-gray-500 text-sm text-center -mt-4 mb-8">{t('brochureHint')}</p>
+          <p className="text-gray-600 text-base text-center -mt-4 mb-8">{t('brochureHint')}</p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {CATEGORIES.map((category, i) => (

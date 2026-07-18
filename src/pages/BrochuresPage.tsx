@@ -92,7 +92,7 @@ export const BrochuresPage: React.FC = () => {
                     to={topicPath(prevItem.id)}
                     className="group flex-1 max-w-[48%] rounded-xl p-4 sm:p-5"
                   >
-                    <span className="text-sm text-gray-500 flex items-center gap-1 group-hover:text-brand-primary transition-colors">
+                    <span className="text-sm text-gray-600 flex items-center gap-1 group-hover:text-brand-primary transition-colors">
                       <span aria-hidden="true" className="inline-block transition-transform group-hover:-translate-x-1">←</span>
                       {t('pager.previous', { defaultValue: 'Previous' })}
                     </span>
@@ -104,7 +104,7 @@ export const BrochuresPage: React.FC = () => {
                     to={topicPath(nextItem.id)}
                     className="group flex-1 max-w-[48%] rounded-xl p-4 sm:p-5 text-right"
                   >
-                    <span className="text-sm text-gray-500 flex items-center justify-end gap-1 group-hover:text-brand-primary transition-colors">
+                    <span className="text-sm text-gray-600 flex items-center justify-end gap-1 group-hover:text-brand-primary transition-colors">
                       {t('pager.next', { defaultValue: 'Next' })}
                       <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1">→</span>
                     </span>

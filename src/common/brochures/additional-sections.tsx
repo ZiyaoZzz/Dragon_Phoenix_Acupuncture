@@ -384,7 +384,7 @@ export const WeightLossSection: React.FC = () => {
 };
 
 const SourceNote: React.FC<{ k: string; d: string }> = ({ k, d }) => (
-  <P k={k} d={d} className="text-sm text-gray-500 italic mt-6 pt-4 border-t border-gray-200" />
+  <P k={k} d={d} className="text-sm text-gray-600 italic mt-6 pt-4 border-t border-gray-200" />
 );
 
 export const MigraineSection: React.FC = () => {

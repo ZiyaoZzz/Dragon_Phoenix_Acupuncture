@@ -14,6 +14,14 @@ server/.env
 dist-ssr
 *.local
 
+# Design/UI skill tooling (installed locally via npx, not shipped with repo — see README)
+.agents/
+.claude/skills/
+.claude/settings.json
+.github/hooks/
+.github/skills/
+skills-lock.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

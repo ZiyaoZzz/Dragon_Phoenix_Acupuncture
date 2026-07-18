@@ -1,12 +1,12 @@
 {
   "nav": {
-    "home": "INICIO",
-    "physicians": "MÉDICOS",
-    "faqs": "PREGUNTAS FRECUENTES",
-    "brochures": "FOLLETOS DE ACUPUNTURA",
-    "conditions": "CONDICIONES",
-    "gallery": "GALERÍA",
-    "contact": "CONTÁCTANOS"
+    "home": "Inicio",
+    "physicians": "Médicos",
+    "faqs": "Preguntas frecuentes",
+    "brochures": "Folletos de acupuntura",
+    "conditions": "Condiciones",
+    "gallery": "Galería",
+    "contact": "Contáctanos"
   },
   "contact": {
     "phone": "(407) 932-4818",

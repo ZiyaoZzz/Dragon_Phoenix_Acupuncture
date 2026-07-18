@@ -18,7 +18,8 @@
     "email": "dragonphoenix40@netscape.net",
     "hoursLabel": "营业时间",
     "hoursWeek": "周一至周六：9AM - 5PM",
-    "hoursSun": "周日：休息"
+    "hoursSun": "周日：休息",
+    "viewMap": "在 Google 地图中查看"
   },
   "review": {
     "title": "请与我们分享您的体验",
