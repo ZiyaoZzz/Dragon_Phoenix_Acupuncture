@@ -43,8 +43,8 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
     {/* Wrapper height is pinned to the banner's post-squish aspect ratio (986 * 0.8 = 788.8)
         instead of h-auto, which would reserve the image's full pre-squish height and leave a
         dead gap below it — transforms affect paint only, not the layout box they create. */}
-    <div className="w-full overflow-hidden -mt-1 mb-6" style={{ aspectRatio: '1512 / 788.8' }}>
-      <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-auto object-contain" loading="eager" style={{ transform: 'scaleY(0.8)', transformOrigin: 'top center' }} />
+    <div className="w-full overflow-hidden -mt-1 mb-6" style={{ aspectRatio: '1512 / 493' }}>
+      <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-auto object-contain" loading="eager" style={{ transform: 'scaleY(0.5)', transformOrigin: 'top center' }} />
     </div>
    <HomepageBanner />
     <section className="bg-white max-w-[1400px] mx-auto px-4 sm:px-5 pb-8 md:pb-14">
