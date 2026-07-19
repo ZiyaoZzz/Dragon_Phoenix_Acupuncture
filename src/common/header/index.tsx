@@ -26,12 +26,12 @@ export const Header: React.FC = () => {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="bg-brand-light/20">
-        <div className="max-w-8xl mx-auto px-4 md:px-8 py-4 md:py-8 flex items-center justify-between">
+        <div className="max-w-8xl mx-auto px-4 md:px-8 py-2.5 md:py-3 flex items-center justify-between">
           <div className="flex items-center">
             <img 
               src={clinicLogo} 
               alt="Dragon Phoenix Acupuncture Logo"
-              className="h-10 md:h-14 w-auto"
+              className="h-8 md:h-12 w-auto"
             />
           </div>
 
@@ -112,7 +112,7 @@ export const Header: React.FC = () => {
       
       <nav className="bg-brand-primary relative">
         <div className="max-w-8xl mx-auto px-4">
-          <div className="hidden lg:flex items-center gap-4 py-4">
+          <div className="hidden lg:flex items-center gap-4 py-[16px]">
             <ul className="flex w-full items-center divide-x divide-white/30 text-base md:text-lg">
               {navItems.map(({ to, labelKey }) => (
                 <li key={to} className="flex-1 text-center">
