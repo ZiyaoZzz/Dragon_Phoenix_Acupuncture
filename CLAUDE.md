@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+If you're a new contributor using an AI coding agent (Antigravity, Cursor, etc.), also read
+`AGENTS.md` — it covers edit scope (keep changes small, no drive-by refactors) and the branch/merge
+rules (never push or merge directly into `react-version` or `main`, both of which auto-deploy).
+
 ## What this is
 
 Marketing site for Dragon Phoenix Acupuncture, a TCM clinic in Kissimmee, FL. A React SPA
