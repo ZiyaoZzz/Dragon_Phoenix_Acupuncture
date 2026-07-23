@@ -136,6 +136,9 @@ export const HomepageBanner: React.FC = () => {
           <p className="text-gray-700 text-base sm:text-lg">
             {t('whoWeAreP2')}
           </p>
+          <p className="text-gray-700 text-base sm:text-lg">
+            {t('whoWeAreP3')}
+          </p>
           <div className="my-3 md:my-4 h-px w-20 bg-gray-300" />
           <p className="italic text-gray-700 text-base sm:text-lg md:text-xl">{t('recognition')}</p>
           <Link to="/physicians#top" className="text-brand-primary hover:text-brand-accent underline underline-offset-2 inline-block mt-3 md:mt-4 text-base sm:text-lg">{t('whoWeAreCta')}</Link>
@@ -224,4 +227,4 @@ export const HomepageBanner: React.FC = () => {
   );
 };
 
-export default HomepageBanner; 
+export default HomepageBanner;
