@@ -3,16 +3,19 @@
   "meetOurTeam": "Meet our experienced practitioners dedicated to your health and wellness",
   "viewProfile": "View Profile",
   "defaultDescription": "Experienced in traditional Chinese medicine and personalized care.",
+  "workingDays": "Office Hours",
   "doctors": {
     "dr-xiu": {
       "name": "Dr. Xiu Feng Searcy, LAc",
       "title": "Lead Acupuncturist",
-      "description": "Dr. Xiu brings over 50 years of experience in Eastern & Western Medicine, including 25 years as an MD in China across otolaryngology and OB/GYN. She is the founder of Dragon Phoenix Acupuncture and is certified by the NCCAOM."
+      "description": "Dr. Xiu brings over 50 years of experience in Eastern & Western Medicine, including 25 years as an MD in China across otolaryngology and OB/GYN. She is the founder of Dragon Phoenix Acupuncture and is certified by the NCCAOM.",
+      "workingDays": "Tuesday, Thursday"
     },
     "dr-zhou": {
       "name": "Dr. Wei Zhou, LAc", 
       "title": "Acupuncturist",
-      "description": "Dr. Zhou holds a PhD in Traditional Chinese Medicine, with doctoral research focused on ophthalmology and eye acupuncture. He is a licensed acupuncturist with extensive acupuncture and herbal experience over 45 years."
+      "description": "Dr. Zhou holds a PhD in Traditional Chinese Medicine, with doctoral research focused on ophthalmology and eye acupuncture. He is a licensed acupuncturist with extensive acupuncture and herbal experience over 45 years.",
+      "workingDays": "Monday, Wednesday, Friday, Saturday"
     }
   }
 }

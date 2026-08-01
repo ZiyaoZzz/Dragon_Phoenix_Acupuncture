@@ -54,23 +54,30 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 justify-items-center">
         <Reveal className="w-full max-w-md">
-          <div className="bg-brand-surface rounded-lg overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 motion-reduce:transform-none w-full">
+          <div className="bg-brand-surface rounded-lg overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 motion-reduce:transform-none w-full flex flex-col h-full">
             <Link to="/physicians">
               <div className="h-64 sm:h-72 overflow-hidden">
                 <img src={Physician_Xiu_Feng_SearcyImg} alt={t('doctorCard:doctors.dr-xiu.name')} className="w-full h-full object-cover" loading="lazy" />
               </div>
             </Link>
-            <div className="p-4 sm:p-6">
+            <div className="p-4 sm:p-6 flex flex-col flex-grow">
               <h3 className="text-brand-primary text-lg sm:text-xl mb-1">{t('doctorCard:doctors.dr-xiu.name')}</h3>
               <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-base sm:text-lg">{t('doctorCard:doctors.dr-xiu.title')}</p>
-              <p className="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">{t('doctorCard:doctors.dr-xiu.description')}</p>
-              <Link to="/physicians" className="text-brand-primary font-bold text-base sm:text-lg">{t('doctorCard:viewProfile')}</Link>
+              
+              {/* Working Days */}
+              <div className="flex items-center gap-1.5 mb-3 text-sm sm:text-base text-gray-700 bg-brand-light/10 py-1 px-2.5 rounded border border-brand-light/25 self-start">
+                <span className="font-semibold text-brand-primary">📅 {t('doctorCard:workingDays')}:</span>
+                <span>{t('doctorCard:doctors.dr-xiu.workingDays')}</span>
+              </div>
+
+              <p className="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg flex-grow">{t('doctorCard:doctors.dr-xiu.description')}</p>
+              <Link to="/physicians" className="text-brand-primary font-bold text-base sm:text-lg mt-auto">{t('doctorCard:viewProfile')}</Link>
             </div>
           </div>
         </Reveal>
 
         <Reveal className="w-full max-w-md" delay={120}>
-          <div className="bg-brand-surface rounded-lg overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 motion-reduce:transform-none w-full">
+          <div className="bg-brand-surface rounded-lg overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 motion-reduce:transform-none w-full flex flex-col h-full">
             <Link to="/physicians">
               <div className="h-64 sm:h-72 overflow-hidden">
                 <img
@@ -82,11 +89,18 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
                 />
               </div>
             </Link>
-            <div className="p-4 sm:p-6">
+            <div className="p-4 sm:p-6 flex flex-col flex-grow">
               <h3 className="text-brand-primary text-lg sm:text-xl mb-1">{t('doctorCard:doctors.dr-zhou.name')}</h3>
               <p className="text-[#4a6e4c] italic mb-2 sm:mb-3 text-base sm:text-lg">{t('doctorCard:doctors.dr-zhou.title')}</p>
-              <p className="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg">{t('doctorCard:doctors.dr-zhou.description')}</p>
-              <Link to="/physicians" className="text-brand-primary font-bold text-base sm:text-lg">{t('doctorCard:viewProfile')}</Link>
+              
+              {/* Working Days */}
+              <div className="flex items-center gap-1.5 mb-3 text-sm sm:text-base text-gray-700 bg-brand-light/10 py-1 px-2.5 rounded border border-brand-light/25 self-start">
+                <span className="font-semibold text-brand-primary">📅 {t('doctorCard:workingDays')}:</span>
+                <span>{t('doctorCard:doctors.dr-zhou.workingDays')}</span>
+              </div>
+
+              <p className="text-gray-600 mb-3 sm:mb-4 text-base sm:text-lg flex-grow">{t('doctorCard:doctors.dr-zhou.description')}</p>
+              <Link to="/physicians" className="text-brand-primary font-bold text-base sm:text-lg mt-auto">{t('doctorCard:viewProfile')}</Link>
             </div>
           </div>
         </Reveal>

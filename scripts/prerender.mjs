@@ -79,10 +79,11 @@ async function main() {
   // port/stdio open — the script's own work finished but the process tree
   // never exited, hanging the CI job indefinitely. node_modules/.bin is
   // already on PATH here because this runs as an npm postbuild lifecycle script.
+  const cmd = process.platform === 'win32' ? 'vite.cmd' : 'vite';
   const previewProcess = spawn(
-    'vite',
+    cmd,
     ['preview', '--port', String(PORT), '--strictPort'],
-    { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] }
+    { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'], shell: process.platform === 'win32' }
   );
   let serverLog = '';
   previewProcess.stdout.on('data', (chunk) => { serverLog += chunk.toString(); });
