@@ -9,4 +9,5 @@ export type BrochureSectionId =
   | 'joint-pain'
   | 'insomnia'
   | 'anxiety'
-  | 'menopause';
+  | 'menopause'
+  | 'dry-eye';

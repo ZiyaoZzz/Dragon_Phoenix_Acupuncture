@@ -10,6 +10,7 @@ import {
   InsomniaSection,
   AnxietySection,
   MenopauseSection,
+  DryEyeSection,
 } from './additional-sections';
 
 export const renderBrochureSection = (sectionId: BrochureSectionId): React.ReactElement => {
@@ -36,6 +37,8 @@ export const renderBrochureSection = (sectionId: BrochureSectionId): React.React
       return <AnxietySection />;
     case 'menopause':
       return <MenopauseSection />;
+    case 'dry-eye':
+      return <DryEyeSection />;
     default:
       return <IntroSection />;
   }

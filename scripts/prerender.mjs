@@ -45,6 +45,7 @@ const ROUTES = [
   '/brochures/insomnia',
   '/brochures/anxiety',
   '/brochures/menopause',
+  '/brochures/dry-eye',
   '/gallery',
   '/contact',
   '/es/contact',

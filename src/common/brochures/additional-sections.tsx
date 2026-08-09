@@ -689,3 +689,64 @@ export const MenopauseSection: React.FC = () => {
     </section>
   );
 };
+
+export const DryEyeSection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="dry-eye" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.dryEye.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.dryEye.overview')}</h3>
+      <P
+        k="sections.dryEye.p1"
+        d="Dry Eye Syndrome (keratoconjunctivitis sicca) is a common condition that occurs when tears aren't able to provide adequate lubrication for the eyes. This can result from insufficient tear production, rapid tear evaporation, or an imbalance in the tear mixture. Common symptoms include dryness, burning, grittiness, redness, eye fatigue, light sensitivity, and blurred vision."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.dryEye.causesHeading')}</h3>
+      <P
+        k="sections.dryEye.p2"
+        d="Modern lifestyles heavily contribute to dry eye symptoms due to extended screen time, air conditioning, environmental pollution, wearing contact lenses, and underlying conditions such as Meibomian gland dysfunction (MGD). While artificial tears offer temporary moisture, they often do not address the root causes of tear gland dysfunction or microvascular circulation around the eyes."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.dryEye.tcmHeading')}</h3>
+      <P
+        k="sections.dryEye.p3"
+        d="In Traditional Chinese Medicine (TCM), the eyes are closely linked to the Liver and Kidney meridians. Classical TCM states that 'The Liver opens into the eyes' and 'The Liver receives blood to see.' Dry Eye Syndrome is primarily viewed as a deficiency of Liver and Kidney Yin (leading to lack of body fluid/Jinye and tear nourishment), Blood deficiency, or Liver Heat. When Yin and Blood are insufficient, fluid fails to moisten the eyes, resulting in dryness, irritation, and visual fatigue."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.dryEye.researchHeading')}</h3>
+      <P
+        k="sections.dryEye.p4"
+        d="Multiple randomized controlled trials and systematic reviews demonstrate that acupuncture is a safe and effective complementary therapy for dry eye syndrome. Studies show that acupuncture significantly improves tear secretion (measured by the Schirmer test), prolongs tear film break-up time (TBUT), and reduces subjective symptom scores (such as OSDI) compared to eye drops alone."
+        className="text-gray-700 leading-relaxed mb-4"
+      />
+      <P
+        k="sections.dryEye.p5"
+        d="Researchers suggest acupuncture stimulates parasympathetic nervous pathways, promotes local microcirculation around the lacrimal glands, reduces inflammatory cytokines in tear fluid, and enhances Meibomian gland function."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.dryEye.treatmentHeading')}</h3>
+      <P
+        k="sections.dryEye.p6"
+        d="At Dragon Phoenix Acupuncture, dry eye treatment combines gentle acupuncture around key periocular points (such as Jingming, Cuanzhu, Sizhukong, and Taiyang) with distal points (such as Taichong, Taixi, and Shenmai) to balance Yin, clear Liver heat, and boost tear production. Treatment may also include gentle facial Tuina massage, warm compress/moxibustion, and classic Chinese herbal formulas (like Qi Ju Di Huang Wan) to nourish Liver Yin and Blood."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.dryEye.expectHeading')}</h3>
+      <P
+        k="sections.dryEye.p7"
+        d="Patients often notice improved eye comfort, reduced strain, and less reliance on artificial tears within 4 to 6 sessions. A full course typically consists of 8 to 12 sessions, with maintenance treatments scheduled periodically for chronic cases or heavy screen users."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <SourceNote
+        k="sections.dryEye.sourceNote"
+        d="Sources: BMC Complementary Medicine and Therapies, Systematic Review of Acupuncture for Dry Eye Syndrome (2020/2023); Evidence-Based Complementary and Alternative Medicine."
+      />
+    </section>
+  );
+};
