@@ -23,6 +23,7 @@ const SEO_KEY_BY_TOPIC: Record<BrochureSectionId, string> = {
   insomnia: 'brochuresInsomnia',
   anxiety: 'brochuresAnxiety',
   menopause: 'brochuresMenopause',
+  'dry-eye': 'brochuresDryEye',
 };
 
 function topicPath(id: string): string {
@@ -46,6 +47,7 @@ export const BrochuresPage: React.FC = () => {
     { id: 'insomnia', name: t('sidebar.items.insomnia') },
     { id: 'anxiety', name: t('sidebar.items.anxiety') },
     { id: 'menopause', name: t('sidebar.items.menopause') },
+    { id: 'dry-eye', name: t('sidebar.items.dry-eye') },
   ], [t]);
 
   const rawIndex = items.findIndex((i) => i.id === topic);
