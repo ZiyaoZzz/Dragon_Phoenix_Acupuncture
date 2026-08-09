@@ -12,7 +12,8 @@
       "joint-pain": "Osteoartritis y Dolor Articular",
       "insomnia": "Insomnio y Sueño",
       "anxiety": "Ansiedad y Estrés",
-      "menopause": "Menopausia y Sofocos"
+      "menopause": "Menopausia y Sofocos",
+      "dry-eye": "Síndrome del Ojo Seco"
     }
   },
   "pager": {
@@ -307,6 +308,23 @@
       "p6": "En Dragon Phoenix Acupuncture, el tratamiento de los síntomas de la menopausia se centra en nutrir el Yin del Riñón y calmar el calor vacío, con puntos seleccionados también para abordar el estancamiento de Qi del Hígado cuando predominan los síntomas de humor o sueño. Se puede añadir auriculoterapia (acupuntura auricular) y apoyo con hierbas chinas según la presentación de cada paciente.",
       "p7": "Muchas pacientes notan una reducción en la frecuencia de los sofocos y una mejora del sueño dentro de las primeras sesiones. Debido a que la menopausia es una transición de varios años, generalmente se recomienda un curso inicial de 8 a 10 tratamientos, seguido de visitas periódicas para controlar los síntomas a medida que cambian con el tiempo.",
       "sourceNote": "Fuentes: Revisión sistemática Cochrane de la acupuntura para los sofocos menopáusicos; revisión sistemática de 2018 respaldada por la Sociedad Norteamericana de Menopausia (NAMS)."
+    },
+    "dryEye": {
+      "title": "Tratamiento del Síndrome del Ojo Seco con Acupuntura",
+      "overview": "Visión general",
+      "causesHeading": "Causas y factores modernos",
+      "tcmHeading": "Perspectiva de la Medicina Tradicional China",
+      "researchHeading": "Investigación clínica sobre acupuntura para el ojo seco",
+      "treatmentHeading": "Cómo tratamos el ojo seco en Dragon Phoenix",
+      "expectHeading": "Qué esperar del tratamiento",
+      "p1": "El síndrome del ojo seco (queratoconjuntivitis seca) es una afección común que ocurre cuando las lágrimas no pueden proporcionar una lubricación adecuada para los ojos. Esto resulta en sequedad, ardor, sensación de arena, enrojecimiento, fatiga ocular y visión borrosa.",
+      "p2": "El estilo de vida moderno, incluido el tiempo prolongado frente a pantallas, el aire acondicionado, los lentes de contacto y la disfunción de las glándulas de Meibomio (DGM), contribuyen enormemente al ojo seco. Aunque las lágrimas artificiales brindan alivio temporal, a menudo no abordan las causas fundamentales de la función glandular ni de la microcirculación ocular.",
+      "p3": "En la Medicina Tradicional China (MTC), los ojos están estrechamente vinculados a los meridianos de Hígado y Riñón. La MTC establece que 'El Hígado se abre en los ojos' y 'El Hígado recibe sangre para ver'. El ojo seco se considera principalmente una deficiencia de Yin de Hígado y Riñón, deficiencia de Sangre o calor del Hígado, impidiendo la correcta hidratación ocular.",
+      "p4": "Diversos ensayos controlados aleatorizados y revisiones sistemáticas demuestran que la acupuntura es una terapia complementaria segura y eficaz para el ojo seco. Los estudios muestran que la acupuntura mejora significativamente la secreción de lágrimas (prueba de Schirmer), prolonga el tiempo de ruptura de la película lagrimal (TBUT) y reduce las puntuaciones de síntomas (OSDI).",
+      "p5": "Los investigadores sugieren que la acupuntura estimula las vías nerviosas parasimpáticas, promueve la microcirculación local alrededor de las glándulas lagrimales y reduce los marcadores inflamatorios en las lágrimas.",
+      "p6": "En Dragon Phoenix Acupuncture, el tratamiento combina acupuntura periocular suave (puntos como Jingming, Cuanzhu, Sizhukong y Taiyang) con puntos distales (como Taichong y Taixi) para nutrir el Yin y promover la secreción lagrimal natural. También puede incluir masaje Tuina facial suave, compresas tibias y fórmulas herbales chinas (como Qi Ju Di Huang Wan).",
+      "p7": "Los pacientes suelen notar una mayor comodidad ocular, menor fatiga y menos dependencia de las lágrimas artificiales dentro de 4 a 6 sesiones. Por lo general, se recomienda un ciclo completo de 8 a 12 sesiones.",
+      "sourceNote": "Fuentes: BMC Complementary Medicine and Therapies, Revisión Sistemática sobre Acupuntura para el Ojo Seco (2020/2023); Evidence-Based Complementary and Alternative Medicine."
     }
   }
 }
