@@ -2,17 +2,28 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-// Only the home and contact pages currently have locale-prefixed URLs (/es, /zh/contact, etc).
-// Every other route keeps a single shared URL across languages, so the switcher just changes
-// i18n state in place for those. See CLAUDE.md's SEO section for why this pilot is scoped narrowly.
-const LOCALIZED_PATHS: Record<string, { en: string; es: string; zh: string }> = {
-  '/': { en: '/', es: '/es', zh: '/zh' },
-  '/es': { en: '/', es: '/es', zh: '/zh' },
-  '/zh': { en: '/', es: '/es', zh: '/zh' },
-  '/contact': { en: '/contact', es: '/es/contact', zh: '/zh/contact' },
-  '/es/contact': { en: '/contact', es: '/es/contact', zh: '/zh/contact' },
-  '/zh/contact': { en: '/contact', es: '/es/contact', zh: '/zh/contact' },
-};
+// Routes that exist in a locale-prefixed form (/es/physicians, /zh/brochures/fertility, etc).
+// Anything else (admin routes, 404) just switches i18n state in place without navigating,
+// since there's no matching URL for it in another language. See CLAUDE.md's SEO section.
+const LOCALIZABLE_BASE_PATHS = ['/', '/physicians', '/faqs', '/conditions', '/gallery', '/contact'];
+
+function isLocalizable(basePath: string): boolean {
+  return LOCALIZABLE_BASE_PATHS.includes(basePath) || basePath === '/brochures' || basePath.startsWith('/brochures/');
+}
+
+function stripLocalePrefix(pathname: string): string {
+  for (const prefix of ['es', 'zh']) {
+    if (pathname === `/${prefix}`) return '/';
+    if (pathname.startsWith(`/${prefix}/`)) return pathname.slice(prefix.length + 1);
+  }
+  return pathname;
+}
+
+function localizedPath(pathname: string, lang: 'en' | 'es' | 'zh'): string {
+  const basePath = stripLocalePrefix(pathname);
+  if (lang === 'en') return basePath;
+  return basePath === '/' ? `/${lang}` : `/${lang}${basePath}`;
+}
 
 export const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
@@ -27,9 +38,8 @@ export const LanguageSwitcher: React.FC = () => {
 
   const handleLanguageChange = (langCode: 'en' | 'es' | 'zh') => {
     i18n.changeLanguage(langCode);
-    const mapping = LOCALIZED_PATHS[location.pathname];
-    if (mapping) {
-      navigate(mapping[langCode]);
+    if (isLocalizable(stripLocalePrefix(location.pathname))) {
+      navigate(localizedPath(location.pathname, langCode));
     }
   };
 

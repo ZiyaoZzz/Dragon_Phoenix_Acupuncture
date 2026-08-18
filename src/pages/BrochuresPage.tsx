@@ -8,6 +8,9 @@ import { renderBrochureSection } from '../common/brochures/renderer';
 import type { BrochureSectionId } from '../common/brochures/types';
 import { useTranslation } from 'react-i18next';
 import { usePageSeo } from '../common/seo/usePageSeo';
+import { useJsonLd } from '../common/seo/useJsonLd';
+
+const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
 // Maps a brochure topic id to its seo.*.json key and its own URL. 'intro' is the default
 // topic and lives at /brochures itself rather than /brochures/intro.
@@ -26,14 +29,13 @@ const SEO_KEY_BY_TOPIC: Record<BrochureSectionId, string> = {
   'dry-eye': 'brochuresDryEye',
 };
 
-function topicPath(id: string): string {
-  return id === 'intro' ? '/brochures' : `/brochures/${id}`;
-}
-
 export const BrochuresPage: React.FC = () => {
-  const { t } = useTranslation('brochures');
+  const { t, i18n } = useTranslation('brochures');
   const navigate = useNavigate();
   const { topic } = useParams<{ topic?: string }>();
+  const langPrefix = i18n.language === 'es' || i18n.language === 'zh' ? `/${i18n.language}` : '';
+  const topicPath = (id: string): string =>
+    id === 'intro' ? `${langPrefix}/brochures` : `${langPrefix}/brochures/${id}`;
 
   const items: SidebarItem[] = useMemo(() => [
     { id: 'intro', name: t('sidebar.items.intro') },
@@ -56,7 +58,23 @@ export const BrochuresPage: React.FC = () => {
   const prevItem = selectedIndex > 0 ? items[selectedIndex - 1] : null;
   const nextItem = selectedIndex < items.length - 1 ? items[selectedIndex + 1] : null;
 
-  usePageSeo(SEO_KEY_BY_TOPIC[selected.id as BrochureSectionId], topicPath(selected.id));
+  const seoKey = SEO_KEY_BY_TOPIC[selected.id as BrochureSectionId];
+  usePageSeo(seoKey, topicPath(selected.id));
+
+  const { t: tSeo } = useTranslation('seo');
+  useJsonLd('brochureTopic', {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    name: tSeo(`${seoKey}.title`),
+    description: tSeo(`${seoKey}.description`),
+    url: `${SITE_URL}${topicPath(selected.id)}/`,
+    inLanguage: i18n.language,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Dragon Phoenix Acupuncture',
+      url: SITE_URL,
+    },
+  });
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

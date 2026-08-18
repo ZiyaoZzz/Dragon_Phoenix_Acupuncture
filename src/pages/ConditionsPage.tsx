@@ -133,9 +133,11 @@ const BROCHURE_LINKS: Record<string, string> = {
   insomnia: 'insomnia',
 };
 
-export const ConditionsPage: React.FC = () => {
-  usePageSeo('conditions', '/conditions');
-  const { t } = useTranslation('conditions');
+export const ConditionsPage: React.FC<{ localePath?: string }> = ({ localePath }) => {
+  const path = localePath ?? '/conditions';
+  usePageSeo('conditions', path);
+  const { t, i18n } = useTranslation('conditions');
+  const langPrefix = i18n.language === 'es' || i18n.language === 'zh' ? `/${i18n.language}` : '';
 
   const renderChip = (key: string, tier: 'proven' | 'probable') => {
     const label = t(`${tier}.${key}`);
@@ -150,7 +152,7 @@ export const ConditionsPage: React.FC = () => {
       return (
         <Link
           key={key}
-          to={`/brochures/${topic}`}
+          to={`${langPrefix}/brochures/${topic}`}
           className={`inline-flex items-center gap-1.5 ${chipClasses} px-3 py-1.5 rounded-full text-sm sm:text-base hover:ring-1 hover:ring-brand-primary transition-shadow`}
         >
           <span aria-hidden="true">{mark}</span>
@@ -172,6 +174,7 @@ export const ConditionsPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
     name: t('title'),
+    url: `https://dragonphoenixacupuncture.com${path}/`,
     about: CATEGORIES.flatMap((category) =>
       TIERS.flatMap((tier) => category[tier].map((key) => ({
         '@type': 'MedicalCondition',

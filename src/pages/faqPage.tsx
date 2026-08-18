@@ -6,9 +6,11 @@ import { FAQCard } from '../common/faqCard';
 import { usePageSeo } from '../common/seo/usePageSeo';
 import { useJsonLd } from '../common/seo/useJsonLd';
 
-export const FAQPage: React.FC = () => {
-  usePageSeo('faqs', '/faqs');
-  const { t } = useTranslation('faq');
+export const FAQPage: React.FC<{ localePath?: string }> = ({ localePath }) => {
+  const path = localePath ?? '/faqs';
+  usePageSeo('faqs', path);
+  const { t, i18n } = useTranslation('faq');
+  const langPrefix = i18n.language === 'es' || i18n.language === 'zh' ? `/${i18n.language}` : '';
 
   const faqData = [
     {
@@ -54,6 +56,7 @@ export const FAQPage: React.FC = () => {
   useJsonLd('faq', {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    url: `https://dragonphoenixacupuncture.com${path}/`,
     mainEntity: faqData.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
@@ -89,8 +92,8 @@ export const FAQPage: React.FC = () => {
           <div className="bg-white border border-green-100 rounded-lg p-10 mt-16 text-center">
             <h3 className="text-3xl font-semibold text-gray-800 mb-6">{t('moreQuestions.title')}</h3>
             <p className="text-gray-700 text-xl mb-8 leading-relaxed">{t('moreQuestions.description')}</p>
-            <a 
-              href="/contact" 
+            <a
+              href={`${langPrefix}/contact`}
               className="inline-block bg-brand-primary text-white px-10 py-4 rounded-lg text-xl font-medium hover:bg-green-600 transition-colors"
             >
               {t('moreQuestions.cta')}

@@ -9,8 +9,9 @@ import { useJsonLd } from '../common/seo/useJsonLd';
 
 const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
-export const PhysiciansPage: React.FC = () => {
-  usePageSeo('physicians', '/physicians');
+export const PhysiciansPage: React.FC<{ localePath?: string }> = ({ localePath }) => {
+  const path = localePath ?? '/physicians';
+  usePageSeo('physicians', path);
   useJsonLd('physicians', {
     '@context': 'https://schema.org',
     '@graph': doctors.map((doctor) => ({
@@ -19,7 +20,7 @@ export const PhysiciansPage: React.FC = () => {
       jobTitle: doctor.title,
       description: doctor.description ?? doctor.summary,
       image: `${SITE_URL}${doctor.img}`,
-      url: `${SITE_URL}/physicians#${doctor.id}`,
+      url: `${SITE_URL}${path}/#${doctor.id}`,
       worksFor: {
         '@type': 'MedicalBusiness',
         name: 'Dragon Phoenix Acupuncture',

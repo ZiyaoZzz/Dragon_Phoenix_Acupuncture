@@ -6,10 +6,35 @@ import xiuImg from '../assets/Xiu_Feng_Searcy.jpg';
 import weiImg from '../assets/Physician_Wei_Zhou.jpeg';
 import reviewImg from '../assets/google_review.jpg';
 import { usePageSeo } from '../common/seo/usePageSeo';
+import { useJsonLd } from '../common/seo/useJsonLd';
+
+const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
 export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) => {
-  usePageSeo('contact', localePath ?? '/contact');
+  const path = localePath ?? '/contact';
+  usePageSeo('contact', path);
   const { t } = useTranslation('contact');
+
+  useJsonLd('contactPage', {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: t('title'),
+    url: `${SITE_URL}${path}/`,
+    about: {
+      '@type': 'MedicalBusiness',
+      '@id': SITE_URL,
+      name: 'Dragon Phoenix Acupuncture',
+      telephone: '+1-407-932-4818',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '2579 Oak Street',
+        addressLocality: 'Kissimmee',
+        addressRegion: 'FL',
+        postalCode: '34744',
+        addressCountry: 'US',
+      },
+    },
+  });
 
   const subjectRef = useRef<HTMLInputElement | null>(null);
   const bodyRef = useRef<HTMLTextAreaElement | null>(null);

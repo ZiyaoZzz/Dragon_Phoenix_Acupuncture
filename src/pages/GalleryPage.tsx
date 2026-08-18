@@ -18,8 +18,9 @@ import { useJsonLd } from '../common/seo/useJsonLd';
 
 const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
-export const GalleryPage: React.FC = () => {
-  usePageSeo('gallery', '/gallery');
+export const GalleryPage: React.FC<{ localePath?: string }> = ({ localePath }) => {
+  const path = localePath ?? '/gallery';
+  usePageSeo('gallery', path);
   const { t } = useTranslation('gallery');
 
   const galleryImages = [
@@ -37,7 +38,7 @@ export const GalleryPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',
     name: t('title'),
-    url: `${SITE_URL}/gallery`,
+    url: `${SITE_URL}${path}/`,
     image: galleryImages.map((img) => ({
       '@type': 'ImageObject',
       contentUrl: `${SITE_URL}${img.src}`,
