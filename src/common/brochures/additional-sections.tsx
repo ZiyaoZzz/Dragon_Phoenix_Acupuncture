@@ -6,6 +6,16 @@ const P: React.FC<{ k: string; d: string; className?: string }> = ({ k, d, class
   return <p className={className}>{t(k, { defaultValue: d })}</p>;
 };
 
+const FaqItem: React.FC<{ base: string }> = ({ base }) => {
+  const { t } = useTranslation('brochures');
+  return (
+    <div className="mb-5">
+      <h4 className="text-lg font-semibold text-gray-900 mb-1">{t(`${base}Q`)}</h4>
+      <p className="text-gray-700 leading-relaxed">{t(`${base}A`)}</p>
+    </div>
+  );
+};
+
 export const LowerBackPainSection: React.FC = () => {
   const { t } = useTranslation('brochures');
   return (
@@ -55,6 +65,98 @@ export const LowerBackPainSection: React.FC = () => {
       <SourceNote
         k="sections.lowerBackPain.sourceNote"
         d="Sources: American College of Physicians, 2017 Clinical Practice Guideline (Annals of Internal Medicine); Kaiser Permanente Washington Health Research Institute / National Institutes of Health, 2025."
+      />
+    </section>
+  );
+};
+
+export const SciaticaSection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="sciatica" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.sciatica.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sciatica.overview')}</h3>
+      <P
+        k="sections.sciatica.p1"
+        d="Sciatica is pain that radiates along the path of the sciatic nerve, from the lower back through the buttock and down the back of one leg. A widely cited review in the New England Journal of Medicine estimates that between 13% and 40% of people will experience an episode of sciatica at some point in their lives, making it one of the most common reasons patients seek care for leg and lower back pain."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sciatica.symptomsHeading')}</h3>
+      <P
+        k="sections.sciatica.p2"
+        d="Sciatica most often results from a herniated disc or bone spur pressing on the nerve roots that form the sciatic nerve, though muscle spasm — particularly of the piriformis muscle deep in the buttock — can produce a similar pattern of pain. Patients typically describe sharp, shooting, or electric-shock-like pain running from the low back or buttock down the back of the thigh and calf, often accompanied by numbness, tingling, or weakness, and made worse by sitting, bending, or coughing."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sciatica.causesHeading')}</h3>
+      <P
+        k="sections.sciatica.p3"
+        d="In Traditional Chinese Medicine, sciatica pain typically follows the pathway of the Gallbladder and Bladder meridians, which run down the back of the leg in roughly the same course as the sciatic nerve. It is understood as an obstruction of Qi and Blood along these meridians — often brought on by Wind, Cold, or Dampness settling in the channels, or by underlying Kidney deficiency — producing the pain, numbness, and restricted movement patients experience."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sciatica.researchHeading')}</h3>
+      <P
+        k="sections.sciatica.p4"
+        d="The American College of Physicians' 2017 guideline for low back pain, which includes sciatica among the conditions it covers, recommends non-drug approaches such as acupuncture before turning to medication. Systematic reviews and meta-analyses published in journals including Evidence-Based Complementary and Alternative Medicine have found acupuncture more effective than conventional treatment alone for reducing sciatica pain, though the authors of these reviews consistently note that many of the underlying trials are small or of only low-to-moderate quality, and call for larger, more rigorous studies."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sciatica.treatmentHeading')}</h3>
+      <P
+        k="sections.sciatica.p5"
+        d="At Dragon Phoenix Acupuncture, sciatica treatment combines acupuncture points along the affected leg with points closer to the spine to reduce inflammation and swelling around the compressed nerve, along with Tuina massage to release deep muscle spasm — including the piriformis muscle when it is a contributing factor. Cupping or moxibustion may be added to improve local circulation and ease chronic stiffness."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sciatica.expectHeading')}</h3>
+      <P
+        k="sections.sciatica.p6"
+        d="Many patients notice some relief in mobility within the first few sessions, but because sciatica involves nerve irritation rather than simple muscle strain, a full course of 10–15 treatments is often recommended to meaningfully reduce pain and help patients rely less on pain medication."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('sections.sciatica.comparisonHeading')}</h3>
+      <P
+        k="sections.sciatica.comparisonP1"
+        d="Many patients weighing their options ask how acupuncture compares to surgery for sciatica. Both have a role, and the right choice depends on the cause and severity of the compression, so this is always a decision to make with your physician — but here is how the two generally compare."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="border border-gray-200 rounded-lg p-5">
+          <h4 className="text-lg font-semibold text-brand-primary mb-3">{t('sections.sciatica.comparisonAcuTitle')}</h4>
+          <ul className="list-disc pl-5 space-y-2">
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAcu1')}</li>
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAcu2')}</li>
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAcu3')}</li>
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAcu4')}</li>
+          </ul>
+        </div>
+        <div className="border border-gray-200 rounded-lg p-5">
+          <h4 className="text-lg font-semibold text-gray-900 mb-3">{t('sections.sciatica.comparisonAltTitle')}</h4>
+          <ul className="list-disc pl-5 space-y-2">
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAlt1')}</li>
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAlt2')}</li>
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAlt3')}</li>
+            <li className="text-gray-700">{t('sections.sciatica.comparisonAlt4')}</li>
+          </ul>
+        </div>
+      </div>
+      <P
+        k="sections.sciatica.comparisonP2"
+        d="Progressive leg weakness, or loss of bowel or bladder control, are red-flag symptoms that need immediate medical evaluation, not acupuncture — please seek emergency care if either occurs. Outside of those cases, a course of conservative care including acupuncture is a reasonable starting point for most patients before surgery is considered."
+        className="text-gray-700 leading-relaxed mb-8"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sciatica.faqHeading')}</h3>
+      <FaqItem base="sections.sciatica.faq1" />
+      <FaqItem base="sections.sciatica.faq2" />
+
+      <SourceNote
+        k="sections.sciatica.sourceNote"
+        d="Sources: Ropper AH, Zafonte RD, 'Sciatica,' New England Journal of Medicine, 2015; American College of Physicians, 2017 Clinical Practice Guideline; Weinstein JN, et al., the SPORT trial, JAMA, 2006/2008; systematic reviews and meta-analyses on acupuncture for sciatica published in Evidence-Based Complementary and Alternative Medicine."
       />
     </section>
   );
@@ -502,6 +604,98 @@ export const JointPainSection: React.FC = () => {
       <SourceNote
         k="sections.jointPain.sourceNote"
         d="Sources: Centers for Disease Control and Prevention (CDC); American College of Rheumatology and Arthritis Foundation, 2019 Clinical Practice Guideline."
+      />
+    </section>
+  );
+};
+
+export const SportsInjuriesSection: React.FC = () => {
+  const { t } = useTranslation('brochures');
+  return (
+    <section id="sports-injuries" className="bg-white rounded-xl shadow-lg p-8 md:p-10">
+      <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('sections.sportsInjuries.title')}</h2>
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sportsInjuries.overview')}</h3>
+      <P
+        k="sections.sportsInjuries.p1"
+        d="Overuse and repetitive-strain injuries are among the most common reasons weekend athletes and everyday patients end up sidelined. Two of the most frequent are lateral or medial epicondylitis — better known as tennis elbow and golfer's elbow — and plantar fasciitis, a leading cause of heel pain that the American Academy of Orthopaedic Surgeons estimates affects about 1 in 10 people at some point in their lives."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sportsInjuries.symptomsHeading')}</h3>
+      <P
+        k="sections.sportsInjuries.p2"
+        d="Golfer's and tennis elbow cause pain and tenderness where the forearm tendons attach at the elbow, often worsened by gripping, swinging, or lifting — golfer's elbow on the inner side of the elbow, tennis elbow on the outer side. Plantar fasciitis typically produces a sharp, stabbing pain at the bottom of the heel that is worst with the first steps in the morning or after periods of rest, easing somewhat with movement but returning after standing or activity."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sportsInjuries.causesHeading')}</h3>
+      <P
+        k="sections.sportsInjuries.p3"
+        d="Traditional Chinese Medicine views these repetitive-strain injuries as local obstruction of Qi and Blood at the affected tendon or fascia — a form of Bi syndrome brought on by overuse, and often aggravated by invasion of Cold or Dampness into the tissue. Because circulation to tendons and fascia is naturally limited compared to muscle, these areas are slow to heal on their own, which is why symptoms can drag on for months without targeted treatment."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sportsInjuries.researchHeading')}</h3>
+      <P
+        k="sections.sportsInjuries.p4"
+        d="Reviews of randomized controlled trials on acupuncture for lateral elbow pain, published in the Cochrane Database of Systematic Reviews, have found short-term reductions in pain compared with sham treatment, though the reviewers note that many trials were small and call for larger studies to confirm how long the benefit lasts. Separately, systematic reviews and meta-analyses published in the Journal of Foot and Ankle Research have found acupuncture reduces pain scores in patients with plantar fasciitis compared with usual care, with several studies reporting improvement within a few weeks of starting treatment."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sportsInjuries.treatmentHeading')}</h3>
+      <P
+        k="sections.sportsInjuries.p5"
+        d="At Dragon Phoenix Acupuncture, treatment targets the affected tendon or fascia directly with local and electroacupuncture to reduce inflammation and stimulate tissue repair, combined with Tuina massage to release surrounding muscle tension that adds strain to the injured area. Cupping or moxibustion may be added, and patients are also given simple stretching and activity-modification guidance to prevent re-injury."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sportsInjuries.expectHeading')}</h3>
+      <P
+        k="sections.sportsInjuries.p6"
+        d="Because these are overuse injuries that built up over time, most patients need a course of 6–10 sessions before seeing lasting improvement, though many notice reduced pain with grip or first-step heel pain within the first few visits. Continuing to aggravate the tendon or fascia between sessions can slow progress, so patients are asked to follow the activity guidance given alongside treatment."
+        className="text-gray-700 leading-relaxed"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{t('sections.sportsInjuries.comparisonHeading')}</h3>
+      <P
+        k="sections.sportsInjuries.comparisonP1"
+        d="For plantar fasciitis in particular, patients often ask how acupuncture compares to a cortisone (corticosteroid) injection, a common conventional treatment for stubborn heel pain. Here is how the two generally compare."
+        className="text-gray-700 leading-relaxed mb-6"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="border border-gray-200 rounded-lg p-5">
+          <h4 className="text-lg font-semibold text-brand-primary mb-3">{t('sections.sportsInjuries.comparisonAcuTitle')}</h4>
+          <ul className="list-disc pl-5 space-y-2">
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAcu1')}</li>
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAcu2')}</li>
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAcu3')}</li>
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAcu4')}</li>
+          </ul>
+        </div>
+        <div className="border border-gray-200 rounded-lg p-5">
+          <h4 className="text-lg font-semibold text-gray-900 mb-3">{t('sections.sportsInjuries.comparisonAltTitle')}</h4>
+          <ul className="list-disc pl-5 space-y-2">
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAlt1')}</li>
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAlt2')}</li>
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAlt3')}</li>
+            <li className="text-gray-700">{t('sections.sportsInjuries.comparisonAlt4')}</li>
+          </ul>
+        </div>
+      </div>
+      <P
+        k="sections.sportsInjuries.comparisonP2"
+        d="Cortisone injections are administered by a physician, not at Dragon Phoenix Acupuncture — some patients use the two approaches at different points in their recovery. If your pain is severe or not improving, it's worth discussing both options with a podiatrist or physician alongside acupuncture."
+        className="text-gray-700 leading-relaxed mb-8"
+      />
+
+      <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('sections.sportsInjuries.faqHeading')}</h3>
+      <FaqItem base="sections.sportsInjuries.faq1" />
+      <FaqItem base="sections.sportsInjuries.faq2" />
+
+      <SourceNote
+        k="sections.sportsInjuries.sourceNote"
+        d="Sources: American Academy of Orthopaedic Surgeons (AAOS); Cochrane Database of Systematic Reviews, acupuncture for lateral elbow pain; systematic reviews and meta-analyses on acupuncture for plantar fasciitis published in the Journal of Foot and Ankle Research; orthopedic and podiatric literature on corticosteroid injection risks, including plantar fascia rupture and fat pad atrophy."
       />
     </section>
   );

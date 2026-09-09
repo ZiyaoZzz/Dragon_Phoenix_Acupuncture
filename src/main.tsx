@@ -54,6 +54,14 @@ createRoot(document.getElementById('root')!).render(
 
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
+
+        {/* GitHub Pages serves dist/index.html directly (200) for a literal request to
+            /index.html, but that path doesn't match "/" above, so without this route it fell
+            through to the catch-all and rendered NotFoundPage — which sets a noindex tag on
+            what Google sees as real homepage content. See CLAUDE.md / GSC "Excluded by noindex
+            tag" history for /index.html. */}
+        <Route path="/index.html" element={<Navigate to="/" replace />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>

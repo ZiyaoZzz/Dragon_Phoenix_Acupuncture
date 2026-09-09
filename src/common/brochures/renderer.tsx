@@ -3,10 +3,12 @@ import type { BrochureSectionId } from './types';
 import { IntroSection, FertilitySection, FibromyalgiaSection } from './sections';
 import {
   LowerBackPainSection,
+  SciaticaSection,
   StopSmokingSection,
   WeightLossSection,
   MigraineSection,
   JointPainSection,
+  SportsInjuriesSection,
   InsomniaSection,
   AnxietySection,
   MenopauseSection,
@@ -23,6 +25,8 @@ export const renderBrochureSection = (sectionId: BrochureSectionId): React.React
       return <FibromyalgiaSection />;
     case 'lower-back-pain':
       return <LowerBackPainSection />;
+    case 'sciatica':
+      return <SciaticaSection />;
     case 'stop-smoking':
       return <StopSmokingSection />;
     case 'weight-loss':
@@ -31,6 +35,8 @@ export const renderBrochureSection = (sectionId: BrochureSectionId): React.React
       return <MigraineSection />;
     case 'joint-pain':
       return <JointPainSection />;
+    case 'sports-injuries':
+      return <SportsInjuriesSection />;
     case 'insomnia':
       return <InsomniaSection />;
     case 'anxiety':

@@ -31,6 +31,10 @@
     "title": "腰痛治疗 | Dragon Phoenix Acupuncture",
     "description": "针灸治疗急慢性腰痛（含坐骨神经痛与椎间盘病变）的临床研究，来自 Dragon Phoenix Acupuncture。"
   },
+  "brochuresSciatica": {
+    "title": "坐骨神经痛与腿痛缓解 | Dragon Phoenix Acupuncture",
+    "description": "针灸如何通过减轻神经炎症与松解深层肌痉挛来缓解坐骨神经痛与腿部放射痛。来自佛罗里达州基西米 Dragon Phoenix Acupuncture。"
+  },
   "brochuresStopSmoking": {
     "title": "针灸戒烟 | Dragon Phoenix Acupuncture",
     "description": "电针与耳穴疗法如何帮助患者在无副作用、不增重的情况下戒烟——Dragon Phoenix Acupuncture。"
@@ -46,6 +50,10 @@
   "brochuresJointPain": {
     "title": "骨关节炎与关节痛缓解 | Dragon Phoenix Acupuncture",
     "description": "针灸如何治疗骨关节炎与关节痛，获美国风湿病学会/关节炎基金会认可，来自佛罗里达州基西米 Dragon Phoenix Acupuncture。"
+  },
+  "brochuresSportsInjuries": {
+    "title": "运动损伤与肌腱炎缓解 | Dragon Phoenix Acupuncture",
+    "description": "针灸如何通过抗炎与促进组织修复来治疗高尔夫球肘、网球肘与足底筋膜炎。来自佛罗里达州基西米 Dragon Phoenix Acupuncture。"
   },
   "brochuresInsomnia": {
     "title": "失眠与睡眠障碍 | Dragon Phoenix Acupuncture",

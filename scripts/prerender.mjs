@@ -32,10 +32,12 @@ const BROCHURE_TOPICS = [
   '/fertility',
   '/fibromyalgia',
   '/lower-back-pain',
+  '/sciatica',
   '/stop-smoking',
   '/weight-loss',
   '/migraine',
   '/joint-pain',
+  '/sports-injuries',
   '/insomnia',
   '/anxiety',
   '/menopause',
@@ -69,6 +71,33 @@ const ROUTES = [
   '/admin',
   '/admin/login',
 ];
+
+// GitHub Pages 301s a no-trailing-slash request to the trailing-slash form for any route
+// (since each one is really dist/<route>/index.html, a directory). Internal <Link>/<a> targets
+// in this app are written without a trailing slash (React Router convention), so every crawlable
+// link Googlebot finds in the prerendered HTML sends it through an avoidable redirect hop —
+// Search Console flags this as "Page with redirect", and the list keeps growing as new pages
+// (e.g. new brochure topics linked from the pager) get crawled. Fixing this per-component is
+// exactly what kept not sticking: it's easy for a new Link somewhere to reintroduce the same gap.
+// Rewriting every internal href here, once, at the single place all static HTML gets written,
+// closes the gap for good — current links and any future ones, without relying on remembering
+// the convention at each call site.
+function addTrailingSlashesToInternalLinks(html) {
+  return html.replace(/ href="(\/[^"]*)"/g, (match, href) => {
+    const hashIdx = href.indexOf('#');
+    const queryIdx = href.indexOf('?');
+    const cut = Math.min(
+      hashIdx === -1 ? href.length : hashIdx,
+      queryIdx === -1 ? href.length : queryIdx,
+    );
+    const path = href.slice(0, cut);
+    const rest = href.slice(cut);
+    if (path === '' || path === '/' || path.endsWith('/')) return match;
+    const lastSegment = path.slice(path.lastIndexOf('/') + 1);
+    if (lastSegment.includes('.')) return match; // e.g. /favicon.svg, /sitemap.xml — real files, not routes
+    return ` href="${path}/${rest}"`;
+  });
+}
 
 function waitForServer(url, timeoutMs = 20000) {
   const start = Date.now();
@@ -156,7 +185,7 @@ async function main() {
         window.scrollTo(0, 0);
       });
 
-      const html = await page.content();
+      const html = addTrailingSlashesToInternalLinks(await page.content());
       const outDir = route === '/' ? DIST : join(DIST, route.replace(/^\//, ''));
       await mkdir(outDir, { recursive: true });
       await writeFile(join(outDir, 'index.html'), html, 'utf-8');

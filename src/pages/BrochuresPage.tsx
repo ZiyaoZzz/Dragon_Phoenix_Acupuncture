@@ -19,14 +19,25 @@ const SEO_KEY_BY_TOPIC: Record<BrochureSectionId, string> = {
   fertility: 'brochuresFertility',
   fibromyalgia: 'brochuresFibromyalgia',
   'lower-back-pain': 'brochuresLowerBackPain',
+  sciatica: 'brochuresSciatica',
   'stop-smoking': 'brochuresStopSmoking',
   'weight-loss': 'brochuresWeightLoss',
   migraine: 'brochuresMigraine',
   'joint-pain': 'brochuresJointPain',
+  'sports-injuries': 'brochuresSportsInjuries',
   insomnia: 'brochuresInsomnia',
   anxiety: 'brochuresAnxiety',
   menopause: 'brochuresMenopause',
   'dry-eye': 'brochuresDryEye',
+};
+
+// Topics with a visible FAQ block in their section component (see additional-sections.tsx),
+// mapped to the translation section key (camelCase) and how many faq{n}Q/faq{n}A pairs exist,
+// so the same content can be surfaced as FAQPage structured data — Google requires the
+// structured data to mirror what's actually visible on the page, not go beyond it.
+const FAQ_TOPICS: Partial<Record<BrochureSectionId, { sectionKey: string; count: number }>> = {
+  sciatica: { sectionKey: 'sciatica', count: 2 },
+  'sports-injuries': { sectionKey: 'sportsInjuries', count: 2 },
 };
 
 export const BrochuresPage: React.FC = () => {
@@ -42,10 +53,12 @@ export const BrochuresPage: React.FC = () => {
     { id: 'fertility', name: t('sidebar.items.fertility') },
     { id: 'fibromyalgia', name: t('sidebar.items.fibromyalgia') },
     { id: 'lower-back-pain', name: t('sidebar.items.lower-back-pain') },
+    { id: 'sciatica', name: t('sidebar.items.sciatica') },
     { id: 'stop-smoking', name: t('sidebar.items.stop-smoking') },
     { id: 'weight-loss', name: t('sidebar.items.weight-loss') },
     { id: 'migraine', name: t('sidebar.items.migraine') },
     { id: 'joint-pain', name: t('sidebar.items.joint-pain') },
+    { id: 'sports-injuries', name: t('sidebar.items.sports-injuries') },
     { id: 'insomnia', name: t('sidebar.items.insomnia') },
     { id: 'anxiety', name: t('sidebar.items.anxiety') },
     { id: 'menopause', name: t('sidebar.items.menopause') },
@@ -75,6 +88,25 @@ export const BrochuresPage: React.FC = () => {
       url: SITE_URL,
     },
   });
+
+  const faqConfig = FAQ_TOPICS[selected.id as BrochureSectionId];
+  useJsonLd(
+    'brochureFaq',
+    faqConfig
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: Array.from({ length: faqConfig.count }, (_, i) => i + 1).map((n) => ({
+            '@type': 'Question',
+            name: t(`sections.${faqConfig.sectionKey}.faq${n}Q`),
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: t(`sections.${faqConfig.sectionKey}.faq${n}A`),
+            },
+          })),
+        }
+      : null,
+  );
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
