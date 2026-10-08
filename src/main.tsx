@@ -1,6 +1,6 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigationType } from 'react-router-dom'
 import { ForceLanguage } from './common/seo/ForceLanguage'
 import './i18n/index'
 import './index.css'
@@ -16,8 +16,24 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then((m) => ({ de
 const AdminLoginPage = lazy(() => import('./pages/admin/AdminLoginPage').then((m) => ({ default: m.AdminLoginPage })))
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard').then((m) => ({ default: m.AdminDashboard })))
 
+// React Router keeps the previous page's scroll position on navigation, so clicking a link
+// from partway down one page (e.g. "Meet our physicians" on the homepage) opened the next page
+// mid-scroll. Reset to the top on every new navigation. Skipped for back/forward (POP), where the
+// browser restores position, and for links with a #hash, which the target page scrolls to itself
+// (HomePage's #appointment, PhysiciansPage's #dr-xiu etc.).
+function ScrollToTop() {
+  const { pathname, hash } = useLocation()
+  const navigationType = useNavigationType()
+  useEffect(() => {
+    if (navigationType === 'POP' || hash) return
+    window.scrollTo(0, 0)
+  }, [pathname, hash, navigationType])
+  return null
+}
+
 createRoot(document.getElementById('root')!).render(
   <Router>
+    <ScrollToTop />
     <Suspense fallback={null}>
       <Routes>
         <Route path="/" element={<HomePage />} />

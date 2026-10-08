@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
-import bannerImg from '../assets/Dragon.jpg';
 import s1 from '../assets/dragon_phoenix_3.png';
 import s2 from '../assets/dragon_phoenix_6.png';
 import s4 from '../assets/cupping.jpg';
@@ -20,6 +19,11 @@ import { HomepageBanner } from '../common/homepageBanner';
 import { HistorySection } from '../common/historySection';
 import { HoursSection } from '../common/hoursSection';
 import { TrustBar } from '../common/trustBar';
+import { HomeHero } from '../common/homeHero';
+import { scrollToAppointment } from '../common/homeHero/scrollToAppointment';
+import { SignBanner } from '../common/signBanner';
+import { WhyChoose } from '../common/whyChoose';
+import { HelpSection } from '../common/helpSection';
 import { Reveal } from '../common/reveal';
 import { doctors, doctorPortraitObjectStyle } from '../common/doctorCard/doctors';
 import { usePageSeo } from '../common/seo/usePageSeo';
@@ -27,6 +31,18 @@ import { usePageSeo } from '../common/seo/usePageSeo';
 export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
   const { t } = useTranslation();
   usePageSeo('home', localePath ?? '/');
+  const { hash } = useLocation();
+
+  // Other pages link to "/#appointment" (ConsultationCta). A client-side route change doesn't
+  // trigger the browser's native jump-to-anchor, so scroll to the booking form manually.
+  useEffect(() => {
+    if (!hash) return;
+    if (hash === '#appointment') {
+      scrollToAppointment();
+      return;
+    }
+    document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [hash]);
   const serviceItems = [
     { key: 'traditional', img: s1 },
     { key: 'scalpEar', img: s2 },
@@ -40,13 +56,10 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
   return (
   <div className="min-h-screen flex flex-col overflow-x-hidden">
     <Header />
-    {/* Wrapper height is pinned to the banner's post-squish aspect ratio (986 * 0.8 = 788.8)
-        instead of h-auto, which would reserve the image's full pre-squish height and leave a
-        dead gap below it — transforms affect paint only, not the layout box they create. */}
-    <div className="w-full overflow-hidden -mt-1 mb-6" style={{ aspectRatio: '1512 / 493' }}>
-      <img src={bannerImg} alt="Dragon Phoenix Acupuncture Banner" className="w-full h-auto object-contain" loading="eager" style={{ transform: 'scaleY(0.5)', transformOrigin: 'top center' }} />
-    </div>
-   <HomepageBanner />
+    <SignBanner />
+    <HomeHero />
+    <WhyChoose />
+    <HomepageBanner />
     <section className="bg-white max-w-[1400px] mx-auto px-4 sm:px-5 pb-8 md:pb-14">
       <div className="text-center mb-6 md:mb-10">
         <h2 className="text-2xl sm:text-3xl text-brand-primary mb-2 md:mb-3">{t('doctorCard:ourTeam')}</h2>
@@ -107,6 +120,7 @@ export const HomePage: React.FC<{ localePath?: string }> = ({ localePath }) => {
       </div>
       <TrustBar />
     </section>
+    <HelpSection />
     <section className="bg-brand-surface px-4 sm:px-5 py-8 md:py-14">
       <div className="text-center max-w-3xl mx-auto">
         <h2 className="text-2xl sm:text-3xl text-brand-primary mb-2 md:mb-3">{t('services:title')}</h2>

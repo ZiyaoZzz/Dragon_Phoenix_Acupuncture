@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Header } from '../common/header';
 import { Footer } from '../common/footer';
 import { PhysicianDetailCard } from '../common/physicianDetailCard';
@@ -6,12 +7,14 @@ import { Sidebar } from '../common/sidebar';
 import { doctors } from '../common/doctorCard/doctors';
 import { usePageSeo } from '../common/seo/usePageSeo';
 import { useJsonLd } from '../common/seo/useJsonLd';
+import { ConsultationCta } from '../common/consultationCta';
 
 const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
 export const PhysiciansPage: React.FC<{ localePath?: string }> = ({ localePath }) => {
   const path = localePath ?? '/physicians';
   usePageSeo('physicians', path);
+  const { t } = useTranslation('doctorCard');
   useJsonLd('physicians', {
     '@context': 'https://schema.org',
     '@graph': doctors.map((doctor) => ({
@@ -65,7 +68,7 @@ export const PhysiciansPage: React.FC<{ localePath?: string }> = ({ localePath }
       <Header />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-4 py-4 sm:py-6 md:py-8">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">{}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">{t('pageHeading')}</h1>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           <div className="lg:col-span-1">
             <div className="lg:sticky lg:top-8">
@@ -84,6 +87,7 @@ export const PhysiciansPage: React.FC<{ localePath?: string }> = ({ localePath }
                   <PhysicianDetailCard doctor={doctor} />
                 </div>
               ))}
+              <ConsultationCta />
             </div>
           </div>
         </div>

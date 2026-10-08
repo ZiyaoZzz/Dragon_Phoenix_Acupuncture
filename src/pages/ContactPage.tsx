@@ -7,6 +7,7 @@ import weiImg from '../assets/Physician_Wei_Zhou.jpeg';
 import reviewImg from '../assets/google_review.jpg';
 import { usePageSeo } from '../common/seo/usePageSeo';
 import { useJsonLd } from '../common/seo/useJsonLd';
+import { ConsultationCta } from '../common/consultationCta';
 
 const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
@@ -55,6 +56,8 @@ export const ContactPage: React.FC<{ localePath?: string }> = ({ localePath }) =
       <main className="flex-1 bg-brand-surface">
         <section className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center text-gray-800 mb-8 sm:mb-12 md:mb-16 lg:mb-24">{t('title')}</h1>
+
+          <ConsultationCta className="mb-8 sm:mb-12 md:mb-16" />
 
           <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-10 lg:p-14 mb-8 sm:mb-12 md:mb-16 lg:mb-24">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-4 md:mb-6">{t('sendMessage')}</h2>

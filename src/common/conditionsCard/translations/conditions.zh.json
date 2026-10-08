@@ -2,17 +2,16 @@
   "title": "针灸治疗的疾病",
   "intro": {
     "p1": "针灸已被用于治疗各种疾病数千年。现代研究继续验证这种古老治疗艺术对许多健康问题的有效性。",
-    "p2": "以下是针灸已显示有效性的疾病综合列表，基于临床研究和传统实践。"
+    "p2": "以下病症来自世界卫生组织（WHO）关于针灸对照临床试验的报告，按健康领域分类列出。"
   },
-  "provenTitle": "已证实有效的疾病",
-  "provenDescription": "病例对照临床研究已表明，针灸对以下疾病、症状或病症是有效的治疗方法：",
-  "probableTitle": "可能有效的疾病",
-  "probableDescription": "以下疾病、症状或病症有有限但可能的证据支持针灸的治疗用途：",
+  "jumpLabel": "跳转到分类",
+  "provenDescription": "对照临床试验发现针灸是有效的治疗方法。",
+  "probableDescription": "已显示出治疗效果，但仍需更多研究。",
   "legend": {
-    "proven": "已证实有效",
-    "probable": "有研究支持"
+    "proven": "对照试验显示有效",
+    "probable": "有一定获益证据",
+    "link": "详细指南"
   },
-  "brochureHint": "↗ 链接到详细指南",
   "categories": {
     "painMusculoskeletal": "疼痛与骨骼肌肉",
     "womensHealth": "女性健康与孕产",
@@ -116,5 +115,7 @@
     "urolithiasis": "尿石症",
     "vascularDementia": "血管性痴呆",
     "whoopingCough": "百日咳"
-  }
+  },
+  "linkDescription": "点击带标记的病症，可阅读我们的详细指南。",
+  "sourceNote": "来源：世界卫生组织，《Acupuncture: Review and Analysis of Reports on Controlled Clinical Trials》（2003）。该报告反映的是当时已有的研究，并因纳入规模较小、质量较低的试验而受到批评；对部分病症，后续综述得出的结论较弱。针灸最适合作为医生治疗的补充，而不是替代。欢迎就您的具体情况向我们咨询。"
 }

@@ -2,17 +2,16 @@
   "title": "Condiciones Tratadas con Acupuntura",
   "intro": {
     "p1": "La acupuntura se ha utilizado durante miles de años para tratar una amplia variedad de condiciones. La investigación moderna continúa validando la efectividad de este arte curativo ancestral para muchas preocupaciones de salud.",
-    "p2": "A continuación se presenta una lista completa de condiciones para las cuales la acupuntura ha demostrado efectividad, basada en estudios clínicos y práctica tradicional."
+    "p2": "A continuación se presentan las condiciones revisadas en el informe de la Organización Mundial de la Salud sobre ensayos clínicos controlados de acupuntura, agrupadas por área de salud."
   },
-  "provenTitle": "Condiciones de Efectividad Probada",
-  "provenDescription": "Estudios clínicos controlados han demostrado que la acupuntura ha sido un tratamiento efectivo para las siguientes enfermedades, síntomas o condiciones:",
-  "probableTitle": "Condiciones Probablemente Efectivas",
-  "probableDescription": "Las siguientes enfermedades, síntomas o condiciones tienen evidencia limitada pero probable para respaldar el uso terapéutico de la acupuntura:",
+  "jumpLabel": "Ir a una categoría",
+  "provenDescription": "Ensayos clínicos controlados encontraron que la acupuntura es un tratamiento eficaz.",
+  "probableDescription": "Se ha demostrado un efecto terapéutico, pero se necesita más investigación.",
   "legend": {
-    "proven": "Eficacia comprobada",
-    "probable": "Respaldado por la investigación"
+    "proven": "Eficaz en ensayos controlados",
+    "probable": "Cierta evidencia de beneficio",
+    "link": "Guía detallada"
   },
-  "brochureHint": "↗ enlaza a una guía detallada",
   "categories": {
     "painMusculoskeletal": "Dolor y Sistema Musculoesquelético",
     "womensHealth": "Salud de la Mujer y Embarazo",
@@ -116,5 +115,7 @@
     "urolithiasis": "Urolitiasis",
     "vascularDementia": "Demencia vascular",
     "whoopingCough": "Tos ferina (pertussis)"
-  }
+  },
+  "linkDescription": "Toque una condición resaltada para leer nuestra guía detallada.",
+  "sourceNote": "Fuente: Organización Mundial de la Salud, Acupuncture: Review and Analysis of Reports on Controlled Clinical Trials (2003). La revisión refleja los estudios disponibles en ese momento y ha sido criticada por incluir ensayos más pequeños y de menor calidad; para algunas condiciones, revisiones posteriores han llegado a conclusiones más débiles. La acupuntura funciona mejor como complemento, no como sustituto, de la atención de su médico. Consúltenos sobre su condición específica."
 }

@@ -22,6 +22,19 @@ export default {
           'green-dark': '#2e7d32',  // 深绿色
         }
       },
+      // "Book an Appointment" CTA: a gentle double hop every few seconds (mostly at rest), so the
+      // main conversion button draws the eye without feeling frantic. Used via motion-safe: only.
+      keyframes: {
+        'cta-bounce': {
+          '0%, 60%, 100%': { transform: 'translateY(0)' },
+          '70%': { transform: 'translateY(-6px)' },
+          '80%': { transform: 'translateY(0)' },
+          '88%': { transform: 'translateY(-3px)' },
+        },
+      },
+      animation: {
+        'cta-bounce': 'cta-bounce 4s ease-in-out infinite',
+      },
       boxShadow: {
         card: '0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)',
         'card-hover': '0 10px 20px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.08)',

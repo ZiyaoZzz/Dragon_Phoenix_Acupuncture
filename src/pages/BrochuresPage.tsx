@@ -9,6 +9,7 @@ import type { BrochureSectionId } from '../common/brochures/types';
 import { useTranslation } from 'react-i18next';
 import { usePageSeo } from '../common/seo/usePageSeo';
 import { useJsonLd } from '../common/seo/useJsonLd';
+import { ConsultationCta } from '../common/consultationCta';
 
 const SITE_URL = 'https://dragonphoenixacupuncture.com';
 
@@ -121,7 +122,7 @@ export const BrochuresPage: React.FC = () => {
       <Header />
       <main className="flex-1 bg-brand-surface">
         <section className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-10 md:py-16 lg:py-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 md:mb-10 text-center">{t('sidebar.title')}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 md:mb-10 text-center">{selected.name}</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 md:gap-8">
             <div className="md:col-span-3">
@@ -137,6 +138,8 @@ export const BrochuresPage: React.FC = () => {
 
             <div className="md:col-span-9 space-y-6 sm:space-y-8 md:space-y-10">
               {renderBrochureSection(selected.id as BrochureSectionId)}
+
+              <ConsultationCta />
 
               <nav className="flex items-stretch justify-between gap-4 pt-4 border-t border-gray-300" aria-label={t('pager.label', { defaultValue: 'Brochure pagination' })}>
                 {prevItem ? (

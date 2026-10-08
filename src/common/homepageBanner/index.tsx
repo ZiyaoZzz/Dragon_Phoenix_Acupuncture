@@ -124,7 +124,7 @@ export const HomepageBanner: React.FC = () => {
   };
 
   return (
-    <section id="appointment" className="max-w-[1500px] mx-auto px-4 sm:px-5 pb-8 md:pb-12">
+    <section className="max-w-[1500px] mx-auto px-4 sm:px-5 pb-8 md:pb-12">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-10 items-start">
         <div className="flex flex-col gap-4 md:gap-10 pt-4 md:pt-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-800 mb-3 md:mb-5 font-bold">{t('whoWeAreTitle')}</h2>
@@ -148,7 +148,9 @@ export const HomepageBanner: React.FC = () => {
           <img src={whoImg} alt={t('altDoctor')} className="mx-auto max-w-full sm:max-w-md rounded-lg shadow" loading="lazy" />
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8">
+        {/* Anchor target for the "Book an Appointment" CTAs (HomeHero, ConsultationCta).
+            scroll-mt keeps the form clear of the sticky header. */}
+        <div id="appointment" className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 scroll-mt-28 lg:scroll-mt-52">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-3 md:mb-4">{t('formTitle')}</h2>
           <p className="text-brand-primary font-medium mb-3 md:mb-4 text-base sm:text-lg">
             {t('formConvenience')}

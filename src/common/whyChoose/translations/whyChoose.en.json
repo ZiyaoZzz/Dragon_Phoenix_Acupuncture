@@ -1,0 +1,23 @@
+{
+  "title": "Why Choose Dragon Phoenix?",
+  "items": {
+    "experience": {
+      "title": "25+ Years in Kissimmee",
+      "desc": "An established local clinic that has provided acupuncture to the Kissimmee community for more than 25 years."
+    },
+    "medical": {
+      "title": "Medical Background",
+      "desc": "Both of our practitioners trained as medical doctors in China. Dr. Searcy practiced as an MD for 25 years; Dr. Zhou also holds a PhD in Traditional Chinese Medicine."
+    },
+    "certified": {
+      "title": "Certified & Licensed",
+      "desc": "NCCAOM-certified practitioners, licensed in Florida as Acupuncture Physicians (A.P.)."
+    },
+    "personal": {
+      "title": "Personalized Care",
+      "desc": "Each treatment plan is tailored to you. Your first consultation is free, so you can ask questions before deciding on treatment."
+    }
+  },
+  "physiciansLink": "Meet our physicians →",
+  "reviewsLink": "Read patient reviews on Google →"
+}
